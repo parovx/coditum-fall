@@ -20,7 +20,7 @@ if (quack==7){
 		System.out.println(""+hi+" Is watching the output");
 		String baa=scan.next();
 		String meow=scan.next();
-		System.out.println(""+moo+""+hi+""+baa+""+meow+" Is Your name");
+		System.out.println(""+moo+""+hi+""+baa+""+meow+" is your name");
 	}
 }
 	}
