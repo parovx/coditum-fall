@@ -1,5 +1,6 @@
 package PieToast;
 
+
 import java.util.Scanner;
 
 public class TicTacToe {
@@ -16,13 +17,13 @@ public class TicTacToe {
 		boolean player = true;
 		boolean winornot =false;
 		for (int int1 = 0; int1 < 3; int1++) {
-			for (int int4 = 0; int4 < 3; int4++) {
+			for (int int4 = 0; int4 < 3; int4++)
 				grid[int1][int4] = 2;
 			}
 		}
 			while (winornot==false){
-		if (player==true) System.out.println(""+name+" Select a place.");
-		else System.out.println(""+name2+" Select a place.");
+		if (player==true){ System.out.println(""+name+" Select a place.");}
+		else{ System.out.println(""+name2+" Select a place.");}
 		System.out.print("Select a row:");
 		int row=scan.nextInt();
 		System.out.print("Select a column:");
@@ -34,21 +35,52 @@ public class TicTacToe {
 		
 				for (int int3 = 0; int3 < 3; int3++) {
 					
-					if(grid[int2][int3]==0)
-						System.out.print("O");
-					else if(grid[int2][int3]==1)
-					System.out.print("X");
-					else
-						System.out.print("  |");
+					if(grid[int2][int3]==0){
+						System.out.print("O");}
+					else if(grid[int2][int3]==1){
+					System.out.print("X");}
+					else{
+						System.out.print("-");}
 				}
 
 				System.out.println();
-				System.out.println("--------");
+				System.out.println("");
 		}
-		/*if (grid[0][0]==1&& grid[1][0]==1&&grid[2][0]==1
-			||grid[0][1]==1&&grid[1][1]==1&&grid[2][1]==1)*/
-			
+		if (grid[0][0]==1&&grid[1][0]==1&&grid[2][0]==1){
+			System.out.println("WIN!!!");}
+		if (grid[0][1]==1&&grid[1][1]==1&&grid[2][1]==1){
+			System.out.println("WIN!!!");}
+		if (grid[0][2]==1&&grid[1][2]==1&&grid[2][2]==1){
+			System.out.println("WIN!!!");}
+		if (grid[0][0]==1&&grid[0][1]==1&&grid[0][2]==1){
+			System.out.println("WIN!!!");}
+		if (grid[1][0]==1&&grid[1][1]==1&&grid[1][2]==1){
+			System.out.println("WIN!!!");}
+		if (grid[2][0]==1&&grid[2][1]==1&&grid[2][2]==1){
+			System.out.println("WIN!!!");}
+		if (grid[0][0]==1&&grid[1][1]==1&&grid[2][2]==1){
+			System.out.println("WIN!!!");}
+		if (grid[2][0]==1&&grid[1][1]==1&&grid[0][2]==1){
+			System.out.println("WIN!!!");}
+		
+			if (grid[0][0]==0&&grid[1][0]==0&&grid[2][0]==0){
+				System.out.println("WIN!!!");}
+			if (grid[0][1]==0&&grid[1][1]==0&&grid[2][1]==0){
+				System.out.println("WIN!!!");}
+			if (grid[0][2]==0&&grid[1][2]==0&&grid[2][2]==0){
+				System.out.println("WIN!!!");}
+			if (grid[0][0]==0&&grid[0][1]==0&&grid[0][2]==0){
+				System.out.println("WIN!!!");}
+			if (grid[1][0]==0&&grid[1][1]==0&&grid[1][2]==0){
+				System.out.println("WIN!!!");}
+			if (grid[2][0]==0&&grid[2][1]==0&&grid[2][2]==0){
+				System.out.println("WIN!!!");}
+			if (grid[0][0]==0&&grid[1][1]==0&&grid[2][2]==0){
+				System.out.println("WIN!!!");}
+			if (grid[2][0]==0&&grid[1][1]==0&&grid[0][2]==0){
+				System.out.println("WIN!!!");}
 		player=!player;
+		
 	}
 }
-	}
+}
