@@ -23,7 +23,7 @@ System.out.println(int1);
 }else if(string1.equals("x")){
 	int1*=int2;
 System.out.println(int1);
-}else if(string1.equals("/")){
+}else if(string1.equals("÷")){
 	int1/=int2;
 	System.out.println(int1);
 }
