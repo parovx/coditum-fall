@@ -20,7 +20,7 @@ public class TicTacToe {
 			for (int int4 = 0; int4 < 3; int4++)
 				grid[int1][int4] = 2;
 			}
-		}
+		
 			while (winornot==false){
 		if (player==true){ System.out.println(""+name+" Select a place.");}
 		else{ System.out.println(""+name2+" Select a place.");}
