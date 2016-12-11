@@ -25,22 +25,56 @@ if (sandwich==1){
 				System.out.println("You throw it out the window. Unfortunately, it hits a bull-pig. The bull-pig starts to charge at you. set up a fire right in front of you=1 sledgehammer=2 step to the side=3");
 				int bullpig=scan.nextInt();
 				if (bullpig==2){
-					System.out.println("You jump outside and squash that bull-pig. You go inside to go eat another sandwich but there is no food! go to butcher shop=1 go to Stop and Shop=2");
+					System.out.println("You jump outside and squash that bull-pig. You go inside to go eat another sandwich but there is no food! go to butcher shop=1 go to Stop&Shop=2");
+					int shop=scan.nextInt();
+					if(shop==2){
+						System.out.println("You go to the cookies and crackers section at Stop&Shop. oreos=1 goldfish=2");
+						int foods=scan.nextInt();
+						if(foods==1){
+							System.out.println("You drive your car home. A zombie pig is blocking the road. throw oreos=1 drive over it=2");
+						int zombie=scan.nextInt();
+						if (zombie==1){
+							System.out.println("You throw that beautiful bag of oreos at the zombie. It hits him in the head and he falls down. You just drive away from him and back to your house. If you didn't remember, you had no food. You die of starvation. "+name+"=(XoX)");
+						}else{
+							System.out.println("You drive over him like a pickle. You go home and eat some oreos and go to sleep. You wake up in the morning and your house explodes. build a new one=1 go live in some other person's house=2");
+						int boomedhouse=scan.nextInt();
+						if(boomedhouse==2){
+							System.out.println("You see an Earthling driving in a car. You drive after him and go in his house. You are tired. sleep in closet=1 sleep in bed=2");
+							int sleepplace=scan.nextInt();
+						}
+						}
+						}else{
+							System.out.println("You drive your car home. A zombie pig is blocking the road. throw goldfish=1 drive over it=2");
+						int zombie2=scan.nextInt();
+						if(zombie2==1){
+							System.out.println("You throw that beautiful bag of goldfish at the zombie. It hits him in the head and he falls down. You just drive away from him and back to your house. if you didn't remember, you had no food. You die of starvation. "+name+"=(XoX)");
+						}else{
+							System.out.println("You run him over like a pickle. You drive home and open up your goldfish. Apparently Pepperidge Farms had a proble and accidentally made sharks. Your tongue gets cut on he sharp teeth and pig-viruses get into your tongue and make it swell up so badly that it breakse your house and blocks out your whole face and you can't breathe and die. "+name+"=(OoO)");
+						}
+						}
+			
+					}else{
+						System.out.println("Of course, the butcher shop has been taken over by rebellious man-eating pigs. You get butchered and sold to some old man-eating pig with a big head. You get eaten. "+name+"=***");
+					}
 				}else if(bullpig==1){
 					System.out.println("You start to make a fire but you don't have enough time. The bull-pig runs over you. "+name+"=(Ω-X)");
 			}else{
-				System.out.println("The bull-pig is right next to you.");
+				System.out.println("The bull-pig is right next to you. He turns and runs over you. He remembers he didn't have breakfast, so he puts syup on you and eats you. "+name+"=***");
 			}
 				}else{
-			System.out.println("You unsafely leave the dead pig in your house. Then carnivorous pigsects start eating it. They get hungrier and eat you. "+name+"=");
-			}
+			System.out.println("You unsafely leave the dead pig in your house. Then giant carnivorous pigsects start eating it. They get hungrier and eat you. "+name+"=***");
 			}
 			}else{
-				System.out.println("The butcher knife isn't thick enough. The pig easily dodges you, tackles you and surgically removes your arms. You can't really do anything, so you die of thirst 72 hours later. "+name+"=(x-x)");System.out.println("You pick it up to throw it out the window. Of course, it has rabies and bites you. You go crazy and start living in the wild. People find you and scream, run away, and call the police. They find you and send you off in a space ship. You open up the door and your head explodes."+name+"= ………");
+				System.out.println("You pick it up to throw it out the window. Of course, it has rabies and bites you. You go crazy and start living in the wild. Other people that have entered Pig World find you and scream, run away, and call the police. They find you and send you off in a space ship. You open up the door and your head explodes."+name+"= ………");
+			}
+			}else{
+				System.out.println("The butcher knife isn't thick enough. The pig easily dodges you, tackles you and surgically removes your arms. You can't really do anything, so you die of thirst 72 hours later. "+name+"=(x-x)");
+				
 			
 		}
+	
 	}else{
-		System.out.println("A pig is in your sandwich. You eat the pig and it eats you from the inside out. "+name+"=");
+		System.out.println("A pig is in your sandwich. You eat the pig and it eats you from the inside out. "+name+"=***");
 		
 	}
 	}
