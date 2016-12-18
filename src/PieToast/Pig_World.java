@@ -41,15 +41,32 @@ if (sandwich==1){
 						if(boomedhouse==2){
 							System.out.println("You see an Earthling driving in a car. You drive after him and go in his house. You are tired. sleep in closet=1 sleep in bed=2");
 							int sleepplace=scan.nextInt();
+							if(sleepplace==1){
+								System.out.println("You go to sleep in his closet. A plutonium atomic bomb drops somewhere.");
+								System.out.println("You wake up in the morning. There is something grabbing you. It gets tighter. It is strangling you. hit it with a knife=1 hit it with a spoon=2");
+								int killcoat=scan.nextInt();
+								if(killcoat==1){
+									System.out.println("You stab the thing. It falls down. You open the door and throw it out. It was a coat pig. You want to take over this house. kill the owner=1 kindly ask him=2");
+									int takehouse=scan.nextInt();
+									if(takehouse==1){
+										System.out.println("You kill the owner of the house. throw body out the window=1 do nothing=2");
+										int getridman=scan.nextInt();
+									}
+								}
+							}else{
+								System.out.println("You run into the mans bed. He finds you there when he needs to go to sleep. He throws you out the window like a spoon and you go flying 100,000,000,000,000,000,000,000,000,000 miles and you hit the ground so hard that you die. "+name+"=(X0X)");
+							}
+						}else{
+							System.out.println("You drive your car to Home Depot. Construction pigs drop giant planks of wood on you and kill you. "+name+"=(x.X)");
 						}
 						}
 						}else{
 							System.out.println("You drive your car home. A zombie pig is blocking the road. throw goldfish=1 drive over it=2");
 						int zombie2=scan.nextInt();
 						if(zombie2==1){
-							System.out.println("You throw that beautiful bag of goldfish at the zombie. It hits him in the head and he falls down. You just drive away from him and back to your house. if you didn't remember, you had no food. You die of starvation. "+name+"=(XoX)");
+							System.out.println("You throw that beautiful bag of goldfish at the zombie. It hits him in the head and he falls down. You just drive away from him and back to your house. If you didn't remember, you had no food. You die of starvation. "+name+"=(XoX)");
 						}else{
-							System.out.println("You run him over like a pickle. You drive home and open up your goldfish. Apparently Pepperidge Farms had a proble and accidentally made sharks. Your tongue gets cut on he sharp teeth and pig-viruses get into your tongue and make it swell up so badly that it breakse your house and blocks out your whole face and you can't breathe and die. "+name+"=(OoO)");
+							System.out.println("You run him over like a pickle. You drive home and open up your goldfish. Apparently Pepperidge Farms had a problem and accidentally made sharks. Your tongue gets cut on he sharp teeth and pig-viruses get into your tongue and make it swell up so badly that it breaks your house and blocks out your whole face and you can't breathe and die. "+name+"=(OoO)");
 						}
 						}
 			
@@ -59,7 +76,7 @@ if (sandwich==1){
 				}else if(bullpig==1){
 					System.out.println("You start to make a fire but you don't have enough time. The bull-pig runs over you. "+name+"=(Ω-X)");
 			}else{
-				System.out.println("The bull-pig is right next to you. He turns and runs over you. He remembers he didn't have breakfast, so he puts syup on you and eats you. "+name+"=***");
+				System.out.println("The bull-pig is right next to you. He turns and runs over you. He remembers he didn't have breakfast, so he puts syrup on you and eats you. "+name+"=*˜*˜*");
 			}
 				}else{
 			System.out.println("You unsafely leave the dead pig in your house. Then giant carnivorous pigsects start eating it. They get hungrier and eat you. "+name+"=***");
