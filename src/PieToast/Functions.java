@@ -4,7 +4,7 @@ public class Functions
 {
 	public static void message()
 	{
-		System.out.println("Dioxys is a mutant alien sausage!");
+		System.out.println("Deoxys is a mutant alien sausage!");
 	}
 	public static int five()
 	{
@@ -16,7 +16,7 @@ public class Functions
 		// TODO Auto-generated method stub
 //
 		message();
-		System.out.println(multiplï(2,10)+"<--number stuf");
+		System.out.println(multiplï(2,10)+"<--number stuff");
 		
 	}
 public static int dubble(int sumthing)

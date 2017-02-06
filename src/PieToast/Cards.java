@@ -26,25 +26,34 @@ if(value>1&&value<11){
 	System.out.println("King of "+süt);
 }
 }
-public Cards RandomCard(){
+//Hearts=0 Spades=1 Diamonds=2 Clubs=3
+public static Cards RandomCard(){
 	Random rand=new Random();
 	int randomcard=rand.nextInt(13)+1;
 	int randomsüt=rand.nextInt(3);
 	String randomsüt2="";
 	if (randomsüt==0){
-		return
+		randomsüt2="Hearts";
+	}else if (randomsüt==1){
+		randomsüt2="Spades";
+	}else if (randomsüt==2){
+		randomsüt2="Diamonds";
+	}else{
+		randomsüt2="Clubs";
 	}
 	
 	Cards card1=new Cards(randomsüt2, randomcard);
 	
+	return card1;
 }
 //test
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Cards testcard=new Cards("Cheese",13);
-		testcard.print();
-		Cards[] deck=new Cards[3];
-			
+		Cards card2=new Cards("hello",13);
+		Cards card1=new Cards("hello",139889);
+		System.out.print(card1.greaterthan(card2));
+	}
+	public boolean greaterthan(Cards othercard){
+		return this.value>othercard.value;
 	}
 
 }
