@@ -18,26 +18,54 @@ public class WAR {
 			System.out.println("Player 1");
 			System.out.println("Card "+cardx);
 			deck[cardx].print();
-			System.out.println("__________________");
+			System.out.println("________________________________________");
 			deck2[cardx]=Cards.RandomCard();
 			System.out.println("Player 2");
 			System.out.println("Card "+cardx);
 			deck2[cardx].print();
-			System.out.println("___________________");
+			System.out.println("________________________________________");
 		}
+		int player1points=0;
+		int player2points=0;
 		int top=0;
+		int points=1;
 		while(top<27){
 			if(deck2[top].greaterthan(deck[top])){
-				System.out.println("Player 2 (^_^)WINS(^_^)!");
+				System.out.println("Player 2 (^_^)WINS(^_^) round "+top+"!");
+				points=1;
+				player2points+=points;
+				System.out.println("________________________________________");
+				System.out.println("Player 1 has "+player1points+" points!");
+				System.out.println("Player 2 has "+player2points+" points!");
+				System.out.println("________________________________________");
 			}else if(deck[top].greaterthan(deck2[top])){
-				System.out.println("Player 1 (^_^)WINS(^_^)!");
+				System.out.println("Player 1 (^_^)WINS(^_^) round "+top+"!");
+				points=1;
+				player1points+=points;
+				System.out.println("________________________________________");
+				System.out.println("Player 1 has "+player1points+" points!");
+				System.out.println("Player 2 has "+player2points+" points!");
+				System.out.println("________________________________________");
 			}else{
-				System.out.println("tie");
+				System.out.println("¿(O_O)tie(O_O)?");
+				System.out.println("________________________________________");
+				points+=3;
+				top+=2;
+				System.out.println("Player 1 has "+player1points+" points!");
+				System.out.println("Player 2 has "+player2points+" points!");
+				System.out.println("________________________________________");
 			}top++;
 		}
-	}
+		if (player1points>player2points){
+			System.out.println("Player 1 (^_^)WINS(^_^) the game!"); 
+		}else{
+			System.out.println("Player 2 (^_^)WINS(^_^) the game!");
+		}
 
+	}
 }
+
+
 
 
 
