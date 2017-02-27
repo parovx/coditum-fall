@@ -14,7 +14,7 @@ public class ceaser {
 		for(int i=0; i<plaintext.length(); i++){
 			letter=plaintext.charAt(i);
 			ciphertext+="";
-			//learn about switch statements
+			//learn about switch statements d
 		} System.out.println(ciphertext);
 	}
 
