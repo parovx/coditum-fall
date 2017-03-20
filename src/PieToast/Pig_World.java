@@ -7,6 +7,7 @@ public class Pig_World {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner scan=new Scanner(System.in);
+		
 		System.out.println("What is your name?");
 		String name=scan.next();
 		System.out.println(""+name+", you are entering Pig World. This is very dangerous. You can close this program and do something else. There are many ways you can die. You must make the right decisions to survive. Each pig species is different. Each pig species is dangerous in many different ways. So look out. A man called Jimothy, one of the previous people sent to Pig World, will be there. He will help you. You must bring him back. He was trapped there for 7 years. Killing him will result in you failing this mission. We're sending you out. 3...2...1...0. WEEEEEEEEEEEEEOOOOOOOWWWWW!");
@@ -47,7 +48,7 @@ if (sandwich==1){
 								System.out.println("You wake up in the morning. There is something grabbing you. It gets tighter. It is strangling you. hit it with a knife=1 hit it with a spoon=2");
 								int killcoat=scan.nextInt();
 								if(killcoat==1){
-									System.out.println("You stab the thing. It falls down. You open the DOOR and throw it out. It was a coat pig. You want to take over this house. kill the owner=1 kindly ask him=2");
+									System.out.println("You stab the thing. It falls down. You open the DOOR and throw it out. It was a pygthon. You want to take over this house. kill the owner=1 kindly ask him=2");
 									int takehouse=scan.nextInt();
 									if(takehouse==1){
 										System.out.println("You kill the owner of the house.");
@@ -59,13 +60,26 @@ if (sandwich==1){
 										System.out.println("??? gives you a CHEESEBURGER!");
 										System.out.println(""+name+" obtained a CHEESEBURGER!");
 										System.out.println("You move out of the house. It is dark. Something softly lands on your hand. It is freezing cold. You swat it like a bug. It is just water now. You wonder what it was as you walked forward. You hear a crunch underneath your feet. You look down. Your shoe is covered with SNOW. You rush to the snow sports store. You buy SNOW PANTS,a SNOW JACKET, SNOW BOOTS and GLOVES.");
-										System.out.println(""+name+"obtained SNOW JACKET, SNOW PANTS, SNOW BOOTS and GLOVES.");
+										System.out.println(""+name+" obtained SNOW JACKET, SNOW PANTS, SNOW BOOTS and GLOVES.");
 										System.out.println("Do you want to equip them? 1=yes 2=no");
 										int equipsnogear=scan.nextInt();
 										if(equipsnogear==1){
-											System.out.println(""+name+"equipped the SNOW JACKET, SNOW PANTS, SNOW BOOTS and GLOVES.");
+											System.out.println(""+name+" equipped the SNOW JACKET, SNOW PANTS, SNOW BOOTS and GLOVES.");
+											System.out.println("A pig falls from the sky. he has round glasses and a lightning scar on hs forehead. he looks at you angrily and takes out a wand. BOSS BATTLE: HARRY PORKER! KILL HIM! firelighter=1 frying pan=2");
+											int harry1=scan.nextInt();
+											if(harry1==2){
+												System.out.println("you pull out a frying pan. where do you hit him. face=1 left side=2 right side=3");
+												int harry2=scan.nextInt();
+												if(harry2==1){
+													System.out.println("You smack him in the face. you smashed his glasses. hit again=1 take wand=2");
+												}else{
+													System.out.println("You reach out with the frying pan to hit his side. your arm is too close to him and he bites it off. you look at it scream, and you are empty handed. he lunges at you and bites your head off. "+name+"=");
+												}
+											}else{
+												System.out.println("you pull out a firelighter. harry grunts and uses a water spell to put out your fire. He sends you flying through the air and, of course, you die "+name+"=(X_X)");
+											}
 										}else{
-											System.out.println("");
+											System.out.println(""+name+" died of the cold. (O≈O)");
 										}
 									}
 								}else{
@@ -85,9 +99,9 @@ if (sandwich==1){
 							System.out.println("You drive your CAR home. A zombie pig is blocking the road. throw BAG OF GOLDFISH=1 drive over it=2");
 						int zombie2=scan.nextInt();
 						if(zombie2==1){
-							System.out.println("You throw that beautiful BAG OF GOLDFISH at the zombie. It hits him in the head and he falls down. You just drive away from him and back to your house. If you didn't remember, you had no food. You die of starvation. "+name+"=(XoX)");
+							System.out.println("You throw that BAG OF GOLDFISH at the zombie. It hits him in the head and he falls down. You just drive away from him and back to your house. If you didn't remember, you had no food. You die of starvation. "+name+"=(XoX)");
 						}else{
-							System.out.println("You run him over like a PICKLE. You drive home and open up your BAG OF GOLDFISH. Apparently Pepperidge Farms had a problem and accidentally made piranhas. Your tongue gets cut on he sharp teeth and pig-viruses get into your tongue and make it swell up so badly that it breaks your house and blocks out your whole face and you can't breathe and die. "+name+"=(OoO)");
+							System.out.println("You run him over like a PICKLE. You drive home and open up your BAG OF GOLDFISH. Apparently Pepperidge Farms had a problem and accidentally made piranhas. Your tongue gets cut on he sharp teeth and swineruses get into your tongue and make it swell up so badly that it breaks your house and blocks out your whole face and you can't breathe and die. "+name+"=(OoO)");
 						}
 						}
 			
