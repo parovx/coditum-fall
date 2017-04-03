@@ -7,7 +7,9 @@ public class Pig_World {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner scan=new Scanner(System.in);
-		
+		System.out.println("Enter Password");
+		int Password=scan.nextInt();
+		if(Password==728){
 		System.out.println("What is your name?");
 		String name=scan.next();
 		System.out.println(""+name+", you are entering Pig World. This is very dangerous. You can close this program and do something else. There are many ways you can die. You must make the right decisions to survive. Each pig species is different. Each pig species is dangerous in many different ways. So look out. A man called Jimothy, one of the previous people sent to Pig World, will be there. He will help you. You must bring him back. He was trapped there for 7 years. Killing him will result in you failing this mission. We're sending you out. 3...2...1...0. WEEEEEEEEEEEEEOOOOOOOWWWWW!");
@@ -59,24 +61,31 @@ if (sandwich==1){
 										System.out.println("???: Nope. Just take this.");
 										System.out.println("??? gives you a CHEESEBURGER!");
 										System.out.println(""+name+" obtained a CHEESEBURGER!");
-										System.out.println("You move out of the house. It is dark. Something softly lands on your hand. It is freezing cold. You swat it like a bug. It is just water now. You wonder what it was as you walked forward. You hear a crunch underneath your feet. You look down. Your shoe is covered with SNOW. You rush to the snow sports store. You buy SNOW PANTS,a SNOW JACKET, SNOW BOOTS and GLOVES.");
+										System.out.println("You move out of the house. It is dark. Something softly lands on your hand. It is freezing cold. You swat it like a bug. It is just water now. You wonder what it was as you walk forward. You hear a crunch underneath your feet. You look down. Your shoe is covered with SNOW. You rush to the snow sports store. You buy SNOW PANTS,a SNOW JACKET, SNOW BOOTS and GLOVES.");
 										System.out.println(""+name+" obtained SNOW JACKET, SNOW PANTS, SNOW BOOTS and GLOVES.");
 										System.out.println("Do you want to equip them? 1=yes 2=no");
 										int equipsnogear=scan.nextInt();
 										if(equipsnogear==1){
 											System.out.println(""+name+" equipped the SNOW JACKET, SNOW PANTS, SNOW BOOTS and GLOVES.");
-											System.out.println("A pig falls from the sky. he has round glasses and a lightning scar on hs forehead. he looks at you angrily and takes out a wand. BOSS BATTLE: HARRY PORKER! KILL HIM! firelighter=1 frying pan=2");
+											System.out.println("A pig falls from the sky. he has round glasses and a lightning scar on hs forehead. he looks at you angrily and takes out a wand. BOSS BATTLE: HARRY PORKER! BANISH HIM! firelighter=1 frying pan=2");
 											int harry1=scan.nextInt();
 											if(harry1==2){
-												System.out.println("you pull out a frying pan. where do you hit him. face=1 left side=2 right side=3");
+												System.out.println("You pull out a frying pan. Where do you hit him. face=1 left side=2 right side=3");
 												int harry2=scan.nextInt();
 												if(harry2==1){
 													System.out.println("You smack him in the face. you smashed his glasses. hit again=1 take wand=2");
+													int harry3=scan.nextInt();
+													if(harry3==1){
+														System.out.println("You smack him in the face and knock him unconcious. He disappears. You see a Nintendo 3DS. You turn it on. It has a Pokémon Red game card in it. You turn on the game. A Pokémon wild Pokémon encounter sound plays as the 3DS screens turn completely white. A blinding flash goes through Pig World. When the light clears you see a pig. It is a pig that looks like a pig-shaped pikachu. Small bolts of lightning come from its cheeks. BOSS BATTLE: PIGACHU! CATCH HIM");
+														
+													}else{
+														System.out.println("You take his wand as he runs around blindly. You don't know any magic spells. Harry Porker runs into you ");
+													}
 												}else{
-													System.out.println("You reach out with the frying pan to hit his side. your arm is too close to him and he bites it off. you look at it scream, and you are empty handed. he lunges at you and bites your head off. "+name+"=");
+													System.out.println("You reach out with the frying pan to hit his side. Your arm is too close to him and he bites it off. You look at it scream, and you are empty handed. He lunges at you and bites your head off. "+name+"=");
 												}
 											}else{
-												System.out.println("you pull out a firelighter. harry grunts and uses a water spell to put out your fire. He sends you flying through the air and, of course, you die "+name+"=(X_X)");
+												System.out.println("You pull out a firelighter. Harry grunts and uses a water spell to put out your fire. He sends you flying through the air and, of course, you die "+name+"=(X_X)");
 											}
 										}else{
 											System.out.println(""+name+" died of the cold. (O≈O)");
@@ -117,22 +126,21 @@ if (sandwich==1){
 			System.out.println("You unsafely leave the dead pig in your house. Then giant carnivorous pigsects start eating it. They get hungrier and eat you. "+name+"=***");
 			}
 			}else{
-				System.out.println("You pick it up to throw it out the window. Of course, it has rabies and bites you. You go crazy and start living in the wild. Other people that have entered Pig World find you and scream, run away, and call the police. They find you and send you off in a SPACESHIP. You open up the door and your head explodes."+name+"= ………");
+				System.out.println("You pick it up to throw it out the window. Of course, it has rabies and bites you. You go crazy and start living in the wild. Other people that have entered Pig World find you and scream, run away, and call the pigolice. They find you and send you off in a SPACESHIP. You open up the door and your head explodes."+name+"= ………");
 			}
 			}else{
 				System.out.println("The BUTCHER KNIFE isn't thick enough. The pig easily dodges you, tackles you and surgically removes your arms. You can't really do anything, so you die of thirst 72 hours later. "+name+"=(x-x)");
-				
-			
 		}
-	
 	}else{
 		System.out.println("A pig is in your sandwich. You eat the pig and it eats you from the inside out. "+name+"=***");
 		
 	}
+	
+		
 	}
 
-
 	}
+}
 
 	
 

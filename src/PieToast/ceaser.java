@@ -28,5 +28,20 @@ public class ceaser {
 		}
 		
 	}
+	
+	public static char cshift(char plaintext, char key){
+		char letter;
+	
+		
+		int shift=key-97;
+			int nv=plaintext;
+			nv+=shift;
+			if(nv>=122){
+			nv-=26;}
+			plaintext=(char)nv;
+		return (plaintext);
+			
+		}
+	}
 }
 
