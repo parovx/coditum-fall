@@ -8,8 +8,9 @@ public class Pig_World {
 		// TODO Auto-generated method stub
 		Scanner scan=new Scanner(System.in);
 		System.out.println("Enter Password");
-		int Password=scan.nextInt();
-		if(Password==728){
+		String Password=scan.next();
+		String meh=scan.next(Password);
+		if(Password==meh){
 		System.out.println("What is your name?");
 		String name=scan.next();
 		System.out.println(""+name+", you are entering Pig World. This is very dangerous. You can close this program and do something else. There are many ways you can die. You must make the right decisions to survive. Each pig species is different. Each pig species is dangerous in many different ways. So look out. A man called Jimothy, one of the previous people sent to Pig World, will be there. He will help you. You must bring him back. He was trapped there for 7 years. Killing him will result in you failing this mission. We're sending you out. 3...2...1...0. WEEEEEEEEEEEEEOOOOOOOWWWWW!");
@@ -79,7 +80,7 @@ if (sandwich==1){
 														System.out.println("You smack him in the face and knock him unconcious. He disappears. You see a Nintendo 3DS. You turn it on. It has a Pokémon Red game card in it. You turn on the game. A Pokémon wild Pokémon encounter sound plays as the 3DS screens turn completely white. A blinding flash goes through Pig World. When the light clears you see a pig. It is a pig that looks like a pig-shaped pikachu. Small bolts of lightning come from its cheeks. BOSS BATTLE: PIGACHU! CATCH HIM");
 														
 													}else{
-														System.out.println("You take his wand as he runs around blindly. You don't know any magic spells. Harry Porker runs into you ");
+														System.out.println("You take his wand as he runs around blindly. You don't know any magic spells. Harry Porker runs into you and knocks you over. Then he runs over you a bunch of times until you die."+name+"=(Ω-o)");
 													}
 												}else{
 													System.out.println("You reach out with the frying pan to hit his side. Your arm is too close to him and he bites it off. You look at it scream, and you are empty handed. He lunges at you and bites your head off. "+name+"=");
@@ -137,6 +138,8 @@ if (sandwich==1){
 	}
 	
 		
+	}else{
+		System.out.println("NO");
 	}
 
 	}
