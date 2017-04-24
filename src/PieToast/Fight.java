@@ -14,9 +14,9 @@ System.out.println("Attack=1 Defend=2 Heal=3");
 int chealth=20;
 int health=20;
 int dah=rand.nextInt(2);
-while(health>0){
+while(health>0&&chealth>0){
 int move1=scan.nextInt();
-if(move1==1&&dah==1){
+if(move1==1&&dah==0){
 	chealth=chealth-5;
 	health=health-5;
 	System.out.println("Did 5 damage to Chicken Man. Chicken Man did 5 damage to you. Chicken Man's health:"+chealth+". Your health="+health+"");
@@ -48,7 +48,7 @@ if(chealth==0){
 }
 dah=rand.nextInt(2);
 	}
-if(chealth==0){
+if(chealth==0&&health==0){
 	System.out.println("You both died.");
 }else if(health==0){
 	System.out.println("You died.");
@@ -58,3 +58,4 @@ if(chealth==0){
 
 }
 }
+
