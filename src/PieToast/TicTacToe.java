@@ -12,7 +12,7 @@ public class TicTacToe {
 		String name=scan.nextLine();
 		System.out.println("Enter name below.");
 		String name2=scan.nextLine();
-		System.out.println(""+name+" Select a place.");
+		System.out.println(""+name+", select a place.");
 		int[][] grid = new int[3][3];
 		boolean player = true;
 		boolean winornot =false;
@@ -22,8 +22,8 @@ public class TicTacToe {
 			}
 		
 			while (winornot==false){
-		if (player==true){ System.out.println(""+name+" Select a place.");}
-		else{ System.out.println(""+name2+" Select a place.");}
+		if (player==true){ System.out.println(""+name+", select a place.");}
+		else{ System.out.println(""+name2+", select a place.");}
 		System.out.print("Select a row:");
 		int row=scan.nextInt();
 		System.out.print("Select a column:");

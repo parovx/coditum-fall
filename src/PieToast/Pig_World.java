@@ -16,7 +16,7 @@ public class Pig_World {
 System.out.println("You are on a farm. You are eating a PEANUT BUTTER AND JELLY SANDWICH. Then you hear a noise in your SANDWICH. Will you cut it open? 1=yes 2=no.");
 int sandwich=scan.nextInt();
 if (sandwich==1){
-	System.out.println("A pig jumps out at you. You only have .1 seconds to grab a weapon. BUTCHER KNIFE=1 ROLLING PIN=2");
+	System.out.println("A pig jumps out at you. You have to grab a weapon. BUTCHER KNIFE=1 ROLLING PIN=2");
 	int weapon=scan.nextInt();
 	if(weapon==2){
 		System.out.println("The pig bangs into the ROLLING PIN. You can attack it. squash it=1 throw it out the window=2");
@@ -82,17 +82,35 @@ if (sandwich==1){
 															System.out.println("You send out Plantasuarus Rex! Solar Beam=1 Throw Pokéball=2");
 															int plantrex=scan.nextInt();
 															if(plantrex==1){
-																System.out.println("You Solar Beam Pigachu. He has 1 health left. His attack misses! You throw the Pokéball. You caught him. IT IS NOT OVER YET!");
+																System.out.println("You Solar Beam Pigachu. He has 1 health left. His attack misses! You throw the Pokéball. You caught him.");
+																System.out.println("IT IS NOT OVER YET!");
 																System.out.println("The End!");
 																System.out.println("Get Version 2");
+																System.out.println("Loserboard");
+																System.out.println("1.The_Memer");
+																System.out.println("2.The_Memer");
+																System.out.println("3.The_Memer");
+																System.out.println("Leaderboard");
+																System.out.println("1."+name+"");
+																System.out.println("2. Jimothy");
+																System.out.println("3. Anybody but The_Memer");
 															}
 														}else if(pika==3){
 															System.out.println("You send out Smaug! Fire Blast=1 Throw Pokéball=2");
 															int smaug=scan.nextInt();
 															if(smaug==1){
-																System.out.println("You Fire Blast Pigachu. He has 1 health left. His attack misses! You throw the Pokéball. You caught him. IT IS NOT OVER YET!");
+																System.out.println("You Fire Blast Pigachu. He has 1 health left. His attack misses! You throw the Pokéball. You caught him.");
+																System.out.println("THIS IS NOT OVER YET!");
 																System.out.println("The End!");
 																System.out.println("Get Version 2");
+																System.out.println("Loserboard");
+																System.out.println("1.The_Memer");
+																System.out.println("2.The_Memer");
+																System.out.println("3.The_Memer");
+																System.out.println("Leaderboard");
+																System.out.println("1. "+name+"");
+																System.out.println("2. Jimothy");
+																System.out.println("Anybody but The_Memer");
 															}
 														}else{
 															System.out.println("You send out Water Bowser! Wrong choice. Pigachu easily defeats him..."+name+"=......");
