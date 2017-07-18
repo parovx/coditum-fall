@@ -19,7 +19,7 @@ public class rock_scissors_paper {
 			if (hello == choice) {
 				tries++;
 				System.out.println("Draw. You Are On Try "+tries+".");
-			} else if (hello > choice) {
+			} else if (hello==2&&choice==1 or hello==3&&choice==2 or hello==1&&choice==3) {
 				tries++;
 				System.out.println("You Won On Attempt Number "+tries+".");
 				wip = true;
@@ -30,10 +30,10 @@ public class rock_scissors_paper {
 			}
 
 		}
-		if(int choice == "1,2,3") {
-			tries++;
-			System.out.println("You Won On Attempt Number "+tries+".");
-			wip = true;
-		}
+	//	if(int choice==1&&) {
+	//		tries++;
+		//	System.out.println("You Won On Attempt Number "+tries+".");
+	//		wip = true;
+	//	}
 	}
 }
