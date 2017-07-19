@@ -41,8 +41,8 @@ if(move1==1&&dah==0){
 	health=health+5;
 	System.out.println("Healed 5 damage. Chicken Man Healed 5 damage. Chicken Man's health:"+chealth+". Your health="+health+"");
 }
-if(chealth==0){
-	System.out.println("You win!");
+if(chealth==0&&health>0){
+	System.out.println("You Win!");
 	health=0;
 	health=health+5;
 }
@@ -50,7 +50,7 @@ dah=rand.nextInt(2);
 	}
 if(chealth==0&&health==0){
 	System.out.println("You both died.");
-}else if(health==0){
+}else if(health==0&&chealth>0){
 	System.out.println("You died.");
 }else{
 	System.out.println("You Win!");

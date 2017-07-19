@@ -43,7 +43,7 @@ public class Pig_World {
 											System.out.println("You drive over him like a PICKLE. You go home and eat some OREOS and go to sleep. You wake up in the morning and your house explodes. build a new one=1 go live in some other person's house=2");
 											int boomedhouse=scan.nextInt();
 											if(boomedhouse==2){
-												System.out.println("You see an Earthling driving in a CAR. You drive after him and go in his house. You are tired. sleep in closet=1 sleep in bed=2");
+												System.out.println("You see a human driving in a CAR. You drive after him and go in his house. You are tired. sleep in closet=1 sleep in bed=2");
 												int sleepplace=scan.nextInt();
 												if(sleepplace==1){
 													System.out.println("You go to sleep in his CLOSET. A PLUTONIUM ATOMIC BOMB drops somewhere.");
@@ -125,7 +125,7 @@ public class Pig_World {
 																	System.out.println("You pull out a firelighter. Harry grunts and uses a water spell to put out your fire. He sends you flying through the air and, of course, you die "+name+"=(X_X)");
 																}
 															}else{
-																System.out.println(""+name+" died of the cold. (O≈O)");
+																System.out.println(""+name+" died of the cold. "+name+"=~'(OoO)'~");
 															}
 														}
 													}else{
