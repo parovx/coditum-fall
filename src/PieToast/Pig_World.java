@@ -8,8 +8,8 @@ public class Pig_World {
 		// TODO Auto-generated method stub
 		Scanner scan=new Scanner(System.in);
 		System.out.println("Enter Password");
-		String Password=scan.next();
-		if(Password!="i_hate_bacon"){
+		String Password=scan.next("wearenumber1");
+		if(Password!="wearenumber1"){
 			System.out.println("What is your name?");
 			String name=scan.next();
 			System.out.println(""+name+", you are entering Pig World. This is very dangerous. You can close this program and do something else. There are many ways you can die. You must make the right decisions to survive. Each pig species is different. Each pig species is dangerous in many different ways. So look out. A man called Jimothy, one of the previous people sent to Pig World, will be there. He will help you. You must bring him back. He was trapped there for 7 years. Killing him will result in you failing this mission. We're sending you out. 3...2...1...0. WEEEEEEEEEEEEEOOOOOOOWWWWW!");
@@ -125,7 +125,7 @@ public class Pig_World {
 																	System.out.println("You pull out a firelighter. Harry grunts and uses a water spell to put out your fire. He sends you flying through the air and, of course, you die "+name+"=(X_X)");
 																}
 															}else{
-																System.out.println(""+name+" died of the cold. "+name+"=~'(OoO)'~");
+																System.out.println(""+name+" died of the cold. "+name+"=~'(O,,O)'~");
 															}
 														}
 													}else{
@@ -177,3 +177,4 @@ public class Pig_World {
 		}
 	}
 }
+
