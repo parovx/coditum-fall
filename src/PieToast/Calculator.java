@@ -26,6 +26,15 @@ public class Calculator {
 			}else if(string1.equals("/")){
 				int1/=int2;
 				System.out.println(int1);
+			}else {
+				char char1=rand.toString();
+				String Strange=
+				int wudmg=rand.nextInt();
+				int wuhhlt=rand.nextInt();
+				int wuspe=rand.nextInt();
+				String Wuname=
+				Enemy lalala=new Enemy(wudmg, Wuname, wuspe, wuhhlt );
+				System.out.println(lalala.getName()+" says:"+Strange+"!");
 			}
 		}
 	}
