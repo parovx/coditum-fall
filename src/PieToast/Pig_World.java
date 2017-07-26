@@ -85,11 +85,11 @@ public class Pig_World {
 																					System.out.println("You Solar Beam Pigachu. He has 1 health left. His attack misses! You throw the Pokéball. You caught him.");
 																					System.out.println("IT IS NOT OVER YET!");
 																					System.out.println("The End!");
-																					System.out.println("Get Version 2");
+																					System.out.println("Get Version 2!");
 																					System.out.println("Loserboard");
-																					System.out.println("1.The_Memer");
-																					System.out.println("2.The_Memer");
-																					System.out.println("3.The_Memer");
+																					System.out.println("1. The_Memer");
+																					System.out.println("2. The_Memer");
+																					System.out.println("3. The_Memer");
 																					System.out.println("Leaderboard");
 																					System.out.println("1. "+name+"");
 																					System.out.println("2. Jimothy");
@@ -104,13 +104,13 @@ public class Pig_World {
 																					System.out.println("The End!");
 																					System.out.println("Get Version 2");
 																					System.out.println("Loserboard");
-																					System.out.println("1.The_Memer");
-																					System.out.println("2.The_Memer");
-																					System.out.println("3.The_Memer");
+																					System.out.println("1. The_Memer");
+																					System.out.println("2. The_Memer");
+																					System.out.println("3. The_Memer");
 																					System.out.println("Leaderboard");
 																					System.out.println("1. "+name+"");
 																					System.out.println("2. Jimothy");
-																					System.out.println("Anybody but The_Memer");
+																					System.out.println("3. Anybody but The_Memer");
 																				}
 																			}else{
 																				System.out.println("You send out Water Bowser! Wrong choice. Pigachu easily defeats him..."+name+"=......");
