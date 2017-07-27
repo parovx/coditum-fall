@@ -25,26 +25,36 @@ public class Pig_World_2 {
 			System.out.println("Screws fall from the lab roof. They dig into  Albert Swinestein. ");
 			System.out.println("Albert Swinestein: You figured out how this works. You think you can win but you're going down!");
 			System.out.println("You go plummeting into the ground with so much force that you dig through it.");
-			System.out.println("1=sing I believe I can fly 2=say Screw you");
+			System.out.println("1=sing I believe I can fly! 2=say Screw You!");
 			int hole=scan.nextInt();
 			if(hole==2) {
 				System.out.println(name+": Screw You!");
 				System.out.println("Screws fall from the lab roof. They dig into  Albert Swinestein. One even hits him in the eye. He trips into the hole.");
 				System.out.println("Albert Swinestein: Seriously? You did the same thing! Why don't you Just get out of my world! You---");
-				System.out.println("1=interrupt and say Your World? 2= say nothing");
+				System.out.println("1=interrupt and say Your World? 2= say nothing.");
 				int erupt=scan.nextInt();
 				if(erupt==1) {
 					System.out.println(name+": Your World?");
 					System.out.println("Yes, Pig World is my world. I created it! The people that sent you here made you think that they created a world that went wrong. They've sent over 50 people here and they all died. But Jimothy managed to  survive. And you barely even know who those people that sent you here are! Let me tell you... They're Pigs! They Somehow managed to escape through the portal and take on human form. They are my most succesful workers. They have led us Pigs to be more superior than humans!");
 					System.out.println("1=say FYI, Humans Are Still More Superior Than Pigs. Get Shrekt. 2=say Screw You.");
 					int sup=scan.nextInt();
-					if(sup==2) {
+					if(sup==1) {
 						System.out.println(name+": FYI, humans are still more superior than pigs. Get Shrekt.");
 						System.out.println("Shrek comes out of nowhere and kills Albert Swinestein.");
+						System.out.println("Now that the leader of the pigs has been defeated, the portal opens and you and Jimothy escape. Without their leader, the pigs all die.");
+						System.out.println("THE END!");
+						System.out.println("Loserboard:");
+						System.out.println("1. The_Memer");
+						System.out.println("2. The_Memer");
+						System.out.println("3. The_Memer");
+						System.out.println("Leaderboard");
+						System.out.println("1. "+name+"");
+						System.out.println("2. Jimothy");
+						System.out.println("3. Anybody but The_Memer");
 					}else {
-						System.out.println(name+"Screw You!");
+						System.out.println(name+": Screw You!");
 						System.out.println("Screws fall from the ceiling but Albert Swinestein easily dodges them.");
-						System.out.println("Albert Swinestein: Ha! You thought I'd be unprepared for a third screw rain? You should really try to get a life!");
+						System.out.println("Albert Swinestein: Ha! You thought I'd be unprepared for a third screw rain? You should really get a life!");
 						System.out.println("You turn into a ghost and can't do anything. Jimothy dies, then Albert Swinestein escapes through the portal and brings all the pigs to Earth. They kill all humans and become more superior than them.");
 					}
 				}else {

@@ -16,14 +16,14 @@ public class Functions
 		// TODO Auto-generated method stub
 //
 		message();
-		System.out.println(multiplï(2,10)+"<--number stuff");
+		System.out.println(multipi(2,10)+"<--number stuff");
 		
 	}
 public static int dubble(int sumthing)
 {
 	return 2*sumthing;
 }
-public static int multiplï(int a, int b)
+public static int multipi(int a, int b)
 {
 	return a*b;
 }
