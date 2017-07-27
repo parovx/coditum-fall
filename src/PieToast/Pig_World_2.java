@@ -15,7 +15,7 @@ public class Pig_World_2 {
 		System.out.println("A portal opens up in the sky. You go floating up through it. You come out the other end in a giant lab. A 10-foot tall pig in a lab coat walks out. You see the man from the house tied up.");
 		System.out.println("Albert Swinestein: Looks like we have another visitor. Would you like to join Jimothy?");
 		System.out.println(""+name+": Bring it on!");
-		System.out.println("Albert Swinestein: You  defeated my two best workers. It'll be much harder to fight me!");
+		System.out.println("Albert Swinestein: You  defeated my two best fighters. It'll be much harder to fight me!");
 		System.out.println(name+": They were so easy. it was, like, 3 right questions then you're done! It'll proably be the same fighting you!");
 		System.out.println("Albert Swinestein: But I've caught you're friend Jimothy. You need to get him back to close the portal. And as you can see, this game has lots of dialogue. You must defeat me by picking to say the right things, not choosing the right actions!");
 		System.out.println("1= say Give back Jimothy! 2=say Screw You!");
@@ -23,12 +23,30 @@ public class Pig_World_2 {
 		if (screwz==2) {
 			System.out.println(name+": Screw You!");
 			System.out.println("Screws fall from the lab roof. They dig into  Albert Swinestein. ");
-			System.out.println("Albert Swinestein: You figured out how this works. You think you can winbut you're going down!.");
+			System.out.println("Albert Swinestein: You figured out how this works. You think you can win but you're going down!");
 			System.out.println("You go plummeting into the ground with so much force that you dig through it.");
+			System.out.println("1=sing I believe I can fly 2=say Screw you");
+			int hole=scan.nextInt();
+			if(hole==2) {
+				System.out.println(name+": Screw You!");
+				System.out.println("Screws fall from the lab roof. They dig into  Albert Swinestein. One even hits him in the eye.");
+				System.out.println("Albert Swinestein: Seriously? You did the same thing! Why don't you Just get out of my world! You---");
+				System.out.println("1=interrupt and say Your World? 2= say nothing");
+				int erupt=scan.nextInt();
+				if(erupt==1) {
+					System.out.println(name+": Your World?");
+					System.out.println("Yes, Pig World is my world. I created it! The people that sent you here made you think that they created a world that went wrong. They've sent over 50 people here and they all died. But Jimothy managed to  survive. And you barely even know who those people that sent you here are! Let me tell you... They're Pigs! They Somehow managed to escape through the portal and take on human form. They are my most succesful ");
+				}
+			}else {
+				System.out.println(name+"I belive I can fly...");
+				System.out.println("Nothing happens.");
+				System.out.println("Albert Swinestein: Idiot! You made yourself believe you could fly, but you can't. You only belive you can. Get Wrecked.");
+				System.out.println("A wrecking ball appears from the ceiling and crashes into you. you break. "+name+"=..,.,...");
+			}
 		}else {
 			System.out.println(name+": Give back Jimothy !");
 			System.out.println("Albert Swinestein: You think it would be that easy? Idiot. You should go die in a hole.");
-			System.out.println("A hole appears in the ground and you fall in. Of course, you die.");
+			System.out.println("A hole appears in the ground and you fall in. Of course, you die. "+name+"=X.x");
 		}
 	}else{
 		System.out.println("Didn't you pay any attention to the first game! "+Password+" is not the password!");
