@@ -28,6 +28,12 @@ public class RPG {
 					int attackjoe16=scan.nextInt();
 					if(attackjoe16==1) {
 						System.out.println("You attack "+Joe.getName()+". "+Joe.getName()+"'s health:"+Joe.gethealth()+".");
+						phealth=phealth-Joe.getdamage();
+						if(phealth>0) {
+							System.out.println(Joe.getName()+" comes toward you and atttacks you. Your health: "+phealth+". Attack Joe? 1=yes 2=no");
+						}else {
+							System.out.println(Joe.getName()+" comes toward you and attacks you. Your health: "+phealth+". You Died.");
+						}
 					}else {
 						phealth=phealth-Joe.getdamage();
 						System.out.println(Joe.getName()+" comes toward you and attacks you. Your health: "+phealth+".");
