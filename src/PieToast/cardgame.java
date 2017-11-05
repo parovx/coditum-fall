@@ -33,8 +33,7 @@ public class cardgame {
 			blackjackdeck.set(bjshuff1, bjtemp2);
 			blackjackdeck.set(bjshuff2, bjtemp1);
 		}
-		//test
-		System.out.println(blackjackdeck);
+
 		//real
 		blackjackplayer.add(blackjackdeck.get(0));
 		blackjackplayer.add(blackjackdeck.get(1));
@@ -43,15 +42,12 @@ public class cardgame {
 		for(int bjdeal=0; bjdeal<4; bjdeal++){
 			blackjackdeck.remove(0);
 		}
-		//test
-		System.out.println(blackjackdeck);
-		System.out.println(blackjackplayer);
-		System.out.println(blackjackdealer);
-		//real
+		System.out.println("Your hand"+blackjackplayer);
+		System.out.println("Dealer's hand"+blackjackdealer);
 		boolean bjhit=true;
+		Scanner scan=new Scanner(System.in);
 		while(bjhit==true){
 			System.out.println("Hit or stand? 1=hit, 2=stand");
-			Scanner scan=new Scanner(System.in);
 			int bjhitorstay=scan.nextInt();
 			if(bjhitorstay==1){
 				blackjackplayer.add(blackjackdeck.get(0));
@@ -60,43 +56,79 @@ public class cardgame {
 				if(sum>21){
 					System.out.println("YOU BUST! ( ͡° ͜ʖ ͡°)");
 					bjhit=false;
+					boolean lennynegative1=true;
+					while(lennynegative1=true){
+						System.out.println("( ͡° ͜ʖ ͡°)");
+					}
+				}else if(sum==21){
+					System.out.println("YOU WIN! Dealer will haunt you forever ( ͡° ͜ʖ ͡°)");
+					bjhit=false;
 				}
-				System.out.println(blackjackplayer);
-				System.out.println(blackjackdealer);
+				System.out.println("Your hand:"+blackjackplayer);
+				System.out.println("Dealer's Hand"+blackjackdealer);
 			}else if(bjhitorstay==2){
-				bjhit=false;	
+				bjhit=false;
+				if(sumOf(blackjackdealer)<sumOf(blackjackplayer)){
+					System.out.println("YOU WIN! Dealer will haunt you forever ( ͡° ͜ʖ ͡°)");
+					bjhit=false;
+				}else if(sumOf(blackjackdealer)>sumOf(blackjackplayer)){
+					System.out.println("YOU LOSE!");
+					bjhit=false;
+					boolean lenny0=true;
+					while(lenny0=true){
+						System.out.println("( ͡° ͜ʖ ͡°)");
+						bjhit=false;
+					}
+				}else{
+					System.out.println("TIE! (ಠ_ಠ) To be continued...");
+				}
 			}else{
 				System.out.println("(ಠ_ಠ)");
 			}
-		}
-		if(sumOf(blackjackplayer)<21){
-			boolean bjai=true;
-			while (bjai=true){
-				int sum2=sumOf(blackjackdealer);
-				if(sum2<17){
-					blackjackdealer.add(blackjackdeck.get(0));
-					blackjackdeck.remove(0);
-				}else{
-					bjai=false;
-				}
-			}
-			//if
-			if(sumOf(blackjackdealer)>21){
-				System.out.println("DEALER BUST! Dealer will haunt you forever ( ͡° ͜ʖ ͡°)");
-			}else if(sumOf(blackjackplayer)>sumOf(blackjackdealer)){
-				System.out.println("YOU WIN! Dealer will haunt you forever ( ͡° ͜ʖ ͡°)");
-			}else if(sumOf(blackjackdealer)>sumOf(blackjackplayer)){
-				System.out.println("YOU LOSE!");
-				boolean lenny=true;
-				while(lenny=true){
-					System.out.println("( ͡° ͜ʖ ͡°)");
+			if(sumOf(blackjackplayer)<21){
+				boolean bjai=true;
+				while (bjai=true){
+					if(sumOf(blackjackdealer)<17){
+						blackjackdealer.add(blackjackdeck.get(0));
+						blackjackdeck.remove(0);
+						System.out.println("Dealer's hand"+blackjackdealer);
+					}else{
+						bjai=false;
+					}
 				}
 			}else{
-				System.out.println("TIE! (ಠ_ಠ) To be continued...");
+				System.out.println("YOU LOSE!");
+				boolean lelene=true;
+				while (lelene=true){
+					System.out.println("( ͡° ͜ʖ ͡°)");
+			}
+			if(sumOf(blackjackdealer)==21){
+				System.out.println("YOU LOSE!");
+				bjhit=false;
+				boolean lenny0=true;
+				while(lenny0=true){
+					System.out.println("( ͡° ͜ʖ ͡°)");
+				}
+			}
+		if(sumOf(blackjackdealer)>21){
+			System.out.println("DEALER BUST! Dealer will haunt you forever ( ͡° ͜ʖ ͡°)");
+		}else if(sumOf(blackjackplayer)>sumOf(blackjackdealer)){
+			System.out.println("YOU WIN! Dealer will haunt you forever ( ͡° ͜ʖ ͡°)");
+		}else if(sumOf(blackjackdealer)>sumOf(blackjackplayer)){
+			System.out.println("YOU LOSE!");
+			boolean lenny=true;
+			while(lenny=true){
+				System.out.println("( ͡° ͜ʖ ͡°)");
+			}
+		}else{
+			System.out.println("TIE! (ಠ_ಠ) To be continued...");
+		}
 			}
 		}
-	}
+}
 
+		//if
+		
 	public static int sumOf(ArrayList<Integer> ListofSum){
 		int sum=0;
 		for(int i=0; i<ListofSum.size(); i++){
