@@ -62,7 +62,7 @@ public class Pig_World_2 {
 					System.out.println("A knife appears in your hand and your arms move by themselves and you stab yourself in the head. "+name+"= =>(X_X)");
 				}
 			}else {
-				System.out.println(name+"I belive I can fly...");
+				System.out.println(name+": I belive I can fly...");
 				System.out.println("Nothing happens.");
 				System.out.println("Albert Swinestein: Idiot! You made yourself believe you could fly, but you can't. You only belive you can. Get Wrecked.");
 				System.out.println("A wrecking ball appears from the ceiling and crashes into you. you break. "+name+"=..,.,...");

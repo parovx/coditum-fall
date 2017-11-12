@@ -57,9 +57,7 @@ public class cardgame {
 					System.out.println("YOU BUST! ( ͡° ͜ʖ ͡°)");
 					bjhit=false;
 					boolean lennynegative1=true;
-					while(lennynegative1=true){
-						System.out.println("( ͡° ͜ʖ ͡°)");
-					}
+
 				}else if(sum==21){
 					System.out.println("YOU WIN! Dealer will haunt you forever ( ͡° ͜ʖ ͡°)");
 					bjhit=false;
@@ -74,11 +72,7 @@ public class cardgame {
 				}else if(sumOf(blackjackdealer)>sumOf(blackjackplayer)){
 					System.out.println("YOU LOSE!");
 					bjhit=false;
-					boolean lenny0=true;
-					while(lenny0=true){
-						System.out.println("( ͡° ͜ʖ ͡°)");
-						bjhit=false;
-					}
+					System.out.println("( ͡° ͜ʖ ͡°)");
 				}else{
 					System.out.println("TIE! (ಠ_ಠ) To be continued...");
 				}
@@ -98,37 +92,28 @@ public class cardgame {
 				}
 			}else{
 				System.out.println("YOU LOSE!");
-				boolean lelene=true;
-				while (lelene=true){
-					System.out.println("( ͡° ͜ʖ ͡°)");
-			}
-			if(sumOf(blackjackdealer)==21){
-				System.out.println("YOU LOSE!");
+				System.out.println("( ͡° ͜ʖ ͡°)");
 				bjhit=false;
-				boolean lenny0=true;
-				while(lenny0=true){
+				if(sumOf(blackjackdealer)==21){
+					System.out.println("YOU LOSE!");
 					System.out.println("( ͡° ͜ʖ ͡°)");
 				}
-			}
-		if(sumOf(blackjackdealer)>21){
-			System.out.println("DEALER BUST! Dealer will haunt you forever ( ͡° ͜ʖ ͡°)");
-		}else if(sumOf(blackjackplayer)>sumOf(blackjackdealer)){
-			System.out.println("YOU WIN! Dealer will haunt you forever ( ͡° ͜ʖ ͡°)");
-		}else if(sumOf(blackjackdealer)>sumOf(blackjackplayer)){
-			System.out.println("YOU LOSE!");
-			boolean lenny=true;
-			while(lenny=true){
-				System.out.println("( ͡° ͜ʖ ͡°)");
-			}
-		}else{
-			System.out.println("TIE! (ಠ_ಠ) To be continued...");
-		}
+				if(sumOf(blackjackdealer)>21){
+					System.out.println("DEALER BUST! Dealer will haunt you forever ( ͡° ͜ʖ ͡°)");
+				}else if(sumOf(blackjackplayer)>sumOf(blackjackdealer)){
+					System.out.println("YOU WIN! Dealer will haunt you forever ( ͡° ͜ʖ ͡°)");
+				}else if(sumOf(blackjackdealer)>sumOf(blackjackplayer)){
+					System.out.println("YOU LOSE!");
+					System.out.println("( ͡° ͜ʖ ͡°)");
+				}else{
+					System.out.println("TIE! (ಠ_ಠ) To be continued...");
+				}
 			}
 		}
-}
+	}
 
-		//if
-		
+	//if
+
 	public static int sumOf(ArrayList<Integer> ListofSum){
 		int sum=0;
 		for(int i=0; i<ListofSum.size(); i++){
