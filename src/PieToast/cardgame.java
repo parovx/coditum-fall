@@ -8,92 +8,84 @@ public class cardgame {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ArrayList<Integer> blackjacklist=new ArrayList<Integer>();
-		ArrayList<Integer> blackjackplayer=new ArrayList<Integer>();
-		ArrayList<Integer> blackjackdealer=new ArrayList<Integer>();
-		ArrayList<Integer> blackjackdeck=new ArrayList<Integer>();
-		for(int i=0; i<4; i++){
-			blackjackdeck.add(10);
-			blackjackdeck.add(10);
-			blackjackdeck.add(10);
-			for(int j=1; j<11; j++){
-				blackjackdeck.add(i,j);
-			}
-		}
-		Random rand=new Random();
-		int randbjshuffto=rand.nextInt(12345);
-		System.out.println("Shuffling...");
-		for(int shuffleblackjack=0; shuffleblackjack<randbjshuffto; shuffleblackjack++){
-			int bjshuff1=(int)(Math.random() * blackjackdeck.size());
-			int bjshuff2=(int)(Math.random()*blackjackdeck.size());
-
-			int bjtemp1=blackjackdeck.get(bjshuff1);
-			int bjtemp2=blackjackdeck.get(bjshuff2);
-
-			blackjackdeck.set(bjshuff1, bjtemp2);
-			blackjackdeck.set(bjshuff2, bjtemp1);
-		}
-
-		//real
-		blackjackplayer.add(blackjackdeck.get(0));
-		blackjackplayer.add(blackjackdeck.get(1));
-		blackjackdealer.add(blackjackdeck.get(2));
-		blackjackdealer.add(blackjackdeck.get(3));
-		for(int bjdeal=0; bjdeal<4; bjdeal++){
-			blackjackdeck.remove(0);
-		}
-		System.out.println("Your hand"+blackjackplayer);
-		System.out.println("Dealer's hand"+blackjackdealer);
-		boolean bjhit=true;
+		String playagain = "y";
 		Scanner scan=new Scanner(System.in);
-		while(bjhit==true){
-			System.out.println("Hit or stand? 1=hit, 2=stand");
-			int bjhitorstay=scan.nextInt();
-			if(bjhitorstay==1){
-				blackjackplayer.add(blackjackdeck.get(0));
-				blackjackdeck.remove(0);
-				int sum=sumOf(blackjackplayer);
-				if(sum>21){
-					System.out.println("YOU BUST! ( ͡° ͜ʖ ͡°)");
-					bjhit=false;
-					boolean lennynegative1=true;
+		while (playagain.equalsIgnoreCase("y")){
+			ArrayList<Integer> blackjacklist=new ArrayList<Integer>();
+			ArrayList<Integer> blackjackplayer=new ArrayList<Integer>();
+			ArrayList<Integer> blackjackdealer=new ArrayList<Integer>();
+			ArrayList<Integer> blackjackdeck=new ArrayList<Integer>();
+			for(int i=0; i<4; i++){
+				blackjackdeck.add(10);
+				blackjackdeck.add(10);
+				blackjackdeck.add(10);
+				for(int j=2; j<12; j++){
+					blackjackdeck.add(i,j);
+				}
+			}
+			Random rand=new Random();
+			int randbjshuffto=rand.nextInt(12345);
+			System.out.println("Shuffling...");
+			for(int shuffleblackjack=0; shuffleblackjack<randbjshuffto; shuffleblackjack++){
+				int bjshuff1=(int)(Math.random() * blackjackdeck.size());
+				int bjshuff2=(int)(Math.random()*blackjackdeck.size());
 
-				}else if(sum==21){
-					System.out.println("YOU WIN! Dealer will haunt you forever ( ͡° ͜ʖ ͡°)");
+				int bjtemp1=blackjackdeck.get(bjshuff1);
+				int bjtemp2=blackjackdeck.get(bjshuff2);
+
+				blackjackdeck.set(bjshuff1, bjtemp2);
+				blackjackdeck.set(bjshuff2, bjtemp1);
+			}
+
+			//real
+			blackjackplayer.add(blackjackdeck.get(0));
+			blackjackplayer.add(blackjackdeck.get(1));
+			blackjackdealer.add(blackjackdeck.get(2));
+			blackjackdealer.add(blackjackdeck.get(3));
+			for(int bjdeal=0; bjdeal<4; bjdeal++){
+				blackjackdeck.remove(0);
+			}
+			System.out.println("Your hand"+blackjackplayer);
+			System.out.println("Dealer's hand"+blackjackdealer);
+			boolean bjhit=true;
+			while(bjhit==true){
+				System.out.println("Hit or stand? 1=hit, 2=stand");
+				int bjhitorstay=scan.nextInt();
+				if(bjhitorstay==1){
+					blackjackplayer.add(blackjackdeck.get(0));
+					blackjackdeck.remove(0);
+					int sum=sumOf(blackjackplayer);
+					if(sum>21){
+						System.out.println("YOU BUST! ( ͡° ͜ʖ ͡°)");
+						bjhit=false;
+						boolean lennynegative1=true;
+
+					}else if(sum==21){
+						System.out.println("YOU WIN! Dealer will haunt you forever ( ͡° ͜ʖ ͡°)");
+						bjhit=false;
+					}
+					System.out.println("Your hand:"+blackjackplayer);
+					System.out.println("Dealer's Hand"+blackjackdealer);
+				}else if(bjhitorstay==2){
 					bjhit=false;
-				}
-				System.out.println("Your hand:"+blackjackplayer);
-				System.out.println("Dealer's Hand"+blackjackdealer);
-			}else if(bjhitorstay==2){
-				bjhit=false;
-				if(sumOf(blackjackdealer)<sumOf(blackjackplayer)){
-					System.out.println("YOU WIN! Dealer will haunt you forever ( ͡° ͜ʖ ͡°)");
-					bjhit=false;
-				}else if(sumOf(blackjackdealer)>sumOf(blackjackplayer)){
-					System.out.println("YOU LOSE!");
-					bjhit=false;
-					System.out.println("( ͡° ͜ʖ ͡°)");
+
 				}else{
-					System.out.println("TIE! (ಠ_ಠ) To be continued...");
+					System.out.println("(ಠ_ಠ)");
 				}
-			}else{
-				System.out.println("(ಠ_ಠ)");
 			}
 			if(sumOf(blackjackplayer)<21){
 				boolean bjai=true;
-				while (bjai=true){
-					if(sumOf(blackjackdealer)<17){
+				while (bjai==true){
+					int i = sumOf(blackjackdealer);
+					if(i<17){
 						blackjackdealer.add(blackjackdeck.get(0));
 						blackjackdeck.remove(0);
 						System.out.println("Dealer's hand"+blackjackdealer);
+						i = sumOf(blackjackdealer);
 					}else{
 						bjai=false;
 					}
 				}
-			}else{
-				System.out.println("YOU LOSE!");
-				System.out.println("( ͡° ͜ʖ ͡°)");
-				bjhit=false;
 				if(sumOf(blackjackdealer)==21){
 					System.out.println("YOU LOSE!");
 					System.out.println("( ͡° ͜ʖ ͡°)");
@@ -108,17 +100,46 @@ public class cardgame {
 				}else{
 					System.out.println("TIE! (ಠ_ಠ) To be continued...");
 				}
+			}else if(sumOf(blackjackplayer)==21){
+				System.out.println("YOU WIN! Dealer will haunt you forever ( ͡° ͜ʖ ͡°)");
+				bjhit=false;
+			}else{
+				System.out.println("YOU LOSE!");
+				System.out.println("( ͡° ͜ʖ ͡°)");
+				bjhit=false;
+
 			}
+			/*if(sumOf(blackjackdealer)<sumOf(blackjackplayer)){
+			System.out.println("YOU WIN! Dealer will haunt you forever ( ͡° ͜ʖ ͡°)");
+			bjhit=false;
+		}else if(sumOf(blackjackdealer)>sumOf(blackjackplayer)){
+			System.out.println("YOU LOSE!");
+			bjhit=false;
+			System.out.println("( ͡° ͜ʖ ͡°)");
+		}else{
+			System.out.println("TIE! (ಠ_ಠ) To be continued...");
+		}*/
+		System.out.println("Press y to play again");
+		playagain=scan.next();
 		}
 	}
-
 	//if
 
 	public static int sumOf(ArrayList<Integer> ListofSum){
+		int acescount=0;
 		int sum=0;
 		for(int i=0; i<ListofSum.size(); i++){
 			sum+=ListofSum.get(i);
+			if(ListofSum.get(i)==11){
+				acescount=acescount+1;
+
+			}
 		}
+		if(sum>21&&acescount>0){
+			sum=sum-10;
+			acescount--;
+		}
+
 		return sum;
 	}
 }
