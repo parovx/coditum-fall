@@ -13,9 +13,17 @@ public class Quiz {
 		if(answer1.equals("hello")) {
 			System.out.println("Yes.");
 			score++;
-		}else{
-System.out.println("No.");
-		}
-	}
 
+		}else{
+			System.out.println("No.");
+			while(!answer1.equals("hello")) {
+				System.out.println("How do you spell hello?");
+				answer1=scan.nextLine();
+				if(answer1.equals("hello")) {
+					System.out.println("Yes.");
+					score++;
+		}
+		}	
+	}
+}
 }
