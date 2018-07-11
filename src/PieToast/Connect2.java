@@ -56,7 +56,30 @@ public class Connect2 {
 				}
 				System.out.println("");
 			}
-
+			for(int wah=0; wah<6; wah++) {
+				for(int haw=0; haw<4; haw++) {
+					if(q[wah][haw].equals("r") && q[wah][haw+1].equals("r") && q[wah][haw+2].equals("r") && q[wah][haw+3].equals("r")) {
+						System.out .println(playerrname+" wins!");
+						win=false;
+					}
+					if(q[wah][haw].equals("y") && q[wah][haw+1].equals("y") && q[wah][haw+2].equals("y") && q[wah][haw+3].equals("y")) {
+						System.out .println(playeryname+" wins!");
+						win=false;
+					}
+				}
+			}
+			for(int wah=0; wah<3; wah++) {
+				for(int haw=0; haw<7; haw++) {
+					if(q[wah][haw].equals("r") && q[wah+1][haw].equals("r") && q[wah+2][haw].equals("r") && q[wah+3][haw].equals("r")) {
+						System.out.println(playerrname+" wins!");
+						win=false;
+					}
+					if(q[wah][haw].equals("y") && q[wah+1][haw].equals("y") && q[wah+2][haw].equals("y") && q[wah+3][haw].equals("y")) {
+						System.out .println(playeryname+" wins!");
+						win=false;
+					}
+				}
+			}
 			System.out.println(playeryname+" choose a column.");
 			int ychoice=scan.nextInt();
 			for(int w=5; w>=0; w--) {
@@ -64,6 +87,7 @@ public class Connect2 {
 					q[w][ychoice]="y";
 					break;
 				}
+
 				if(w==0 && !q[w][ychoice].equals("-")){
 					System.out.println("This column is full.");
 					boolean full=true;
@@ -90,6 +114,31 @@ public class Connect2 {
 				}
 				System.out.println("");
 			}
+			for(int wah=0; wah<6; wah++) {
+				for(int haw=0; haw<4; haw++) {
+					if(q[wah][haw].equals("r") && q[wah][haw+1].equals("r") && q[wah][haw+2].equals("r") && q[wah][haw+3].equals("r")) {
+						System.out .println(playerrname+" wins!");
+						win=false;
+					}
+					if(q[wah][haw].equals("y") && q[wah][haw+1].equals("y") && q[wah][haw+2].equals("y") && q[wah][haw+3].equals("y")) {
+						System.out .println(playeryname+" wins!");
+						win=false;
+					}
+				}
+			}
+			for(int wah=0; wah<3; wah++) {
+				for(int haw=0; haw<7; haw++) {
+					if(q[wah][haw].equals("r") && q[wah+1][haw].equals("r") && q[wah+2][haw].equals("r") && q[wah+3][haw].equals("r")) {
+						System.out.println(playerrname+" wins!");
+						win=false;
+					}
+					if(q[wah][haw].equals("y") && q[wah+1][haw].equals("y") && q[wah+2][haw].equals("y") && q[wah+3][haw].equals("y")) {
+						System.out .println(playeryname+" wins!");
+						win=false;
+					}
+				}
+			}
+			for(int wahaw=0; wahaw)
 		}
 	}
 }
