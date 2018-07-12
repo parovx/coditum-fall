@@ -15,12 +15,7 @@ public class Connect2 {
 				q[e][r]="-";
 			}
 		}
-		for(int e=0; e<6; e++) {
-			for(int r=0; r<7; r++){
-				System.out.print(q[e][r]+" ");
-			}
-			System.out.println("");
-		}
+		printBoard(q);
 		boolean win=false;
 		while (win==false) {
 			System.out.println(playerrname+" choose a column.");
@@ -50,68 +45,8 @@ public class Connect2 {
 					}
 				}
 			}
-			for(int e=0; e<6; e++) {
-				for(int r=0; r<7; r++){
-					System.out.print(q[e][r]+" ");
-				}
-				System.out.println("");
-			}
-			for(int wah=0; wah<6; wah++) {
-				for(int haw=0; haw<4; haw++) {
-					if(q[wah][haw].equals("r") && q[wah][haw+1].equals("r") && q[wah][haw+2].equals("r") && q[wah][haw+3].equals("r")) {
-						System.out .println(playerrname+" wins!");
-						win=true;
-					}
-					if(q[wah][haw].equals("y") && q[wah][haw+1].equals("y") && q[wah][haw+2].equals("y") && q[wah][haw+3].equals("y")) {
-						System.out .println(playeryname+" wins!");
-						win=true;
-					}
-				}
-			}
-			for(int wah=0; wah<3; wah++) {
-				for(int haw=0; haw<7; haw++) {
-					if(q[wah][haw].equals("r") && q[wah+1][haw].equals("r") && q[wah+2][haw].equals("r") && q[wah+3][haw].equals("r")) {
-						System.out.println(playerrname+" wins!");
-						win=true;
-					}
-					if(q[wah][haw].equals("y") && q[wah+1][haw].equals("y") && q[wah+2][haw].equals("y") && q[wah+3][haw].equals("y")) {
-						System.out .println(playeryname+" wins!");
-						win=true;
-					}
-				}
-			}
-			for(int waha=0; waha<3; waha++) {
-				for(int hawa=0; hawa<3; hawa++) {
-					if(q[waha][hawa].equals("r") && q[waha+1][hawa+1].equals("r") && q[waha+2][hawa+2].equals("r") && q[waha+3][hawa+3].equals("r")) {
-						System.out.println(playerrname+" wins!");
-						win=true;
-					}
-				}
-			}
-			for(int wahaw=5; wahaw>2; wahaw--) {
-				for(int hawaw=0; hawaw<2; hawaw++) {
-					if(q[wahaw][hawaw].equals("r") && q[wahaw-1][hawaw+1].equals("r") && q[wahaw-2][hawaw+2].equals("r") && q[wahaw-3][hawaw+3].equals("r")) {
-						System.out.println(playerrname+" wins!");
-						win=true;
-					}
-				}
-			}
-			for(int waha=0; waha<3; waha++) {
-				for(int hawa=0; hawa<3; hawa++) {
-					if(q[waha][hawa].equals("y") && q[waha+1][hawa+1].equals("y") && q[waha+2][hawa+2].equals("y") && q[waha+3][hawa+3].equals("y")) {
-						System.out.println(playeryname+" wins!");
-						win=true;
-					}
-				}
-			}
-			for(int wahaw=5; wahaw>2; wahaw--) {
-				for(int hawaw=0; hawaw<2; hawaw++) {
-					if(q[wahaw][hawaw].equals("y") && q[wahaw-1][hawaw+1].equals("y") && q[wahaw-2][hawaw+2].equals("y") && q[wahaw-3][hawaw+3].equals("y")) {
-						System.out.println(playeryname+" wins!");
-						win=true;
-					}
-				}
-			}
+			printBoard(q);
+			win=win(q, playerrname, playeryname);
 			if(win==false) {
 				System.out.println(playeryname+" choose a column.");
 				int ychoice=scan.nextInt();
@@ -142,80 +77,88 @@ public class Connect2 {
 					}
 				}
 			}
-			for(int e=0; e<6; e++) {
-				for(int r=0; r<7; r++){
-					System.out.print(q[e][r]+" ");
-				}
-				System.out.println("");
+			printBoard(q);
+			win=win(q, playerrname, playeryname);
+		}
+	}
+
+	public static void printBoard(String[][] q) {
+		for(int e=0; e<6; e++) {
+			for(int r=0; r<7; r++){
+				System.out.print(q[e][r]+" ");
 			}
-			for(int wah=0; wah<6; wah++) {
-				for(int haw=0; haw<4; haw++) {
-					if(q[wah][haw].equals("r") && q[wah][haw+1].equals("r") && q[wah][haw+2].equals("r") && q[wah][haw+3].equals("r")) {
-						System.out .println(playerrname+" wins!");
-						win=true;
-					}
-					if(q[wah][haw].equals("y") && q[wah][haw+1].equals("y") && q[wah][haw+2].equals("y") && q[wah][haw+3].equals("y")) {
-						System.out .println(playeryname+" wins!");
-						win=true;
-					}
+			System.out.println("");
+		}
+	}
+	public static boolean win(String[][] q,String playerrname,String playeryname) {
+		for(int wah=0; wah<6; wah++) {
+			for(int haw=0; haw<4; haw++) {
+				if(q[wah][haw].equals("r") && q[wah][haw+1].equals("r") && q[wah][haw+2].equals("r") && q[wah][haw+3].equals("r")) {
+					System.out .println(playerrname+" wins!");
+					return true;
 				}
-			}
-			for(int wah=0; wah<3; wah++) {
-				for(int haw=0; haw<7; haw++) {
-					if(q[wah][haw].equals("r") && q[wah+1][haw].equals("r") && q[wah+2][haw].equals("r") && q[wah+3][haw].equals("r")) {
-						System.out.println(playerrname+" wins!");
-						win=true;
-					}
-					if(q[wah][haw].equals("y") && q[wah+1][haw].equals("y") && q[wah+2][haw].equals("y") && q[wah+3][haw].equals("y")) {
-						System.out .println(playeryname+" wins!");
-						win=true;
-					}
+				if(q[wah][haw].equals("y") && q[wah][haw+1].equals("y") && q[wah][haw+2].equals("y") && q[wah][haw+3].equals("y")) {
+					System.out .println(playeryname+" wins!");
+					return true;
 				}
-			}
-			for(int waha=0; waha<3; waha++) {
-				for(int hawa=0; hawa<3; hawa++) {
-					if(q[waha][hawa].equals("r") && q[waha+1][hawa+1].equals("r") && q[waha+2][hawa+2].equals("r") && q[waha+3][hawa+3].equals("r")) {
-						System.out.println(playerrname+" wins!");
-						win=true;
-					}
-				}
-			}
-			for(int wahaw=5; wahaw>2; wahaw--) {
-				for(int hawaw=0; hawaw<2; hawaw++) {
-					if(q[wahaw][hawaw].equals("r") && q[wahaw-1][hawaw+1].equals("r") && q[wahaw-2][hawaw+2].equals("r") && q[wahaw-3][hawaw+3].equals("r")) {
-						System.out.println(playerrname+" wins!");
-						win=true;
-					}
-				}
-			}
-			for(int waha=0; waha<3; waha++) {
-				for(int hawa=0; hawa<3; hawa++) {
-					if(q[waha][hawa].equals("y") && q[waha+1][hawa+1].equals("y") && q[waha+2][hawa+2].equals("y") && q[waha+3][hawa+3].equals("y")) {
-						System.out.println(playeryname+" wins!");
-						win=true;
-					}
-				}
-			}
-			for(int wahaw=5; wahaw>2; wahaw--) {
-				for(int hawaw=0; hawaw<2; hawaw++) {
-					if(q[wahaw][hawaw].equals("y") && q[wahaw-1][hawaw+1].equals("y") && q[wahaw-2][hawaw+2].equals("y") && q[wahaw-3][hawaw+3].equals("y")) {
-						System.out.println(playeryname+" wins!");
-						win=true;
-					}
-				}
-			}
-			int x=0;
-			for(int b=0; b<6; b++) {
-				for(int c=0; c<7; c++) {
-					if(q[b][c].equals("-")) {
-						x++;
-					}
-				}
-			}
-			if(x==0) {
-				System.out.println("Tie.");
-				win=true;
 			}
 		}
+		for(int wah=0; wah<3; wah++) {
+			for(int haw=0; haw<7; haw++) {
+				if(q[wah][haw].equals("r") && q[wah+1][haw].equals("r") && q[wah+2][haw].equals("r") && q[wah+3][haw].equals("r")) {
+					System.out.println(playerrname+" wins!");
+					return true;
+				}
+				if(q[wah][haw].equals("y") && q[wah+1][haw].equals("y") && q[wah+2][haw].equals("y") && q[wah+3][haw].equals("y")) {
+					System.out .println(playeryname+" wins!");
+					return true;
+				}
+			}
+		}
+		for(int waha=0; waha<3; waha++) {
+			for(int hawa=0; hawa<3; hawa++) {
+				if(q[waha][hawa].equals("r") && q[waha+1][hawa+1].equals("r") && q[waha+2][hawa+2].equals("r") && q[waha+3][hawa+3].equals("r")) {
+					System.out.println(playerrname+" wins!");
+					return true;
+				}
+			}
+		}
+		for(int wahaw=5; wahaw>2; wahaw--) {
+			for(int hawaw=0; hawaw<2; hawaw++) {
+				if(q[wahaw][hawaw].equals("r") && q[wahaw-1][hawaw+1].equals("r") && q[wahaw-2][hawaw+2].equals("r") && q[wahaw-3][hawaw+3].equals("r")) {
+					System.out.println(playerrname+" wins!");
+					return true;
+				}
+			}
+		}
+		for(int waha=0; waha<3; waha++) {
+			for(int hawa=0; hawa<3; hawa++) {
+				if(q[waha][hawa].equals("y") && q[waha+1][hawa+1].equals("y") && q[waha+2][hawa+2].equals("y") && q[waha+3][hawa+3].equals("y")) {
+					System.out.println(playeryname+" wins!");
+					return true;
+				}
+			}
+		}
+		for(int wahaw=5; wahaw>2; wahaw--) {
+			for(int hawaw=0; hawaw<2; hawaw++) {
+				if(q[wahaw][hawaw].equals("y") && q[wahaw-1][hawaw+1].equals("y") && q[wahaw-2][hawaw+2].equals("y") && q[wahaw-3][hawaw+3].equals("y")) {
+					System.out.println(playeryname+" wins!");
+					return true;
+				}
+			}
+		}
+		int x=0;
+		for(int b=0; b<6; b++) {
+			for(int c=0; c<7; c++) {
+				if(q[b][c].equals("-")) {
+					x++;
+				}
+			}
+		}
+		if(x==0) {
+			System.out.println("Tie.");
+			return true;
+		}
+		return false;
 	}
 }
