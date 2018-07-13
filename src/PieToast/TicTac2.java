@@ -37,7 +37,7 @@ public class TicTac2 {
 					playerchoiceoc=scan.nextInt();
 					if(!q[playerchoiceor][playerchoiceoc].equals("x") && !q[playerchoiceor][playerchoiceoc].equals("o")) {
 						taken=false;
-					}else {
+					}else{
 						System.out.println("That space is already taken.");
 					}
 				}
