@@ -11,13 +11,14 @@ public class Arraylist implements List{
 	public boolean add(Object arg0) {
 		// TODO Auto-generated method stub
 		A[size]=arg0;
-		
 		if (size==A.length){
-			for() {
-				
+			Object[] B= new Object[A.length+1];
+			for(int AtoB=0; AtoB<A.length; AtoB++) {
+				B[AtoB]=A[AtoB];
 			}
+			A=B;
 		}
-		return false;
+		return true;
 	}
 
 	@Override
@@ -59,7 +60,8 @@ public class Arraylist implements List{
 	@Override
 	public Object get(int arg0) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		return A[arg0];
 	}
 
 	@Override
