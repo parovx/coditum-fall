@@ -5,6 +5,7 @@ public class randomwordgenerator {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Random rand=new Random();
+		System.out.println("How many characters long would yo like your word to be?");
 		int char1=rand.nextInt(26);
 		if (char1==1){
 			System.out.print("A");
@@ -113,115 +114,7 @@ public class randomwordgenerator {
 		}else{
 			System.out.print("z");
 		}
-		int char3=rand.nextInt(26);
-		if (char2==1){
-			System.out.print("a");
-		}else if(char3==2){
-			System.out.print("b");
-		}else if(char3==3){
-			System.out.print("c");
-		}else if(char3==4){
-			System.out.print("d");
-		}else if(char3==5){
-			System.out.print("e");
-		}else if(char3==6){
-			System.out.print("f");
-		}else if(char3==7){
-			System.out.print("g");
-		}else if(char3==8){
-			System.out.print("h");
-		}else if(char3==9){
-			System.out.print("i");
-		}else if(char3==10){
-			System.out.print("j");
-		}else if(char3==11){
-			System.out.print("k");
-		}else if(char3==12){
-			System.out.print("l");
-		}else if(char3==13){
-			System.out.print("m");
-		}else if(char3==14){
-			System.out.print("n");
-		}else if(char3==15){
-			System.out.print("o");
-		}else if(char3==16){
-			System.out.print("p");
-		}else if(char3==17){
-			System.out.print("q");
-		}else if(char3==18){
-			System.out.print("r");
-		}else if(char3==19){
-			System.out.print("s");
-		}else if(char3==20){
-			System.out.print("t");
-		}else if(char3==21){
-			System.out.print("u");
-		}else if(char3==22){
-			System.out.print("v");
-		}else if(char3==23){
-			System.out.print("w");
-		}else if(char3==24){
-			System.out.print("x");
-		}else if(char3==25){
-			System.out.print("y");
-		}else{
-			System.out.print("z");
-		}
-		int char4=rand.nextInt(26);
-		if (char4==1){
-			System.out.print("a");
-		}else if(char4==2){
-			System.out.print("b");
-		}else if(char4==3){
-			System.out.print("c");
-		}else if(char4==4){
-			System.out.print("d");
-		}else if(char4==5){
-			System.out.print("e");
-		}else if(char4==6){
-			System.out.print("f");
-		}else if(char4==7){
-			System.out.print("g");
-		}else if(char4==8){
-			System.out.print("h");
-		}else if(char4==9){
-			System.out.print("i");
-		}else if(char4==10){
-			System.out.print("j");
-		}else if(char4==11){
-			System.out.print("k");
-		}else if(char4==12){
-			System.out.print("l");
-		}else if(char4==13){
-			System.out.print("m");
-		}else if(char4==14){
-			System.out.print("n");
-		}else if(char4==15){
-			System.out.print("o");
-		}else if(char4==16){
-			System.out.print("p");
-		}else if(char4==17){
-			System.out.print("q");
-		}else if(char4==18){
-			System.out.print("r");
-		}else if(char4==19){
-			System.out.print("s");
-		}else if(char4==20){
-			System.out.print("t");
-		}else if(char4==21){
-			System.out.print("u");
-		}else if(char4==22){
-			System.out.print("v");
-		}else if(char4==23){
-			System.out.print("w");
-		}else if(char4==24){
-			System.out.print("x");
-		}else if(char4==25){
-			System.out.print("y");
-		}else{
-			System.out.print("z");
-		}
+
 	}
-}
 
 
