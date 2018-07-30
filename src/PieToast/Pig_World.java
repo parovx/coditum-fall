@@ -9,7 +9,7 @@ public class Pig_World {
 		Scanner scan=new Scanner(System.in);
 		System.out.println("Enter Password");
 		String Password=scan.next("wearenumber1");
-		if(Password!="wearenumber1"){
+		if(Password!="0"){
 			System.out.println("What is your name?");
 			String name=scan.next();
 			System.out.println(""+name+", you are entering Pig World. This is very dangerous. You can close this program and do something else. There are many ways you can die. You must make the right decisions to survive. Each pig species is different. Each pig species is dangerous in many different ways. So look out. A man called Jimothy, one of the previous people sent to Pig World, will be there. He will help you. You must bring him back. He was trapped there for 7 years. Killing him will result in you failing this mission. We're sending you out. 3...2...1...0. WEEEEEEEEEEEEEOOOOOOOWWWWW!");

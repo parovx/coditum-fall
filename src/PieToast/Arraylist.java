@@ -11,6 +11,7 @@ public class Arraylist implements List{
 	public boolean add(Object arg0) {
 		// TODO Auto-generated method stub
 		A[size]=arg0;
+		size++;
 		if (size==A.length){
 			Object[] B= new Object[A.length+1];
 			for(int AtoB=0; AtoB<A.length; AtoB++) {
@@ -24,7 +25,18 @@ public class Arraylist implements List{
 	@Override
 	public void add(int arg0, Object arg1) {
 		// TODO Auto-generated method stub
-
+		if (size==A.length){
+			Object[] B= new Object[A.length+1];
+			for(int AtoB=0; AtoB<A.length; AtoB++) {
+				B[AtoB]=A[AtoB];
+			}
+			A=B;
+		}
+		for(int backwards=size-1; backwards>=arg0; backwards--) {
+			A[backwards]=A[backwards+1];
+		}
+		A[arg0]=arg1;
+		size++;
 	}
 
 	@Override
@@ -42,7 +54,10 @@ public class Arraylist implements List{
 	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
-
+		for(int clear=0; clear<A.length; clear++) {
+			A[clear]=null;
+		}
+		size=0;
 	}
 
 	@Override
@@ -60,7 +75,7 @@ public class Arraylist implements List{
 	@Override
 	public Object get(int arg0) {
 		// TODO Auto-generated method stub
-		
+
 		return A[arg0];
 	}
 
