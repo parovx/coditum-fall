@@ -24,7 +24,7 @@ public class Arraylist implements List{
 
 	@Override
 	public void add(int arg0, Object arg1) {
-		// TODO Auto-generated method stub
+		size++;// TODO Auto-generated method stub
 		if (size==A.length){
 			Object[] B= new Object[A.length+1];
 			for(int AtoB=0; AtoB<A.length; AtoB++) {
@@ -32,11 +32,12 @@ public class Arraylist implements List{
 			}
 			A=B;
 		}
-		for(int backwards=size-1; backwards>=arg0; backwards--) {
-			A[backwards]=A[backwards+1];
+		for(int backwards=size-2; backwards>=arg0; backwards--) {
+			A[backwards+1]=A[backwards];
 		}
+
 		A[arg0]=arg1;
-		size++;
+
 	}
 
 	@Override
@@ -63,7 +64,13 @@ public class Arraylist implements List{
 	@Override
 	public boolean contains(Object arg0) {
 		// TODO Auto-generated method stub
-		return false;
+		//		for(int c=0; c<size; c++) {
+		//			if(A[c].equals(arg0)) {
+		//				return true;
+		//			}
+		//		}
+		//		return false;
+		return indexOf(arg0)>=0;
 	}
 
 	@Override
@@ -82,7 +89,13 @@ public class Arraylist implements List{
 	@Override
 	public int indexOf(Object arg0) {
 		// TODO Auto-generated method stub
-		return 0;
+		for(int s=0; s<size; s++) {
+
+			if(A[s].equals(arg0)) {
+				return s;
+			}
+		}
+		return -1;
 	}
 
 	@Override
@@ -124,7 +137,12 @@ public class Arraylist implements List{
 	@Override
 	public Object remove(int arg0) {
 		// TODO Auto-generated method stub
-		return null;
+		size--;
+		Object V=A[arg0];
+		for(int forwards=arg0; forwards<=size; forwards++) {
+			A[forwards]=A[forwards+1];
+		}
+		return V;
 	}
 
 	@Override

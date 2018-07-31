@@ -10,10 +10,11 @@ public class DataStructureRutter {
 		DSR.add(5);
 		DSR.add("O");
 		DSR.add(DSR);
-		DSR.add(null);
 		System.out.println(DSR.get(2));
-		DSR.add(2, "O");
-		System.out.println(DSR.get(2));
+		DSR.add(2, "K");
+		System.out.println(DSR.get(1));
+		DSR.remove(1);
+		System.out.println(DSR.get(1));
 	}
 
 }
