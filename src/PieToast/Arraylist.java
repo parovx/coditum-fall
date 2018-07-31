@@ -43,7 +43,10 @@ public class Arraylist implements List{
 	@Override
 	public boolean addAll(Collection arg0) {
 		// TODO Auto-generated method stub
-		return false;
+		for(Object object: arg0) {
+			add(object); 
+		}
+		return true;
 	}
 
 	@Override
@@ -170,7 +173,7 @@ public class Arraylist implements List{
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
-		return 0;
+		return size;
 	}
 
 	@Override
@@ -193,10 +196,17 @@ public class Arraylist implements List{
 	
 	@Override
 	public String toString() {
-		 for(int t=; t<A.length; t++) {
-			 
+		String tS= "[";
+		for(int t=0; t<size; t++) {
+			if(t==size-1) {
+				tS+=A[t];
+			}else {
+			 tS+=A[t]+",";
+			}
 		 }
-		return "["+A+"]";
+		
+		tS+="]";
+		return tS;
 	}
 	Object[] A= new Object[5];
 	int size=0;

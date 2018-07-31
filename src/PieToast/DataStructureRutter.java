@@ -9,8 +9,7 @@ public class DataStructureRutter {
 		Arraylist DSR = new Arraylist();
 		DSR.add(5);
 		DSR.add("O");
-		DSR.add(DSR);
-		System.out.println(DSR.get(2));
+		System.out.println(DSR);
 		DSR.add(2, "K");
 		System.out.println(DSR.get(1));
 		DSR.remove("K");
