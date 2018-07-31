@@ -13,7 +13,7 @@ public class DataStructureRutter {
 		System.out.println(DSR.get(2));
 		DSR.add(2, "K");
 		System.out.println(DSR.get(1));
-		DSR.remove(1);
+		DSR.remove("K");
 		System.out.println(DSR.get(1));
 	}
 

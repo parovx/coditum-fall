@@ -131,6 +131,10 @@ public class Arraylist implements List{
 	@Override
 	public boolean remove(Object arg0) {
 		// TODO Auto-generated method stub
+		if(indexOf(arg0)>=0) {
+			remove(indexOf(arg0));
+			return true;
+		}
 		return false;
 	}
 
@@ -185,6 +189,14 @@ public class Arraylist implements List{
 	public Object[] toArray(Object[] a) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public String toString() {
+		 for(int t=; t<A.length; t++) {
+			 
+		 }
+		return "["+A+"]";
 	}
 	Object[] A= new Object[5];
 	int size=0;
