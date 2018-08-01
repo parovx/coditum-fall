@@ -8,7 +8,7 @@ public class Enemytest {
 		System.out.println(Timmy.gethealth());
 		System.out.println(Timmy.getspeed());
 		System.out.println(Timmy.getName());
-		Timmy.setdamage(30);
+		Timmy.setdamage(Timmy.getdamage()+Timmy.getdamage()/5);
 		System.out.println(Timmy.getdamage());
 		Timmy.setspeed(60);
 		System.out.println(Timmy.getspeed());
