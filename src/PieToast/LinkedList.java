@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.ListIterator;
 
 public class LinkedList implements List{
+	//LinkedListNode.size=0;
 	LinkedListNode head;
 	public LinkedList() {
 		head=null;
@@ -16,9 +17,11 @@ public class LinkedList implements List{
 		if(head==null) {
 			head= new LinkedListNode(e, null);
 		}else {
-			while(!LinkedListNode=null) {
-				
+			LinkedListNode add=head;
+			while(add.getNext() != null) {
+				add=add.getNext();
 			}
+			add.setNext(new LinkedListNode(e, null));
 		}
 		return false;
 	}
