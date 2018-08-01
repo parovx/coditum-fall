@@ -14,6 +14,11 @@ public class DataStructureRutter {
 		System.out.println(DSR.get(1));
 		DSR.remove("K");
 		System.out.println(DSR.get(1));
+		LinkedList ATU = new LinkedList();
+		ATU.add(99);
+		ATU.add("E");
+		ATU.add(3);
+		System.out.println(ATU.get(2));
 	}
 
 }

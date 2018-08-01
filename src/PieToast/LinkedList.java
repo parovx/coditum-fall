@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.ListIterator;
 
 public class LinkedList implements List{
-	//LinkedListNode.size=0;
+	int Size=0;
 	LinkedListNode head;
 	public LinkedList() {
 		head=null;
@@ -14,6 +14,7 @@ public class LinkedList implements List{
 	@Override
 	public boolean add(Object e) {
 		// TODO Auto-generated method stub
+		Size++;
 		if(head==null) {
 			head= new LinkedListNode(e, null);
 		}else {
@@ -47,7 +48,7 @@ public class LinkedList implements List{
 	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -65,7 +66,11 @@ public class LinkedList implements List{
 	@Override
 	public Object get(int index) {
 		// TODO Auto-generated method stub
-		return null;
+		LinkedListNode get=head;
+		for (int getLoop=0; getLoop<index; getLoop++) {
+			get=get.getNext();
+		}
+		return get.getValue();
 	}
 
 	@Override
@@ -157,5 +162,5 @@ public class LinkedList implements List{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
 }
