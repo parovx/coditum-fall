@@ -18,7 +18,15 @@ public class DataStructureRutter {
 		ATU.add(99);
 		ATU.add("E");
 		ATU.add(3);
+		System.out.println(ATU.get(0));
+		System.out.println(ATU.get(1));
 		System.out.println(ATU.get(2));
+		ATU.add(0, "5");
+		System.out.println(ATU.get(0));
+		System.out.println(ATU.get(1));
+		System.out.println(ATU.get(2));
+		System.out.println(ATU.get(3));
+		System.out.println(ATU);
 	}
 
 }

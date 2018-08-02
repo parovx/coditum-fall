@@ -32,7 +32,8 @@ public class LinkedList implements List{
 		// TODO Auto-generated method stub
 		Size++;
 		if(index==0) {
-			;
+			LinkedListNode newHead = new LinkedListNode(element, head);
+			head=newHead;
 		}else {
 			LinkedListNode get=head;
 			for (int getLoop=1; getLoop<index; getLoop++) {
@@ -122,6 +123,8 @@ public class LinkedList implements List{
 	@Override
 	public boolean remove(Object o) {
 		// TODO Auto-generated method stub
+		Size--;
+
 		return false;
 	}
 
@@ -172,5 +175,20 @@ public class LinkedList implements List{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	@Override
+	public String toString() {
+		String Ts=new String();
+		Ts="[";
+		for(int tsf=0; tsf<Size; tsf++) {
+			if(tsf==Size-1) {
+				Ts+=get(tsf);
+			}else {
+				Ts+=get(tsf)+",";
+			}
+		}
 
+		Ts+="]";
+		return Ts;
+	}
 }
+
