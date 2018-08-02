@@ -30,7 +30,17 @@ public class LinkedList implements List{
 	@Override
 	public void add(int index, Object element) {
 		// TODO Auto-generated method stub
-		
+		Size++;
+		if(index==0) {
+			;
+		}else {
+			LinkedListNode get=head;
+			for (int getLoop=1; getLoop<index; getLoop++) {
+				get=get.getNext();
+			}
+			LinkedListNode a= get.getNext();
+			get.setNext(new LinkedListNode(element, a));
+		}
 	}
 
 	@Override
