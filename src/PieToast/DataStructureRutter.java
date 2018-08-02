@@ -27,6 +27,8 @@ public class DataStructureRutter {
 		System.out.println(ATU.get(2));
 		System.out.println(ATU.get(3));
 		System.out.println(ATU);
+		ATU.remove(0);
+		System.out.println(ATU);
 	}
 
 }

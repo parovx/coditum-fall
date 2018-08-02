@@ -87,6 +87,10 @@ public class LinkedList implements List{
 	@Override
 	public int indexOf(Object o) {
 		// TODO Auto-generated method stub
+		LinkedListNode indexOf=head;
+		for(int iO=0; iO<Size; iO++) {
+			
+		}
 		return 0;
 	}
 
@@ -123,15 +127,24 @@ public class LinkedList implements List{
 	@Override
 	public boolean remove(Object o) {
 		// TODO Auto-generated method stub
-		Size--;
-
 		return false;
 	}
 
 	@Override
 	public Object remove(int index) {
-		// TODO Auto-generated method stub
+		Size--;
+		if(index==0) {
+			head=head.getNext();
+		}else {
+		LinkedListNode remove=head;
+		for (int removeLoop=1; removeLoop<index; removeLoop++) {
+			remove=remove.getNext();
+		}
+		LinkedListNode a= remove.getNext().getNext();
+		remove.setNext(a);
+		}
 		return null;
+		
 	}
 
 	@Override
