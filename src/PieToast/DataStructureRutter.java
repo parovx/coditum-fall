@@ -29,6 +29,7 @@ public class DataStructureRutter {
 		System.out.println(ATU);
 		ATU.remove(0);
 		System.out.println(ATU);
+		System.out.println(ATU.indexOf("E"));
 	}
 
 }

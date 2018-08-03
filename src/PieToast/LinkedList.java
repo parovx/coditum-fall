@@ -47,7 +47,10 @@ public class LinkedList implements List{
 	@Override
 	public boolean addAll(Collection c) {
 		// TODO Auto-generated method stub
-		return false;
+		for(Object tcejbo : c) {
+			add(tcejbo);
+		}
+		return true;
 	}
 
 	@Override
@@ -59,13 +62,14 @@ public class LinkedList implements List{
 	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
-
+		Size=0;
+		head=null;
 	}
 
 	@Override
 	public boolean contains(Object o) {
 		// TODO Auto-generated method stub
-		return false;
+		return indexOf(o)>=0;
 	}
 
 	@Override
@@ -89,9 +93,12 @@ public class LinkedList implements List{
 		// TODO Auto-generated method stub
 		LinkedListNode indexOf=head;
 		for(int iO=0; iO<Size; iO++) {
-			
+			if(indexOf.getValue().equals(o)) {
+				return iO;
+			}
+			indexOf=indexOf.getNext();
 		}
-		return 0;
+		return -1;
 	}
 
 	@Override
