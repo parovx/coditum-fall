@@ -175,7 +175,7 @@ public class LinkedList implements List{
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
-		return 0;
+		return Size;
 	}
 
 	@Override
