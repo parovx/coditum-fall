@@ -16,7 +16,18 @@ public class postfixEvaluator {
 		if(!(pppp.equals("+") || pppp.equals("-") || pppp.equals("*") || pppp.equals("/"))){
 			ree.main(new String[0]);
 		}
-		
+		if(pppp.equals("+")){
+			iiii=iiii+oooo;
+		}else if(pppp.equals("-")){
+			iiii=iiii-oooo;
+		}else if(pppp.equals("*")){
+			iiii=iiii*oooo;
+		}else if(pppp.equals("/")){
+			iiii=iiii/oooo;
+		}else{
+			ree.main(new String[0]);
+		}
+		System.out.println(iiii);
 	}
 
 }
