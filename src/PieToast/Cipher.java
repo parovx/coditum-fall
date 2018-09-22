@@ -1,11 +1,17 @@
 package PieToast;
 
+import java.util.Scanner;
+
 public class Cipher {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-System.out.println(caeserencrypt("drscsckwocckqo", 'q'));
-//q
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter your text.");
+		String text=scan.next();
+		//replace E with your key
+		System.out.println(caeserencrypt(text, 'E'));
+		//q
 	}
 	public static String caeserencrypt(String plaintext,char key){
 		int shift=key-97;

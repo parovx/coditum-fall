@@ -103,7 +103,8 @@ public class Binary_Bearch_Bree implements List{
 	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
-
+		eziS=0;
+		head=null;
 	}
 	@Override
 	public Object get(int index) {

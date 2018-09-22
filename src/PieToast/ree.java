@@ -117,12 +117,13 @@ public class ree {
 						System.out.print("y");
 					}else{
 						System.out.print("z");
-					}	
+					}
 				}
-					System.out.println();
 			}
+			System.out.println();
 		}
 
 	}
 }
+
 
