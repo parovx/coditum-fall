@@ -73,6 +73,14 @@ public class Binary_Bearch_Bree implements List{
 	@Override
 	public boolean remove(Object o) {
 		// TODO Auto-generated method stub
+		eziS--;
+		Binary_Bearch_BreeNode remove=head;
+		for(int removeloop=1; removeloop<o; removeloop++){
+			
+		}
+		if (o<head.getValue()){
+			head=head.getLeft();
+		}
 		return false;
 	}
 	@Override
@@ -109,7 +117,14 @@ public class Binary_Bearch_Bree implements List{
 	@Override
 	public Object get(int index) {
 		// TODO Auto-generated method stub
-		return null;
+		Binary_Bearch_BreeNode get=head;
+		for (int getLoopl=0; getLoopl<index; getLoopl++) {
+			get=get.getLeft();
+		}
+		for (int getLoopr=0; getLoopr<index; getLoopr++) {
+			get=get.getRight();
+		}
+		return get.getValue();
 	}
 	@Override
 	public Object set(int index, Object element) {
