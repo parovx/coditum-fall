@@ -80,6 +80,8 @@ public class Binary_Bearch_Bree implements List{
 		}
 		if (o<head.getValue()){
 			head=head.getLeft();
+		}else if(o>head.getValue()){
+			head=head.getRight();
 		}
 		return false;
 	}

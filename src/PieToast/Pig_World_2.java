@@ -17,7 +17,7 @@ public class Pig_World_2 {
 		System.out.println(""+name+": Bring it on!");
 		System.out.println("Albert Swinestein: You  defeated my two best fighters. It'll be much harder to fight me!");
 		System.out.println(name+": They were so easy. it was, like, 3 right questions then you're done! It'll proably be the same fighting you!");
-		System.out.println("Albert Swinestein: But I've caught you're friend Jimothy. You need to get him back to close the portal. And as you can see, this game has lots of dialogue. You must defeat me by picking to say the right things, not choosing the right actions!");
+		System.out.println("Albert Swinestein: But I've caught your friend Jimothy. You need to get him back to close the portal. And as you can see, this game has lots of dialogue. You must defeat me by picking to say the right things, not choosing the right actions!");
 		System.out.println("1= say 'Give back Jimothy!' 2=say 'Screw You!'");
 		int screwz=scan.nextInt();
 		if (screwz==2) {
@@ -36,12 +36,12 @@ public class Pig_World_2 {
 				if(erupt==1) {
 					System.out.println(name+": Your World?");
 					System.out.println("Yes, Pig World is my world. I created it! The people that sent you here made you think that they created a world that went wrong. They've sent over 50 people here and they all died. But Jimothy managed to  survive. And you barely even know who those people that sent you here are! Let me tell you... They're Pigs! They Somehow managed to escape through the portal and take on human form. They are my most succesful workers. They have led us Pigs to be more superior than humans!");
-					System.out.println("1=say 'FYI, Humans Are Still More Superior Than Pigs. Get Shrekt.' 2=say 'Screw You.'");
+					System.out.println("1=say 'Humans Are Still More Superior Than Pigs. Get Shrekt.' 2=say 'Screw You.'");
 					int sup=scan.nextInt();
 					if(sup==1) {
-						System.out.println(name+": FYI, humans are still more superior than pigs. Get Shrekt.");
+						System.out.println(name+": Humans are still more superior than pigs. Get Shrekt.");
 						System.out.println("Shrek comes out of nowhere and kills Albert Swinestein.");
-						System.out.println("Now that the leader of the pigs has been defeated, the portal opens and you and Jimothy escape. Without their leader, the pigs all die.");
+						System.out.println("Now that the leader of the pigs has been defeated, the portal opens and you, Jimothy and Shrek escape. Without their leader, the pigs all die.");
 						System.out.println("THE END!");
 						System.out.println("Loserboard:");
 						System.out.println("1. The_Memer");
