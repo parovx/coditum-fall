@@ -24,7 +24,27 @@ public class Binary_Bearch_Bree implements List{
 	@Override
 	public boolean contains(Object o) {
 		// TODO Auto-generated method stub
-		return false;
+		Binary_Bearch_BreeNode contains=head;
+		while(true){
+			if ((int) o<contains.getValue()){
+				if(contains.getLeft()==null){
+					return false;
+				}else if(contains.getLeft().getValue()==(int) o){
+					return true;
+				}else{ 
+					contains=contains.getLeft();
+				}
+			}
+			if ((int) o>contains.getValue()){
+				if(contains.getRight()==null){
+					return false;
+				}else if(contains.getRight().getValue()==(int) o){
+					return true;
+				}else{
+					contains=contains.getRight();
+				}
+			}
+		}
 	}
 	@Override
 	public Iterator iterator() {
@@ -60,13 +80,13 @@ public class Binary_Bearch_Bree implements List{
 					if((int) e<add.getValue()){
 						if(add.getRight()==null){
 							add.setRight(new Binary_Bearch_BreeNode ((int) e, null, null));
-						return true;
+							return true;
 						}
 						add=add.getRight();
 					}
 				}
 			}
-			
+
 		}
 		return false;
 	}
@@ -74,14 +94,35 @@ public class Binary_Bearch_Bree implements List{
 	public boolean remove(Object o) {
 		// TODO Auto-generated method stub
 		eziS--;
+		Binary_Bearch_BreeNode bead=null;
 		Binary_Bearch_BreeNode remove=head;
-		for(int removeloop=1; removeloop<o; removeloop++){
-			
-		}
-		if (o<head.getValue()){
-			head=head.getLeft();
-		}else if(o>head.getValue()){
-			head=head.getRight();
+		while(this.contains(o)){
+			if ((int) o<remove.getValue()){
+				bead=remove;
+				remove=remove.getLeft();
+
+			}else if( (int) o>remove.getValue()){
+				bead=remove;
+				remove=remove.getRight();
+
+			}else{
+				if((remove.getRight()==null) && (remove.getLeft()==null)){
+					if(bead.getLeft()==remove){
+						bead=new Binary_Bearch_BreeNode(bead.getValue(), bead.getRight(), null);
+					}else if(bead.getRight()==remove){
+						bead=new Binary_Bearch_BreeNode(bead.getValue(), null, bead.getLeft());
+					}
+				} 
+				if(!(remove.getRight()==null)){
+					Binary_Bearch_BreeNode egarots=remove.getRight();
+					if(bead.getLeft()==remove){
+						bead=new Binary_Bearch_BreeNode(bead.getValue(), bead.getRight(), null);
+					}else if(bead.getRight()==remove){
+						bead=new Binary_Bearch_BreeNode(bead.getValue(), null, bead.getLeft());
+					}
+					//Add egarots back to the binary search
+				}
+			}
 		}
 		return false;
 	}

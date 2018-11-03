@@ -36,6 +36,7 @@ public class DataStructureRutter {
 		BBB.add(8);
 		BBB.add(7);
 		System.out.println(BBB.get(0));
+		System.out.println(BBB.contains(11));
 		//System.out.println(BBB.get(1));
 	}
 

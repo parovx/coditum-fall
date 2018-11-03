@@ -10,7 +10,7 @@ public class ree {
 			for(int E=0; E<3; E++) {
 				for (int EEEE=0; EEEE<100; EEEE++){
 					Random rand=new Random();
-					int char1=rand.nextInt(26);
+					int char1=rand.nextInt(52);
 					if (char1==1){
 						System.out.print("A");
 					}else if(char1==2){
@@ -61,62 +61,62 @@ public class ree {
 						System.out.print("X");
 					}else if(char1==25){
 						System.out.print("Y");
-					}else{
+					}else if(char1==26){
 						System.out.print("Z");
-					}
-					int char2=rand.nextInt(26);
-					if (char2==1){
+					}else if (char1==27){
 						System.out.print("a");
-					}else if(char2==2){
+					}else if(char1==28){
 						System.out.print("b");
-					}else if(char2==3){
+					}else if(char1==29){
 						System.out.print("c");
-					}else if(char2==4){
+					}else if(char1==30){
 						System.out.print("d");
-					}else if(char2==5){
+					}else if(char1==31){
 						System.out.print("e");
-					}else if(char2==6){
+					}else if(char1==32){
 						System.out.print("f");
-					}else if(char2==7){
+					}else if(char1==33){
 						System.out.print("g");
-					}else if(char2==8){
+					}else if(char1==34){
 						System.out.print("h");
-					}else if(char2==9){
+					}else if(char1==35){
 						System.out.print("i");
-					}else if(char2==10){
+					}else if(char1==36){
 						System.out.print("j");
-					}else if(char2==11){
+					}else if(char1==37){
 						System.out.print("k");
-					}else if(char2==12){
+					}else if(char1==38){
 						System.out.print("l");
-					}else if(char2==13){
+					}else if(char1==39){
 						System.out.print("m");
-					}else if(char2==14){
+					}else if(char1==40){
 						System.out.print("n");
-					}else if(char2==15){
+					}else if(char1==41){
 						System.out.print("o");
-					}else if(char2==16){
+					}else if(char1==42){
 						System.out.print("p");
-					}else if(char2==17){
+					}else if(char1==43){
 						System.out.print("q");
-					}else if(char2==18){
+					}else if(char1==44){
 						System.out.print("r");
-					}else if(char2==19){
+					}else if(char1==45){
 						System.out.print("s");
-					}else if(char2==20){
+					}else if(char1==46){
 						System.out.print("t");
-					}else if(char2==21){
+					}else if(char1==47){
 						System.out.print("u");
-					}else if(char2==22){
+					}else if(char1==48){
 						System.out.print("v");
-					}else if(char2==23){
+					}else if(char1==49){
 						System.out.print("w");
-					}else if(char2==24){
+					}else if(char1==50){
 						System.out.print("x");
-					}else if(char2==25){
+					}else if(char1==51){
 						System.out.print("y");
-					}else{
+					}else if(char1==52){
 						System.out.print("z");
+					}else if(char1==53){
+						System.out.println("1");
 					}
 				}
 			}
