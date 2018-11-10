@@ -76,14 +76,14 @@ public class Binary_Bearch_Bree implements List{
 						return true;
 					}
 					add=add.getLeft();
-				}else{
-					if((int) e<add.getValue()){
-						if(add.getRight()==null){
-							add.setRight(new Binary_Bearch_BreeNode ((int) e, null, null));
-							return true;
-						}
-						add=add.getRight();
+				}else if((int) e>add.getValue()){
+					if(add.getRight()==null){
+						add.setRight(new Binary_Bearch_BreeNode ((int) e, null, null));
+						return true;
 					}
+					add=add.getRight();
+				}else{
+					return false;
 				}
 			}
 
@@ -116,9 +116,11 @@ public class Binary_Bearch_Bree implements List{
 				if(!(remove.getRight()==null)){
 					Binary_Bearch_BreeNode egarots=remove.getRight();
 					if(bead.getLeft()==remove){
-						bead=new Binary_Bearch_BreeNode(bead.getValue(), bead.getRight(), null);
+						//bead=new Binary_Bearch_BreeNode(bead.getValue(), bead.getRight(), null);
+						bead.getLeft().setLeft(null);
 					}else if(bead.getRight()==remove){
 						bead=new Binary_Bearch_BreeNode(bead.getValue(), null, bead.getLeft());
+						bead.getRight().setLeft(null);
 					}
 					//Add egarots back to the binary search
 				}
@@ -171,7 +173,7 @@ public class Binary_Bearch_Bree implements List{
 	}
 	@Override
 	public Object set(int index, Object element) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub 
 		return null;
 	}
 	@Override

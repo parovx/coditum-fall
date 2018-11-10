@@ -10,7 +10,7 @@ public class ree {
 			for(int E=0; E<3; E++) {
 				for (int EEEE=0; EEEE<100; EEEE++){
 					Random rand=new Random();
-					int char1=rand.nextInt(52);
+					int char1=rand.nextInt(62);
 					if (char1==1){
 						System.out.print("A");
 					}else if(char1==2){
@@ -116,7 +116,25 @@ public class ree {
 					}else if(char1==52){
 						System.out.print("z");
 					}else if(char1==53){
-						System.out.println("1");
+						System.out.print("1");
+					}else if(char1==54){
+						System.out.print("2");
+					}else if(char1==55){
+						System.out.print("3");
+					}else if(char1==56){
+						System.out.print("4");
+					}else if(char1==57){
+						System.out.print("5");
+					}else if(char1==58){
+						System.out.print("6");
+					}else if(char1==59){
+						System.out.print("7");
+					}else if(char1==60){
+						System.out.print("8");
+					}else if(char1==61){
+						System.out.print("9");
+					}else if(char1==62){
+						System.out.print("0");
 					}
 				}
 			}

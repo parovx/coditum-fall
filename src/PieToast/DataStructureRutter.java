@@ -6,7 +6,7 @@ public class DataStructureRutter {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-	/*	Arraylist DSR = new Arraylist();
+		/*Arraylist DSR = new Arraylist();
 		DSR.add(5);
 		DSR.add("O");
 		System.out.println(DSR);
@@ -31,13 +31,24 @@ public class DataStructureRutter {
 		System.out.println(ATU);
 		System.out.println(ATU.indexOf("E"));*/
 		Binary_Bearch_Bree BBB = new Binary_Bearch_Bree();
+		System.out.println("a");
 		BBB.add(10);
-		BBB.add(9);
-		BBB.add(8);
-		BBB.add(7);
-		System.out.println(BBB.get(0));
-		System.out.println(BBB.contains(11));
-		//System.out.println(BBB.get(1));
+		System.out.println("b");
+		BBB.add(10);
+		System.out.println("c");
+		BBB.add(10);
+		System.out.println("d");
+		BBB.add(10);
+		System.out.println("e");
+		BBB.add(10);
+		System.out.println("f");
+		BBB.remove(10);
+		System.out.println("g");
+		if(BBB.contains(10)){
+			System.out.println("try");
+		}else{
+			System.out.println("success");
+		}
 	}
 
 }
