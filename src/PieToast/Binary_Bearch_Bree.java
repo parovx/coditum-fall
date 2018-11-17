@@ -26,22 +26,26 @@ public class Binary_Bearch_Bree implements List{
 		// TODO Auto-generated method stub
 		Binary_Bearch_BreeNode contains=head;
 		while(true){
-			if ((int) o<contains.getValue()){
-				if(contains.getLeft()==null){
-					return false;
-				}else if(contains.getLeft().getValue()==(int) o){
-					return true;
-				}else{ 
-					contains=contains.getLeft();
+			if((int) o==head.getValue()){
+				return true;
+			}else{
+				if ((int) o<contains.getValue()){
+					if(contains.getLeft()==null){
+						return false;
+					}else if(contains.getLeft().getValue()==(int) o){
+						return true;
+					}else{ 
+						contains=contains.getLeft();
+					}
 				}
-			}
-			if ((int) o>contains.getValue()){
-				if(contains.getRight()==null){
-					return false;
-				}else if(contains.getRight().getValue()==(int) o){
-					return true;
-				}else{
-					contains=contains.getRight();
+				if ((int) o>contains.getValue()){
+					if(contains.getRight()==null){
+						return false;
+					}else if(contains.getRight().getValue()==(int) o){
+						return true;
+					}else{
+						contains=contains.getRight();
+					}
 				}
 			}
 		}
@@ -108,18 +112,18 @@ public class Binary_Bearch_Bree implements List{
 			}else{
 				if((remove.getRight()==null) && (remove.getLeft()==null)){
 					if(bead.getLeft()==remove){
-						bead=new Binary_Bearch_BreeNode(bead.getValue(), bead.getRight(), null);
+						bead.setLeft(null);
 					}else if(bead.getRight()==remove){
-						bead=new Binary_Bearch_BreeNode(bead.getValue(), null, bead.getLeft());
+						bead.setRight(null);
 					}
 				} 
 				if(!(remove.getRight()==null)){
 					Binary_Bearch_BreeNode egarots=remove.getRight();
 					if(bead.getLeft()==remove){
-						//bead=new Binary_Bearch_BreeNode(bead.getValue(), bead.getRight(), null);
+						bead.setRight(null);
 						bead.getLeft().setLeft(null);
 					}else if(bead.getRight()==remove){
-						bead=new Binary_Bearch_BreeNode(bead.getValue(), null, bead.getLeft());
+						bead.setLeft(null);
 						bead.getRight().setLeft(null);
 					}
 					//Add egarots back to the binary search

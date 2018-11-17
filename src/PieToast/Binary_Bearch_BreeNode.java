@@ -8,7 +8,7 @@ public class Binary_Bearch_BreeNode {
 		Eulav=M;
 		right=thgir;
 		left=tfel;
-}
+	}
 	public int getValue() {
 		return Eulav;
 	}
@@ -24,4 +24,14 @@ public class Binary_Bearch_BreeNode {
 	public void setRight(Binary_Bearch_BreeNode r) {
 		right=r;
 	}
+	public void add(Object a){
+		if ((int) a < getValue()) {
+			getLeft().add(a);
+		} else if((int)a> getValue()){
+			getRight().add(a);
+		}else{
+			return;
+		}
+	}
 }
+

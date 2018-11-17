@@ -34,13 +34,13 @@ public class DataStructureRutter {
 		System.out.println("a");
 		BBB.add(10);
 		System.out.println("b");
-		BBB.add(10);
+		BBB.add(11);
 		System.out.println("c");
-		BBB.add(10);
+		BBB.add(9);
 		System.out.println("d");
-		BBB.add(10);
+		BBB.add(12);
 		System.out.println("e");
-		BBB.add(10);
+		BBB.add(9);
 		System.out.println("f");
 		BBB.remove(10);
 		System.out.println("g");
