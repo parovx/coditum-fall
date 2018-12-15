@@ -29,7 +29,7 @@ public class UnoCards {
 			System.out.println("DRAW FOUR");
 		}
 	}
-	public static UnoCards RandomUnoCards(){
+	public static UnoCards RandomUnoCard(){
 		Random rand=new Random();
 		int randomcard=rand.nextInt(27);
 		int randomcolor=rand.nextInt(3);
@@ -47,9 +47,6 @@ public class UnoCards {
 		return carda;
 	}
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println();
-	}
+	
 
 }
