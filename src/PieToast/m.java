@@ -16,6 +16,9 @@ public class m {
 			while(scan1.hasNext()){
 				System.out.println(scan1.nextLine());
 			}
+			
+		}else{
+			System.out.println("okay");
 		}
 
 	}
