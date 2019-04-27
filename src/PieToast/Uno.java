@@ -26,7 +26,7 @@ public class Uno {
 			if(cardf==93){
 				System.out.println("Deck Card "+cardf);
 				pickupdeck[cardf].print();
-				if((hand.contains(pickupdeck[cardf].colour) || (hand.contains(pickupdeck(cardf).value))){
+		//		if((hand.contains(pickupdeck[cardf].colour) || (hand.contains(pickupdeck(cardf).value))){
 					
 				}
 			}
@@ -34,4 +34,4 @@ public class Uno {
 	}
 
 
-}
+//}

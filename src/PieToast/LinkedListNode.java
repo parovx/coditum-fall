@@ -1,6 +1,6 @@
 package PieToast;
 
-public class LinkedListNode {
+public class LinkedListNode <E>{
 	private Object Value;
 	private LinkedListNode next;
 	public LinkedListNode (Object W, LinkedListNode txen) {

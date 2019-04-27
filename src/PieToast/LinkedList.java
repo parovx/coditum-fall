@@ -1,18 +1,19 @@
 package PieToast;
 
+import java.util.AbstractList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class LinkedList implements List{
+public class LinkedList<E> extends AbstractList<E>{
 	int Size=0;
-	LinkedListNode head;
+	LinkedListNode<E> head;
 	public LinkedList() {
 		head=null;
 	}
-	@Override
-	public boolean add(Object e) {
+	
+	public boolean add(E e) {
 		// TODO Auto-generated method stub
 		Size++;
 		if(head==null) {
@@ -28,7 +29,7 @@ public class LinkedList implements List{
 	}
 
 	@Override
-	public void add(int index, Object element) {
+	public void add(int index, E element) {
 		// TODO Auto-generated method stub
 		Size++;
 		if(index==0) {
@@ -48,7 +49,7 @@ public class LinkedList implements List{
 	public boolean addAll(Collection c) {
 		// TODO Auto-generated method stub
 		for(Object tcejbo : c) {
-			add(tcejbo);
+			add((E) tcejbo);
 		}
 		return true;
 	}
@@ -79,13 +80,13 @@ public class LinkedList implements List{
 	}
 
 	@Override
-	public Object get(int index) {
+	public E get(int index) {
 		// TODO Auto-generated method stub
 		LinkedListNode get=head;
 		for (int getLoop=0; getLoop<index; getLoop++) {
 			get=get.getNext();
 		}
-		return get.getValue();
+		return (E) get.getValue();
 	}
 
 	@Override
@@ -113,11 +114,7 @@ public class LinkedList implements List{
 		return null;
 	}
 
-	@Override
-	public int lastIndexOf(Object o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 
 	@Override
 	public ListIterator listIterator() {
@@ -131,14 +128,10 @@ public class LinkedList implements List{
 		return null;
 	}
 
-	@Override
-	public boolean remove(Object o) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 
 	@Override
-	public Object remove(int index) {
+	public E remove(int index) {
 		Size--;
 		if(index==0) {
 			head=head.getNext();
@@ -167,7 +160,7 @@ public class LinkedList implements List{
 	}
 
 	@Override
-	public Object set(int index, Object element) {
+	public E set(int index, E element) {
 		// TODO Auto-generated method stub
 		return null;
 	}
