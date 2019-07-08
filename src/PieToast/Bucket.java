@@ -1,22 +1,22 @@
 package PieToast;
 
 public class Bucket {
-public int kee;
-public String value;
-public Bucket(){
+public String kee;
+public int value;
+public Bucket(String kee, int value){
 	this.kee=kee;
 	this.value=value;
 }
-public int getkee(){
+public String getkee(){
 	return kee;
 }
-public void setkee(int setterofkee){
+public void setkee(String setterofkee){
 	kee=(setterofkee);
 }
-public String getvalue(){
+public int getvalue(){
 	return value;
 }
-public void setvalue(String setterofvalue){
-	value.equals(setterofvalue);
+public void setvalue(int setterofvalue){
+	value=(setterofvalue);
 }
 }
