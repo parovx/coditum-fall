@@ -18,6 +18,17 @@ public class HashMap {
 
 	public void adder(String kee, int value){
 		int notthevalue=hash(kee);
+		if(map[notthevalue]==null) {
+		map[notthevalue]=new Bucket(kee, value);
+		}else if(map[notthevalue]!=null) {
+			while(map[notthevalue]!=null) {
+				notthevalue=notthevalue+1;
+			}
+			map[notthevalue]=new Bucket(kee, value);
+		}
+		
+		
+		
 		String kee2="person";
 		int value2=hash(kee2);
 		new Bucket(kee2, value2);
@@ -39,7 +50,7 @@ public class HashMap {
 			int b=data.charAt(a);
 			sum=sum+b;
 					}
-		return sum;
+		return sum%map.length;
 	}
 
 }
