@@ -1,12 +1,13 @@
 package PieToast;
 
 public class HashMap {
+	int thisisthemaplength=4;
 	private Bucket[] map;
 	public HashMap(int hmm){
 		map=new Bucket[hmm];
 	}
 	public HashMap(){
-		map=new Bucket[4];
+		map=new Bucket[thisisthemaplength];
 	}
 
 
@@ -40,7 +41,16 @@ public class HashMap {
 			return 0;
 		}
 	}
-
+		private void resizer() {
+			int thisisactuallyallofthevalues;
+			Bucket[] temp=map;
+			thisisthemaplength=thisisthemaplength*2;
+			map=new Bucket[thisisthemaplength];
+			for(thisisactuallyallofthevalues=0; thisisactuallyallofthevalues<thisisthemaplength/2; thisisactuallyallofthevalues++) {
+				adder(temp[thisisactuallyallofthevalues].getkee(), temp[thisisactuallyallofthevalues].getvalue());
+				
+			}
+		}
 	public int hash(String data){ 
 		int sum=0;
 		for(int a=0; a<data.length(); a++){
@@ -51,3 +61,4 @@ public class HashMap {
 	}
 
 }
+
