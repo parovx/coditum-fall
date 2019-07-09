@@ -22,14 +22,22 @@ public class HashMap {
 		}
 	}
 	public int getvalue(String kee) {
-		int hmmisthisthevalue=hash(kee); 
+		int hmmisthisthevalue=hash(kee);
+		int thisisnotthevalueitisjusttemporary= hmmisthisthevalue;
 		if(kee.equals(map[hmmisthisthevalue].getkee())) {
 			return map[hmmisthisthevalue].getvalue();
-		}else {
+		}else if(map[hmmisthisthevalue]!=null && !kee.equals(map[hmmisthisthevalue].getkee())){
 			while(!kee.equals(map[hmmisthisthevalue].getkee())) {
-				hmmisthisthevalue=(hmmisthisthevalue+1)%map.length;
+				hmmisthisthevalue=(hmmisthisthevalue+1)%map.length;	
+				if(hmmisthisthevalue==thisisnotthevalueitisjusttemporary) {
+					System.out.println("This has no value"); 
+					return 0;
+				}
 			}
 			return map[hmmisthisthevalue].getvalue();
+		}else {
+			System.out.println("This has no value");
+			return 0;
 		}
 	}
 
