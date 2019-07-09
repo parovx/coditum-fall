@@ -2,16 +2,22 @@ package PieToast;
 
 public class HashMap {
 	int thisisthemaplength=4;
+	int notthelength;
 	private Bucket[] map;
 	public HashMap(int hmm){
 		map=new Bucket[hmm];
 	}
 	public HashMap(){
 		map=new Bucket[thisisthemaplength];
+		notthelength=0;
 	}
 
 
 	public void adder(String kee, int value){
+		if(notthelength==thisisthemaplength) {
+			notthelength=0;
+			resizer();
+		}
 		int notthevalue=hash(kee);
 		if(map[notthevalue]==null) {
 			map[notthevalue]=new Bucket(kee, value);
@@ -21,6 +27,7 @@ public class HashMap {
 			}
 			map[notthevalue]=new Bucket(kee, value);
 		}
+		notthelength=notthelength+1;
 	}
 	public int getvalue(String kee) {
 		int hmmisthisthevalue=hash(kee);
@@ -61,4 +68,3 @@ public class HashMap {
 	}
 
 }
-
