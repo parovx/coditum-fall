@@ -13,7 +13,7 @@ public class Arrays {
 			;
 			for(int r=0; r<4; r++) {
 				x[e][r]=7;
-				System.out.println(x[e][r]);
+				System.out.print(x[e][r]);
 			}
 		}
 
