@@ -1,9 +1,9 @@
 package PieToast;
 
-public class Bucket {
+public class Bucket<T> {
 public String kee;
-public int value;
-public Bucket(String kee, int value){
+public T value;
+public Bucket(String kee, T value){
 	this.kee=kee;
 	this.value=value;
 }
@@ -13,10 +13,10 @@ public String getkee(){
 public void setkee(String setterofkee){
 	kee=(setterofkee);
 }
-public int getvalue(){
+public T getvalue(){
 	return value;
 }
-public void setvalue(int setterofvalue){
+public void setvalue(T setterofvalue){
 	value=(setterofvalue);
 }
 }

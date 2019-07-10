@@ -1,9 +1,9 @@
 package PieToast;
 
-public class HashMap {
+public class HashMap<T> {
 	int thisisthemaplength=4;
 	int notthelength;
-	private Bucket[] map;
+	private Bucket<T>[] map;
 	public HashMap(int hmm){
 		map=new Bucket[hmm];
 	}
@@ -13,23 +13,23 @@ public class HashMap {
 	}
 
 
-	public void adder(String kee, int value){
+	public void adder(String kee, T value){
 		if(notthelength==thisisthemaplength) {
 			notthelength=0;
 			resizer();
 		}
 		int notthevalue=hash(kee);
 		if(map[notthevalue]==null) {
-			map[notthevalue]=new Bucket(kee, value);
+			map[notthevalue]=new Bucket<T>(kee, value);
 		}else if(map[notthevalue]!=null) {
 			while(map[notthevalue]!=null) {
 				notthevalue=(notthevalue+1)%map.length;
 			}
-			map[notthevalue]=new Bucket(kee, value);
+			map[notthevalue]=new Bucket<T>(kee, value);
 		}
 		notthelength=notthelength+1;
 	}
-	public int getvalue(String kee) {
+	public T getvalue(String kee) {
 		int hmmisthisthevalue=hash(kee);
 		int thisisnotthevalueitisjusttemporary= hmmisthisthevalue;
 		if(kee.equals(map[hmmisthisthevalue].getkee())) {
@@ -39,18 +39,18 @@ public class HashMap {
 				hmmisthisthevalue=(hmmisthisthevalue+1)%map.length;	
 				if(hmmisthisthevalue==thisisnotthevalueitisjusttemporary) {
 					System.out.println("This has no value"); 
-					return 0;
+					return null;
 				}
 			}
 			return map[hmmisthisthevalue].getvalue();
 		}else {
 			System.out.println("This has no value");
-			return 0;
+			return null;
 		}
 	}
 		private void resizer() {
 			int thisisactuallyallofthevalues;
-			Bucket[] temp=map;
+			Bucket<T>[] temp=map;
 			thisisthemaplength=thisisthemaplength*2;
 			map=new Bucket[thisisthemaplength];
 			for(thisisactuallyallofthevalues=0; thisisactuallyallofthevalues<thisisthemaplength/2; thisisactuallyallofthevalues++) {
