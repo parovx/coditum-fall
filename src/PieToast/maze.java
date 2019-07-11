@@ -27,19 +27,29 @@ public class maze {
 	}
 	public static void solvethemazeof(String examplemazegoeshere[][]) {
 		String alinefromamaze[];
-		String thelinefromthemaze;
+		int thecurrentcolumn;
+		int beingdone = 0;
+		int yesfinallythefinalthingihope = 0;
 		for(int lookingfors=0; lookingfors<examplemazegoeshere.length; lookingfors++){
+			String thelinefromthemaze="";
 			alinefromamaze=examplemazegoeshere[lookingfors];
-			thelinefromthemaze=alinefromamaze;
+			for(int transferringaline=0; transferringaline<alinefromamaze.length; transferringaline++) {
+				thelinefromthemaze=thelinefromthemaze+""+alinefromamaze[transferringaline];
+				
+			}
 			System.out.println(thelinefromthemaze);
 			if (thelinefromthemaze.contains("S")) {
-				int thecurrentlocation=thelinefromthemaze.indexOf("S");
-				lookingfors=examplemazegoeshere.length;
+				thecurrentcolumn=thelinefromthemaze.indexOf("S");
+				yesfinallythefinalthingihope=thecurrentcolumn;
+				beingdone=lookingfors;
 				
 			}
 		}
-		/*while(boolean solved==false) {
-			if(thelinefromthemaze)
+		System.out.println(yesfinallythefinalthingihope+","+beingdone);
+		/*
+		boolean solved=false;
+		while(solved==false) {
+			
 		}*/
 	}
 	public static void printMaze(String[][] isthisthemaze) {
