@@ -23,6 +23,24 @@ public class maze {
 			isthisthemaze[thismightbethemazelength]=whatifthelinewasanarray;
 		}
 		printMaze(isthisthemaze);
+		solvethemazeof(isthisthemaze);
+	}
+	public static void solvethemazeof(String examplemazegoeshere[][]) {
+		String alinefromamaze[];
+		String thelinefromthemaze;
+		for(int lookingfors=0; lookingfors<examplemazegoeshere.length; lookingfors++){
+			alinefromamaze=examplemazegoeshere[lookingfors];
+			thelinefromthemaze=alinefromamaze;
+			System.out.println(thelinefromthemaze);
+			if (thelinefromthemaze.contains("S")) {
+				int thecurrentlocation=thelinefromthemaze.indexOf("S");
+				lookingfors=examplemazegoeshere.length;
+				
+			}
+		}
+		/*while(boolean solved==false) {
+			if(thelinefromthemaze)
+		}*/
 	}
 	public static void printMaze(String[][] isthisthemaze) {
 		for(int e=0; e<7; e++) {
