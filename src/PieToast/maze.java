@@ -27,7 +27,7 @@ public class maze {
 	}
 	public static void solvethemazeof(String examplemazegoeshere[][]) {
 		String alinefromamaze[];
-		int thecurrentcolumn;
+		int thecurrentcolumn=0;
 		int beingdone = 0;
 		int yesfinallythefinalthingihope = 0;
 		for(int lookingfors=0; lookingfors<examplemazegoeshere.length; lookingfors++){
@@ -35,23 +35,74 @@ public class maze {
 			alinefromamaze=examplemazegoeshere[lookingfors];
 			for(int transferringaline=0; transferringaline<alinefromamaze.length; transferringaline++) {
 				thelinefromthemaze=thelinefromthemaze+""+alinefromamaze[transferringaline];
-				
+
 			}
 			System.out.println(thelinefromthemaze);
 			if (thelinefromthemaze.contains("S")) {
 				thecurrentcolumn=thelinefromthemaze.indexOf("S");
 				yesfinallythefinalthingihope=thecurrentcolumn;
 				beingdone=lookingfors;
-				
+
 			}
 		}
-		System.out.println(yesfinallythefinalthingihope+","+beingdone);
-		/*
+		System.out.println(beingdone+","+yesfinallythefinalthingihope);
+
 		boolean solved=false;
 		while(solved==false) {
-			
-		}*/
+			printMaze(examplemazegoeshere);
+			System.out.println(beingdone+","+yesfinallythefinalthingihope);
+			if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope+1].equals(" ")||examplemazegoeshere[beingdone][yesfinallythefinalthingihope+1].equals("E")) {
+				examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="u";
+				yesfinallythefinalthingihope=yesfinallythefinalthingihope+1;
+			}else if(examplemazegoeshere[beingdone+1][yesfinallythefinalthingihope].equals(" ")||examplemazegoeshere[beingdone+1][yesfinallythefinalthingihope].equals("E")){
+				examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="u";
+				beingdone=beingdone+1;
+			}else if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope-1].equals(" ")||examplemazegoeshere[beingdone][yesfinallythefinalthingihope-1].equals("E")) {
+				examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="u";
+				yesfinallythefinalthingihope=yesfinallythefinalthingihope-1;
+			}else if(examplemazegoeshere[beingdone-1][yesfinallythefinalthingihope].equals(" ")||examplemazegoeshere[beingdone-1][yesfinallythefinalthingihope].equals("E")) {
+				examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="u";
+				beingdone=beingdone-1;
+			}else {
+				System.out.println("EBIC FAIL!");
+				if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope+1].equals("u")) {
+					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
+					yesfinallythefinalthingihope=yesfinallythefinalthingihope+1;
+				}else if(examplemazegoeshere[beingdone+1][yesfinallythefinalthingihope].equals("u")){
+					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
+					beingdone=beingdone+1;
+				}else if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope-1].equals("u")) {
+					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
+					yesfinallythefinalthingihope=yesfinallythefinalthingihope-1;
+				}else if(examplemazegoeshere[beingdone-1][yesfinallythefinalthingihope].equals("u")) {
+					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
+					beingdone=beingdone-1;
+				}else {
+					System.out.println("bruh moment");
+					if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope+1].equals("u")) {
+						yesfinallythefinalthingihope=yesfinallythefinalthingihope+1;
+					}else if(examplemazegoeshere[beingdone+1][yesfinallythefinalthingihope].equals("u")){
+						beingdone=beingdone+1;
+					}else if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope-1].equals("u")) {
+						yesfinallythefinalthingihope=yesfinallythefinalthingihope-1;
+					}else if(examplemazegoeshere[beingdone-1][yesfinallythefinalthingihope].equals("u")) {
+						beingdone=beingdone-1;
+					}else {
+						System.out.println("oof");
+					}
+				}
+			}
+
+			if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope].equals("E")) {
+				System.out.println("e");
+				printMaze(examplemazegoeshere);
+				solved=true;
+			}else {
+				solved=false;
+			}
+		}
 	}
+
 	public static void printMaze(String[][] isthisthemaze) {
 		for(int e=0; e<7; e++) {
 			for(int r=0; r<7; r++){
