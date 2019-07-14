@@ -8,7 +8,7 @@ public class maze {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
-		Scanner scan = new Scanner(new File("C:\\Users\\User\\git\\coditum-fall\\coditum-fall\\coditum-fall\\coditum-fall\\src\\PieToast\\themaze"));
+		Scanner scan = new Scanner(new File("C:\\Users\\Kirk Hoffman\\git\\coditum-fall\\coditum-fall\\src\\PieToast\\themaze"));
 		String isthisthemaze[][]=new String[scan.nextInt()][scan.nextInt()];
 		String line=scan.nextLine();
 		System.out.println(line);
@@ -80,12 +80,16 @@ public class maze {
 				}else {
 					System.out.println("bruh moment");
 					if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope+1].equals("u")) {
+						examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
 						yesfinallythefinalthingihope=yesfinallythefinalthingihope+1;
 					}else if(examplemazegoeshere[beingdone+1][yesfinallythefinalthingihope].equals("u")){
+						examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
 						beingdone=beingdone+1;
 					}else if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope-1].equals("u")) {
+						examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
 						yesfinallythefinalthingihope=yesfinallythefinalthingihope-1;
 					}else if(examplemazegoeshere[beingdone-1][yesfinallythefinalthingihope].equals("u")) {
+						examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
 						beingdone=beingdone-1;
 					}else {
 						System.out.println("oof");
