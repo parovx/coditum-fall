@@ -8,7 +8,7 @@ public class maze {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
-		Scanner scan = new Scanner(new File("C:\\Users\\Kirk Hoffman\\git\\coditum-fall\\coditum-fall\\src\\PieToast\\themaze"));
+		Scanner scan = new Scanner(new File("C:\\Users\\User\\git\\coditum-fall\\src\\PieToast\\themaze"));
 		String isthisthemaze[][]=new String[scan.nextInt()][scan.nextInt()];
 		String line=scan.nextLine();
 		System.out.println(line);
@@ -49,51 +49,57 @@ public class maze {
 
 		boolean solved=false;
 		while(solved==false) {
-			printMaze(examplemazegoeshere);
-			System.out.println(beingdone+","+yesfinallythefinalthingihope);
+		//	printMaze(examplemazegoeshere);
+		//	System.out.println(beingdone+","+yesfinallythefinalthingihope);
 			if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope+1].equals(" ")||examplemazegoeshere[beingdone][yesfinallythefinalthingihope+1].equals("E")) {
-				examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="u";
+				if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope].equals("u")||examplemazegoeshere[beingdone][yesfinallythefinalthingihope].equals("r")) {
+					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
+				}else {
+					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="u";
+				}
 				yesfinallythefinalthingihope=yesfinallythefinalthingihope+1;
+				printMaze(examplemazegoeshere);
 			}else if(examplemazegoeshere[beingdone+1][yesfinallythefinalthingihope].equals(" ")||examplemazegoeshere[beingdone+1][yesfinallythefinalthingihope].equals("E")){
-				examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="u";
+				if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope].equals("u")||examplemazegoeshere[beingdone][yesfinallythefinalthingihope].equals("r")) {
+					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
+				}else {
+					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="u";
+				}
 				beingdone=beingdone+1;
+				printMaze(examplemazegoeshere);
 			}else if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope-1].equals(" ")||examplemazegoeshere[beingdone][yesfinallythefinalthingihope-1].equals("E")) {
-				examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="u";
+				if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope].equals("u")||examplemazegoeshere[beingdone][yesfinallythefinalthingihope].equals("r")) {
+					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
+				}else {
+					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="u";
+				}
 				yesfinallythefinalthingihope=yesfinallythefinalthingihope-1;
+				printMaze(examplemazegoeshere);
 			}else if(examplemazegoeshere[beingdone-1][yesfinallythefinalthingihope].equals(" ")||examplemazegoeshere[beingdone-1][yesfinallythefinalthingihope].equals("E")) {
-				examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="u";
+				if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope].equals("u")||examplemazegoeshere[beingdone][yesfinallythefinalthingihope].equals("r")) {
+					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
+				}else {
+					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="u";
+				}
 				beingdone=beingdone-1;
+				printMaze(examplemazegoeshere);
 			}else {
-				System.out.println("EBIC FAIL!");
 				if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope+1].equals("u")) {
 					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
 					yesfinallythefinalthingihope=yesfinallythefinalthingihope+1;
+					printMaze(examplemazegoeshere);
 				}else if(examplemazegoeshere[beingdone+1][yesfinallythefinalthingihope].equals("u")){
 					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
 					beingdone=beingdone+1;
+					printMaze(examplemazegoeshere);
 				}else if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope-1].equals("u")) {
 					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
 					yesfinallythefinalthingihope=yesfinallythefinalthingihope-1;
+					printMaze(examplemazegoeshere);
 				}else if(examplemazegoeshere[beingdone-1][yesfinallythefinalthingihope].equals("u")) {
 					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
 					beingdone=beingdone-1;
-				}else {
-					System.out.println("bruh moment");
-					if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope+1].equals("u")) {
-						examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
-						yesfinallythefinalthingihope=yesfinallythefinalthingihope+1;
-					}else if(examplemazegoeshere[beingdone+1][yesfinallythefinalthingihope].equals("u")){
-						examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
-						beingdone=beingdone+1;
-					}else if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope-1].equals("u")) {
-						examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
-						yesfinallythefinalthingihope=yesfinallythefinalthingihope-1;
-					}else if(examplemazegoeshere[beingdone-1][yesfinallythefinalthingihope].equals("u")) {
-						examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
-						beingdone=beingdone-1;
-					}else {
-						System.out.println("oof");
-					}
+					printMaze(examplemazegoeshere);
 				}
 			}
 
