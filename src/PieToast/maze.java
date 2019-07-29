@@ -48,7 +48,9 @@ public class maze {
 		System.out.println(beingdone+","+yesfinallythefinalthingihope);
 
 		boolean solved=false;
+		int theintthatmakesthejstaytwice=0;
 		while(solved==false) {
+
 			//	printMaze(examplemazegoeshere);
 			//	System.out.println(beingdone+","+yesfinallythefinalthingihope);
 			if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope+1].equals(" ")||examplemazegoeshere[beingdone][yesfinallythefinalthingihope+1].equals("E")) {
@@ -105,25 +107,28 @@ public class maze {
 					}
 				}
 			}
+			theintthatmakesthejstaytwice=theintthatmakesthejstaytwice+1;
 			String alinefromamazebutitsj[];
 			int thecurrentcolumnbutitsj=0;
 			int beingdonebutitsj = 0;
-			int yesfinallythefinalthingihopebutitsj = 0;
-			for(int lookingforj=0; lookingforj<examplemazegoeshere.length; lookingforj++){
-				String thelinefromthemazebutitsj="";
-				alinefromamazebutitsj=examplemazegoeshere[lookingforj];
-				for(int transferringalinebutitsj=0; transferringalinebutitsj<alinefromamazebutitsj.length; transferringalinebutitsj++) {
-					thelinefromthemazebutitsj=thelinefromthemazebutitsj+""+alinefromamazebutitsj[transferringalinebutitsj];
+			if(theintthatmakesthejstaytwice==2) {
+				int yesfinallythefinalthingihopebutitsj = 0;
+				for(int lookingforj=0; lookingforj<examplemazegoeshere.length; lookingforj++){
+					String thelinefromthemazebutitsj="";
+					alinefromamazebutitsj=examplemazegoeshere[lookingforj];
+					for(int transferringalinebutitsj=0; transferringalinebutitsj<alinefromamazebutitsj.length; transferringalinebutitsj++) {
+						thelinefromthemazebutitsj=thelinefromthemazebutitsj+""+alinefromamazebutitsj[transferringalinebutitsj];
 
+					}
+					if (thelinefromthemazebutitsj.contains("j")) {
+						thecurrentcolumnbutitsj=thelinefromthemazebutitsj.indexOf("j");
+						yesfinallythefinalthingihopebutitsj=thecurrentcolumnbutitsj;
+						beingdonebutitsj=lookingforj;
+					}
 				}
-				if (thelinefromthemazebutitsj.contains("j")) {
-					thecurrentcolumnbutitsj=thelinefromthemazebutitsj.indexOf("j");
-					yesfinallythefinalthingihopebutitsj=thecurrentcolumnbutitsj;
-					beingdonebutitsj=lookingforj;
-				}
+				examplemazegoeshere[beingdonebutitsj][yesfinallythefinalthingihopebutitsj]="u";
+				theintthatmakesthejstaytwice=0;
 			}
-			examplemazegoeshere[beingdonebutitsj][yesfinallythefinalthingihopebutitsj]="u";
-
 			if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope].equals("E")) {
 				System.out.println("e");
 				printMaze(examplemazegoeshere);
