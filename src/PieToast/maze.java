@@ -49,59 +49,80 @@ public class maze {
 
 		boolean solved=false;
 		while(solved==false) {
-		//	printMaze(examplemazegoeshere);
-		//	System.out.println(beingdone+","+yesfinallythefinalthingihope);
+			//	printMaze(examplemazegoeshere);
+			//	System.out.println(beingdone+","+yesfinallythefinalthingihope);
 			if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope+1].equals(" ")||examplemazegoeshere[beingdone][yesfinallythefinalthingihope+1].equals("E")) {
-				if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope].equals("u")||examplemazegoeshere[beingdone][yesfinallythefinalthingihope].equals("r")) {
-					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
-				}else {
-					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="u";
-				}
+				examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="j";
 				yesfinallythefinalthingihope=yesfinallythefinalthingihope+1;
 				printMaze(examplemazegoeshere);
 			}else if(examplemazegoeshere[beingdone+1][yesfinallythefinalthingihope].equals(" ")||examplemazegoeshere[beingdone+1][yesfinallythefinalthingihope].equals("E")){
-				if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope].equals("u")||examplemazegoeshere[beingdone][yesfinallythefinalthingihope].equals("r")) {
-					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
-				}else {
-					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="u";
-				}
+				examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="j";
 				beingdone=beingdone+1;
 				printMaze(examplemazegoeshere);
 			}else if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope-1].equals(" ")||examplemazegoeshere[beingdone][yesfinallythefinalthingihope-1].equals("E")) {
-				if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope].equals("u")||examplemazegoeshere[beingdone][yesfinallythefinalthingihope].equals("r")) {
-					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
-				}else {
-					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="u";
-				}
+				examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="j";
 				yesfinallythefinalthingihope=yesfinallythefinalthingihope-1;
 				printMaze(examplemazegoeshere);
 			}else if(examplemazegoeshere[beingdone-1][yesfinallythefinalthingihope].equals(" ")||examplemazegoeshere[beingdone-1][yesfinallythefinalthingihope].equals("E")) {
-				if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope].equals("u")||examplemazegoeshere[beingdone][yesfinallythefinalthingihope].equals("r")) {
-					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
-				}else {
-					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="u";
-				}
+				examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="j";
+
 				beingdone=beingdone-1;
 				printMaze(examplemazegoeshere);
 			}else {
-				if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope+1].equals("u")) {
+				if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope+1].equals("j")) {
 					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
 					yesfinallythefinalthingihope=yesfinallythefinalthingihope+1;
 					printMaze(examplemazegoeshere);
-				}else if(examplemazegoeshere[beingdone+1][yesfinallythefinalthingihope].equals("u")){
+				}else if(examplemazegoeshere[beingdone+1][yesfinallythefinalthingihope].equals("j")){
 					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
 					beingdone=beingdone+1;
 					printMaze(examplemazegoeshere);
-				}else if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope-1].equals("u")) {
+				}else if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope-1].equals("j")) {
 					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
 					yesfinallythefinalthingihope=yesfinallythefinalthingihope-1;
 					printMaze(examplemazegoeshere);
-				}else if(examplemazegoeshere[beingdone-1][yesfinallythefinalthingihope].equals("u")) {
+				}else if(examplemazegoeshere[beingdone-1][yesfinallythefinalthingihope].equals("j")) {
 					examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
 					beingdone=beingdone-1;
 					printMaze(examplemazegoeshere);
+				}else {
+					if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope+1].equals("u")) {
+						examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
+						yesfinallythefinalthingihope=yesfinallythefinalthingihope+1;
+						printMaze(examplemazegoeshere);
+					}else if(examplemazegoeshere[beingdone+1][yesfinallythefinalthingihope].equals("u")){
+						examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
+						beingdone=beingdone+1;
+						printMaze(examplemazegoeshere);
+					}else if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope-1].equals("u")) {
+						examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
+						yesfinallythefinalthingihope=yesfinallythefinalthingihope-1;
+						printMaze(examplemazegoeshere);
+					}else if(examplemazegoeshere[beingdone-1][yesfinallythefinalthingihope].equals("u")) {
+						examplemazegoeshere[beingdone][yesfinallythefinalthingihope]="r";
+						beingdone=beingdone-1;
+						printMaze(examplemazegoeshere);
+					}
 				}
 			}
+			String alinefromamazebutitsj[];
+			int thecurrentcolumnbutitsj=0;
+			int beingdonebutitsj = 0;
+			int yesfinallythefinalthingihopebutitsj = 0;
+			for(int lookingforj=0; lookingforj<examplemazegoeshere.length; lookingforj++){
+				String thelinefromthemazebutitsj="";
+				alinefromamazebutitsj=examplemazegoeshere[lookingforj];
+				for(int transferringalinebutitsj=0; transferringalinebutitsj<alinefromamazebutitsj.length; transferringalinebutitsj++) {
+					thelinefromthemazebutitsj=thelinefromthemazebutitsj+""+alinefromamazebutitsj[transferringalinebutitsj];
+
+				}
+				if (thelinefromthemazebutitsj.contains("j")) {
+					thecurrentcolumnbutitsj=thelinefromthemazebutitsj.indexOf("j");
+					yesfinallythefinalthingihopebutitsj=thecurrentcolumnbutitsj;
+					beingdonebutitsj=lookingforj;
+				}
+			}
+			examplemazegoeshere[beingdonebutitsj][yesfinallythefinalthingihopebutitsj]="u";
 
 			if(examplemazegoeshere[beingdone][yesfinallythefinalthingihope].equals("E")) {
 				System.out.println("e");
