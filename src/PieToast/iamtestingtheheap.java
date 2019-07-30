@@ -10,7 +10,11 @@ public class iamtestingtheheap {
 			hehe.insert(3);
 			hehe.insert(4);
 			hehe.insert(5);
+			hehe.insert(49);
+			hehe.insert(24);
+			hehe.insert(589);
 			hehe.minheapifier();
+			hehe.remove();
 			hehe.print();
 	}
 

@@ -8,6 +8,7 @@ public class heaps {
 		this.currentsize=0;
 		this.maxsize=maxsize;
 		heap=new int [this.maxsize+1];
+		heap[0]=Integer.MIN_VALUE;
 	}
 	public int getparent (int pos) {
 		return pos/2;
@@ -19,7 +20,7 @@ public class heaps {
 		return pos*2+1;
 	}
 	public boolean isitaleaf(int pos) {
-		if(pos>=currentsize/2 && pos<currentsize) {
+		if(pos>=currentsize/2 && pos<=currentsize) {
 			return true;
 		}else {
 			return false;
@@ -60,9 +61,15 @@ public class heaps {
 			tempcurrentsize=getparent(tempcurrentsize);
 		}
 	}
+	public int remove() {
+		int tempremoved=heap[1];
+		heap[1]=heap[currentsize--];
+		heapifier(1);
+		return tempremoved;
+	}
 	public void print() {
-		for(int upwards=0; upwards<currentsize/2; upwards++) {
-			System.out.println(heap[getparent(upwards)]+" "+heap[getchildl(upwards)]+" "+heap[(getchildr(upwards))]);
+		for(int upwards=1; upwards<=currentsize/2; upwards++) {
+			System.out.println(heap[upwards]+" "+heap[upwards*2]+" "+heap[(upwards*2)+1]);
 		}
 	}
 }
