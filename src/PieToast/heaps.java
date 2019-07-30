@@ -7,16 +7,16 @@ public class heaps {
 	public heaps(int maxsize) {
 		this.currentsize=0;
 		this.maxsize=maxsize;
-		heap=new int [this.maxsize];
+		heap=new int [this.maxsize+1];
 	}
 	public int getparent (int pos) {
 		return pos/2;
 	}
 	public int getchildl (int pos) {
-		return pos*2+ 1;
+		return pos*2;
 	}
 	public int getchildr(int pos) {
-		return pos*2+2;
+		return pos*2+1;
 	}
 	public boolean isitaleaf(int pos) {
 		if(pos>=currentsize/2 && pos<currentsize) {
@@ -34,11 +34,35 @@ public class heaps {
 		if(isitaleaf(pos)==false){
 			if(heap[getchildl(pos)]<heap[pos] || heap[getchildr(pos)]<heap[pos]) {
 				if(heap[getchildl(pos)]>heap[getchildr(pos)]) {
-				swap(pos, getchildr(pos));
+					swap(pos, getchildr(pos));
+					heapifier(getchildr(pos));
 				}else {
 					swap(pos,getchildl(pos));
+					heapifier(getchildl(pos));
 				}
 			}
+		}
+	}
+	public void minheapifier() {
+		for(int downwards=currentsize/2; downwards>0; downwards--) {
+			heapifier(downwards);
+		}
+	}
+
+	public void insert(int value) {
+		if(currentsize>=maxsize) {
+			return;
+		}
+		heap[++currentsize]=value;
+		int tempcurrentsize=currentsize;
+		while(heap[tempcurrentsize]<heap[getparent(tempcurrentsize)]) {
+			swap(tempcurrentsize, getparent(tempcurrentsize));
+			tempcurrentsize=getparent(tempcurrentsize);
+		}
+	}
+	public void print() {
+		for(int upwards=0; upwards<currentsize/2; upwards++) {
+			System.out.println(heap[getparent(upwards)]+" "+heap[getchildl(upwards)]+" "+heap[(getchildr(upwards))]);
 		}
 	}
 }
