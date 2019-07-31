@@ -1,17 +1,18 @@
 package PieToast;
-
+import java.util.ArrayList;
 public class adjacencylist {
-	public int [][]adjacencylist;
+	public ArrayList<Integer>[] adjacencylist;
 	public adjacencylist (int size) {
-		this.adjacencylist=new int[size][size];
+		this.adjacencylist=new ArrayList[size];
 	}
 	public void adder(int sauce, int destination, int cost) {
-		adjacencylist[sauce][destination]=cost;
-		adjacencylist[destination][sauce]=cost;
+		adjacencylist[sauce].add(destination);
+		adjacencylist[destination].add(sauce);
 	}
-/*	public void printcost() {
+	
+	public void printcost() {
 		for(int sizecounter=0; sizecounter<adjacencylist.length; sizecounter++) {
-			System.out.print(adjacencylist[size]+" ");
+			System.out.print(adjacencylist[sizecounter]);
 		}
-	}*/
+	}
 }
