@@ -4,8 +4,8 @@ import java.util.Random;
 
 public class ree {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		public static void main(String[] args) {
+			// TODO Auto-generated method stub
 		while(1<2) {
 			for(int E=0; E<3; E++) {
 				for (int EEEE=0; EEEE<100; EEEE++){
