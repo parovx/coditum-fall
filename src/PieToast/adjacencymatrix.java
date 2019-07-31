@@ -26,4 +26,14 @@ public class adjacencymatrix {
 		}
 		return false;
 	}
+	public void addcolumn(int more) {
+		int [][]newarray;
+		newarray=new int [more+adjacencyarray.length][more+adjacencyarray.length];
+		for(int rowcounter=0; rowcounter<adjacencyarray.length; rowcounter++) {
+			for(int columncounter=0; columncounter<adjacencyarray.length; columncounter++) {
+				newarray[rowcounter][columncounter]=adjacencyarray[rowcounter][columncounter];
+			}
+		}
+		adjacencyarray=newarray;
+	}
 }
