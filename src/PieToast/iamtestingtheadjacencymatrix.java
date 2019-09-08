@@ -20,11 +20,16 @@ public class iamtestingtheadjacencymatrix {
 		am.addedge(3, 1, 3);
 		am.addedge(3, 3, 2);
 		am.addedge(4, 4, 4);
-		am.printmatrix();
-		System.out.println();
+		am.addedge(2, 2, 3);
+		am.addedge(0, 0, 1);
+		am.addedge(0, 2, 3);
+		am.addedge(0, 4, 3);
+		am.addedge(1, 4, 2);
+		am.addedge(0, 3, 4);
 		am.printmatrix();
 		System.out.println();
 		System.out.println(am.dijkstracalc(0));
+		am.printmatrix();
 	}
 
 }

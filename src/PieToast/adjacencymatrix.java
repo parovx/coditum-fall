@@ -56,19 +56,35 @@ public class adjacencymatrix {
 			distances[chek]=Integer.MAX_VALUE;
 		}
 		distances[sauce]=0;
-		for(int sheccloop1=0; sheccloop1<size; sheccloop1++) {
-			int minvertex=getminimumvertex(checkingboolean, distances);
-			checkingboolean[minvertex]=true;
-			for(int sheccloop2=0; sheccloop2<size; sheccloop2++) {
-				if(adjacencyarray[minvertex][sheccloop2]>0) {
-					if(checkingboolean[sheccloop2]==false && adjacencyarray[minvertex][sheccloop1]!=Integer.MAX_VALUE) {
-						int newminimum=distances[minvertex]+adjacencyarray[minvertex][sheccloop2];
-						if(distances[sheccloop2]<newminimum) {
-							distances[sheccloop2]=newminimum;
+		int destination=adjacencyarray[size-1][size-1];
+		while(destination!=9){
+			for(int sheccloop1=0; sheccloop1<Integer.MAX_VALUE; sheccloop1++) {
+				int minvertex=getminimumvertex(checkingboolean, distances);
+				checkingboolean[minvertex]=true;
+				for(int sheccloop2=0; sheccloop2<Integer.MAX_VALUE; sheccloop2++) {
+					if(adjacencyarray[minvertex][sheccloop2]>0) {
+						if(checkingboolean[sheccloop2]==false && adjacencyarray[minvertex][sheccloop1]!=Integer.MAX_VALUE) {
+							int newminimum=distances[minvertex]+adjacencyarray[minvertex][sheccloop2];
+							if(distances[sheccloop2]==destination){
+								distances[sheccloop2]=newminimum;
+							}else if(distances[sheccloop2]>newminimum) {
+								System.out.print(minvertex+" ");
+								System.out.print(sheccloop2+" ");
+								System.out.println(adjacencyarray[minvertex][sheccloop2]);
+								distances[sheccloop2]=newminimum;
+								adjacencyarray[minvertex][sheccloop2]=9;
+								for(int rowcounter=0; rowcounter<adjacencyarray.length; rowcounter++) {
+									for(int columncounter=0; columncounter<adjacencyarray.length; columncounter++) {
+										System.out.print(adjacencyarray[rowcounter][columncounter]+" ");
+									}
+									System.out.println();
+								}
+								System.out.println();
+							}
 						}
 					}
-				}
 
+				}
 			}
 		}
 		return distances[size-1];
