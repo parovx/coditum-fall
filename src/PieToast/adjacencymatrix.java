@@ -53,17 +53,17 @@ public class adjacencymatrix {
 		boolean[] checkingboolean= new boolean[size];
 		int[] distances=new int [size];
 		for(int chek=0; chek<size; chek++) {
-			distances[chek]=Integer.MAX_VALUE;
+			distances[chek]=5;
 		}
 		distances[sauce]=0;
 		int destination=adjacencyarray[size-1][size-1];
 		while(destination!=9){
-			for(int sheccloop1=0; sheccloop1<Integer.MAX_VALUE; sheccloop1++) {
+			for(int sheccloop1=0; sheccloop1<5; sheccloop1++) {
 				int minvertex=getminimumvertex(checkingboolean, distances);
 				checkingboolean[minvertex]=true;
-				for(int sheccloop2=0; sheccloop2<Integer.MAX_VALUE; sheccloop2++) {
+				for(int sheccloop2=0; sheccloop2<5; sheccloop2++) {
 					if(adjacencyarray[minvertex][sheccloop2]>0) {
-						if(checkingboolean[sheccloop2]==false && adjacencyarray[minvertex][sheccloop1]!=Integer.MAX_VALUE) {
+						if(checkingboolean[sheccloop2]==false && adjacencyarray[minvertex][sheccloop1]!=5) {
 							int newminimum=distances[minvertex]+adjacencyarray[minvertex][sheccloop2];
 							if(distances[sheccloop2]==destination){
 								distances[sheccloop2]=newminimum;
