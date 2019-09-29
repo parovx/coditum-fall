@@ -28,6 +28,7 @@ public class iamtestingtheadjacencymatrix {
 		am.addedge(0, 3, 4);
 		am.printmatrix();
 		System.out.println();
+		System.out.println(am.minspanningtree(0));
 	}
 
 }

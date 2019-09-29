@@ -25,9 +25,9 @@ public class objecc<T> {
 		keys[temp].add(key);
 		objects[temp].add(value);
 	}
-	public T get(String key){
+	/*public T get(String key){
 		int index=Hash(key);
 		int windex=keys[index].indexOf(key);
 		get(key.indexOf(objects));
-		}
+		}*/
 }

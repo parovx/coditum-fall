@@ -100,7 +100,6 @@ public class adjacencymatrix {
 			int minvertex=getminimumvertex(checkingboolean, distances);
 			checkingboolean[minvertex]=true;
 			for(int sheccloop2=0; sheccloop2<5; sheccloop2++) {
-				
 				theaddeddistances=theaddeddistances+getcost(source, sheccloop2);
 			}
 		}
