@@ -25,4 +25,5 @@ public class adjacencylist {
 			System.out.println();
 		}
 	}
+	 
 }
