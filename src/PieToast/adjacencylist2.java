@@ -12,12 +12,28 @@ public class adjacencylist2 {
 			lists[unnulling]= new LinkedList<adjacencylist2node>();
 		}
 	}
-
-	public void add(int Source, int dest, int cost){
-		adjacencylist2node addednode = new adjacencylist2node (1,1);
-		lists[Source].add(addednode);
+	public void print(){
+		for(int othersizecounter=0; othersizecounter<lists.length; othersizecounter++) {
+			System.out.print(othersizecounter+":  ");
+			for(int sizecounter=0; sizecounter<lists[othersizecounter].size(); sizecounter++) {
+				System.out.print(lists[othersizecounter].get(sizecounter).getD()+", ");
+				//System.out.print(lists[othersizecounter].get(sizecounter).toString());
+			}
+			System.out.println();
+		}
 	}
-	public int dijkstracalc(int Source, int dest) {
+	public void add(int Source, int dest, int cost){
+		adjacencylist2node addednode = new adjacencylist2node (dest,cost);
+		adjacencylist2node swapnode = new adjacencylist2node(Source, cost);
+		if(Source==dest || lists[Source].contains(addednode) || lists[dest].contains(swapnode)){
+			System.out.println("f");
+			return;
+		}else{
+			lists[Source].add(addednode);
+			lists[dest].add(swapnode);
+		}
+	}
+	/*	public int dijkstracalc(int Source, int dest) {
 		boolean[] checkingboolean= new boolean[lists.length];
 		int[] distances=new int [lists.length];
 
@@ -55,7 +71,8 @@ public class adjacencylist2 {
 		}
 		return distances[length-1];
 	}
-	public int getminv(int)
-		
-	}
+	public int getminv(int ){
+
+
+	}*/
 }

@@ -16,4 +16,11 @@ public class adjacencylist2node {
 	public void setC(int newC){
 		Cost=newC;
 	}
+	public boolean equals(adjacencylist2node doesitequal){
+		if(this.Dest==doesitequal.getD()){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }
