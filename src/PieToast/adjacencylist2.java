@@ -25,7 +25,7 @@ public class adjacencylist2 {
 	public void add(int Source, int dest, int cost){
 		adjacencylist2node addednode = new adjacencylist2node (dest,cost);
 		adjacencylist2node swapnode = new adjacencylist2node(Source, cost);
-		if(Source==dest || lists[Source].contains(addednode) || lists[dest].contains(swapnode)){
+		if(Source==dest || lists[Source].contains(addednode) || lists[dest].contains(swapnode) || addednode==swapnode){
 			System.out.println("f");
 			return;
 		}else{
