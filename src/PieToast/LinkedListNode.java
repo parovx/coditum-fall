@@ -1,19 +1,19 @@
 package PieToast;
 
 public class LinkedListNode <E>{
-	private Object Value;
-	private LinkedListNode next;
-	public LinkedListNode (Object W, LinkedListNode txen) {
+	private E Value;
+	private LinkedListNode <E> next;
+	public LinkedListNode (E W, LinkedListNode <E> txen) {
 		Value=W;
 		next=txen;
 	}
-	public Object getValue() {
+	public E getValue() {
 		return Value;
 	}
-	public LinkedListNode getNext() {
+	public LinkedListNode <E> getNext() {
 		return next;
 	}
-	public void setNext(LinkedListNode l) {
+	public void setNext(LinkedListNode <E> l) {
 		next=l;
 	}
 }

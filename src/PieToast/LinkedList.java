@@ -17,13 +17,13 @@ public class LinkedList<E> /*extends AbstractList<E>*/{
 		// TODO Auto-generated method stub
 		Size++;
 		if(head==null) {
-			head= new LinkedListNode(e, null);
+			head= new LinkedListNode<E>(e, null);
 		}else {
-			LinkedListNode add=head;
+			LinkedListNode<E> add=head;
 			while(add.getNext() != null) {
 				add=add.getNext();
 			}
-			add.setNext(new LinkedListNode(e, null));
+			add.setNext(new LinkedListNode<E>(e, null));
 		}
 		return false;
 	}
@@ -32,20 +32,20 @@ public class LinkedList<E> /*extends AbstractList<E>*/{
 		// TODO Auto-generated method stub
 		Size++;
 		if(index==0) {
-			LinkedListNode newHead = new LinkedListNode(element, head);
+			LinkedListNode<E> newHead = new LinkedListNode<E>(element, head);
 			head=newHead;
 		}else {
-			LinkedListNode get=head;
+			LinkedListNode<E> get=head;
 			for (int getLoop=1; getLoop<index; getLoop++) {
 				get=get.getNext();
 			}
-			LinkedListNode a= get.getNext();
-			get.setNext(new LinkedListNode(element, a));
+			LinkedListNode<E> a= get.getNext();
+			get.setNext(new LinkedListNode<E>(element, a));
 		}
 	}
 
 	
-	public boolean addAll(Collection c) {
+	public boolean addAll(Collection<?> c) {
 		// TODO Auto-generated method stub
 		for(Object tcejbo : c) {
 			add((E) tcejbo);
@@ -54,7 +54,7 @@ public class LinkedList<E> /*extends AbstractList<E>*/{
 	}
 
 	
-	public boolean addAll(int index, Collection c) {
+	public boolean addAll(int index, Collection<?> c) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -71,15 +71,15 @@ public class LinkedList<E> /*extends AbstractList<E>*/{
 	}
 
 	
-	public boolean containsAll(Collection c) {
+	public boolean containsAll(Collection<?> c) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	
-	public E get(int index) {
+	public E get(int index) throws NullPointerException{
 		// TODO Auto-generated method stub
-		LinkedListNode get=head;
+		LinkedListNode<E> get=head;
 		for (int getLoop=0; getLoop<index; getLoop++) {
 			get=get.getNext();
 		}
@@ -89,7 +89,7 @@ public class LinkedList<E> /*extends AbstractList<E>*/{
 	
 	public int indexOf(E e) {
 		// TODO Auto-generated method stub
-		LinkedListNode indexOf=head;
+		LinkedListNode <E> indexOf=head;
 		for(int iO=0; iO<Size; iO++) {
 			if(indexOf.getValue().equals(e)) {
 				return iO;
@@ -106,7 +106,7 @@ public class LinkedList<E> /*extends AbstractList<E>*/{
 	}
 
 	
-	public Iterator iterator() {
+	public Iterator<?> iterator() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -114,13 +114,13 @@ public class LinkedList<E> /*extends AbstractList<E>*/{
 	
 
 	
-	public ListIterator listIterator() {
+	public ListIterator<?> listIterator() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	
-	public ListIterator listIterator(int index) {
+	public ListIterator<?> listIterator(int index) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -133,11 +133,11 @@ public class LinkedList<E> /*extends AbstractList<E>*/{
 		if(index==0) {
 			head=head.getNext();
 		}else {
-		LinkedListNode remove=head;
+		LinkedListNode<E> remove=head;
 		for (int removeLoop=1; removeLoop<index; removeLoop++) {
 			remove=remove.getNext();
 		}
-		LinkedListNode a= remove.getNext().getNext();
+		LinkedListNode<E> a= remove.getNext().getNext();
 		remove.setNext(a);
 		}
 		return null;
@@ -145,13 +145,13 @@ public class LinkedList<E> /*extends AbstractList<E>*/{
 	}
 
 	
-	public boolean removeAll(Collection c) {
+	public boolean removeAll(Collection<?> c) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	
-	public boolean retainAll(Collection c) {
+	public boolean retainAll(Collection<?> c) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -169,7 +169,7 @@ public class LinkedList<E> /*extends AbstractList<E>*/{
 	}
 
 	
-	public List subList(int fromIndex, int toIndex) {
+	public List<?> subList(int fromIndex, int toIndex) {
 		// TODO Auto-generated method stub
 		return null;
 	}

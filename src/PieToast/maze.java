@@ -8,7 +8,7 @@ public class maze {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
-		Scanner scan = new Scanner(new File("C:\\Users\\User\\git\\coditum-fall\\src\\PieToast\\themaze"));
+		Scanner scan = new Scanner(new File("C:/Users/user/coditum/git/coditum-fall/src/PieToast/theemaze"));
 		String isthisthemaze[][]=new String[scan.nextInt()][scan.nextInt()];
 		String line=scan.nextLine();
 		System.out.println(line);

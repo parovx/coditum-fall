@@ -1,13 +1,10 @@
 package PieToast;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-
 public class adjacencylist2 {
 
 	public LinkedList<adjacencylist2node>[] lists;
 	public adjacencylist2(int size){
-		this.lists= new LinkedList[size];
+		this.lists= new LinkedList [size];
 		for(int unnulling=0; unnulling<size; unnulling++){
 			lists[unnulling]= new LinkedList<adjacencylist2node>();
 		}
@@ -22,13 +19,21 @@ public class adjacencylist2 {
 			System.out.println();
 		}
 	}
-	public void add(int Source, int dest, int cost){
+	public void add(int Source, int dest, int cost) throws NullPointerException{
 		adjacencylist2node addednode = new adjacencylist2node (dest,cost);
 		adjacencylist2node swapnode = new adjacencylist2node(Source, cost);
-		if(Source==dest || lists[Source].contains(addednode) || lists[dest].contains(swapnode) || addednode==swapnode){
-			System.out.println("f");
-			return;
-		}else{
+		try{
+			if(Source==dest || lists[Source].get(dest).getC()==0 || addednode.getC()==dest || swapnode.getD()==cost || lists[dest].contains(swapnode) || addednode==swapnode){
+				System.out.println("f");
+				return;
+			}else{
+				System.out.println("e");
+				lists[Source].add(addednode);
+				lists[dest].add(swapnode);
+			}
+		}
+		catch (NullPointerException E){
+			System.out.println("e");
 			lists[Source].add(addednode);
 			lists[dest].add(swapnode);
 		}
