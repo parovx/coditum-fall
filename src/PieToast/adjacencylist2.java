@@ -22,16 +22,28 @@ public class adjacencylist2 {
 	public void add(int Source, int dest, int cost) throws NullPointerException{
 		adjacencylist2node addednode = new adjacencylist2node (dest,cost);
 		adjacencylist2node swapnode = new adjacencylist2node(Source, cost);
-		try {if(Source==dest || lists[Source].get(dest)==addednode || addednode.getD()==Source || swapnode.getD()==dest || lists[dest].contains(swapnode) || addednode==swapnode){
-			System.out.println("f");
+		try{System.out.println(lists[Source].get(dest).Dest);
+		}catch (NullPointerException e){
+			
+		}
+		try {if((lists[Source].get(dest)==addednode)){
+			System.out.println("the try f");
 			return;
 		}else{
-			System.out.println("e");
+			System.out.println("the try e");
 			lists[Source].add(addednode);
 			lists[dest].add(swapnode);
 		}
 		}catch(NullPointerException e){
-			System.out.println("e");
+			System.out.println("catch e");
+			lists[Source].add(addednode);
+			lists[dest].add(swapnode);
+		}
+		if(Source==dest ||  addednode.getD()==Source || swapnode.getD()==dest || lists[dest].contains(swapnode) || addednode==swapnode){
+			System.out.println("the big f");
+			return;
+		}else{
+			System.out.println("the big e");
 			lists[Source].add(addednode);
 			lists[dest].add(swapnode);
 		}

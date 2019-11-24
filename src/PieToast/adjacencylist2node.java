@@ -1,8 +1,8 @@
 package PieToast;
 
 public class adjacencylist2node {
-	private int Dest;
-	private int Cost;
+	public int Dest;
+	public int Cost;
 	public adjacencylist2node(int destination, int val){
 		Dest=destination;
 		Cost=val;
