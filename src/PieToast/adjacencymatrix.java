@@ -86,6 +86,46 @@ public class adjacencymatrix {
 		}
 		return distances[size-1];
 	}
+	public boolean dfs(int sp, int ep){
+		int[][] temp=this.adjacencyarray;
+		if(sp>=size){
+			return false;
+		}
+		if(ep>=size){
+			return false;
+		}
+		if(!(temp[sp][ep]==0)){
+			return true;
+		}
+		int rowcheckfor0;
+		int columncheckfor0;
+		while(dfs(sp, sp)==false){
+			for(rowcheckfor0=0; rowcheckfor0<size; rowcheckfor0++){
+				if(temp[rowcheckfor0][sp]==0){
+					continue;
+					
+				}else{
+					sp=rowcheckfor0;
+					break;
+				}
+			}
+			if(!(temp[sp][ep]==0)){
+				return true;
+			}
+			for(columncheckfor0=0; columncheckfor0<size; columncheckfor0++){
+				if(temp[sp][columncheckfor0]==0){
+					continue;
+				}else{
+					sp=columncheckfor0;
+					break;
+				}
+			}
+			if(!(temp[sp][ep]==0)){
+				return true;
+			}
+		}
+		return false;
+	}
 
 	public int minspanningtree(int source){
 		int theaddeddistances=0;
