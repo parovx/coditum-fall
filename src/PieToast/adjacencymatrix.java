@@ -99,12 +99,14 @@ public class adjacencymatrix {
 		}
 		int rowcheckfor0;
 		int columncheckfor0;
-		while(dfs(sp, sp)==false){
+		boolean not=false;
+		while(not==false){
 			for(rowcheckfor0=0; rowcheckfor0<size; rowcheckfor0++){
 				if(temp[rowcheckfor0][sp]==0){
 					continue;
-					
+
 				}else{
+					adjacencyarray[rowcheckfor0][sp]=-1;
 					sp=rowcheckfor0;
 					break;
 				}
@@ -116,13 +118,17 @@ public class adjacencymatrix {
 				if(temp[sp][columncheckfor0]==0){
 					continue;
 				}else{
-					sp=columncheckfor0;
+					adjacencyarray[sp][columncheckfor0]=-1;
+					sp=columncheckfor0; 
 					break;
 				}
+				
 			}
 			if(!(temp[sp][ep]==0)){
 				return true;
 			}
+			return false;
+			
 		}
 		return false;
 	}
