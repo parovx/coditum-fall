@@ -49,7 +49,7 @@ public class gameoflife {
 		for(int killer=0; killer<10; killer++) {
 			for(int killer1=0; killer1<10; killer1++) {
 				if(board[killer][killer1]==1) {
-					for(int circler=0; circler<)
+					//for(int circler=0; circler<)
 				}
 			}
 		}
