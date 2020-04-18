@@ -22,6 +22,7 @@ public class gameoflife {
 			System.out.println("Enter a cell y coordinate");
 			int ycoord=scan.nextInt();
 			board[xcoord][ycoord]=1;
+			printboard();
 			System.out.println("Would you like to add another live cell? (yes or no)");
 			String cellyn=scan.next();
 			if(cellyn.contentEquals("no")) {
@@ -29,7 +30,7 @@ public class gameoflife {
 			}else {
 				game=0;
 			}
-			printboard();
+
 		}
 		game(10, 0);
 	}
@@ -53,32 +54,33 @@ public class gameoflife {
 					tempboard[boardtotemp1][boardtotemp2]=board[boardtotemp1][boardtotemp2];
 				}
 			}
-			for(int maker1=0; maker1<10; maker1++) {
-				for(int maker2=0; maker2<10; maker2++) {
+			for(int neighborcheck1=0; neighborcheck1<10; neighborcheck1++) {
+				for(int neighborcheck2=0; neighborcheck2<10; neighborcheck2++) {
 					int neighbors=0;
 					for(int circler1=-1; circler1<2; circler1++) {
 						for(int circler2=-1; circler2<2; circler2++) {
-							if((maker1+circler1>0 && maker1+circler1<10) && (maker2+circler2>0 && maker2+circler2<10) && board[maker1+circler1][maker2+circler2]==(1)) {
+							if((neighborcheck1+circler1>-1 && neighborcheck1+circler1<10) && (neighborcheck2+circler2>-1 && neighborcheck2+circler2<10) && board[neighborcheck1+circler1][neighborcheck2+circler2]==(1)) {
 								neighbors++;
 							}
 						}
 					}
-					if(board[maker1][maker2]==0) {
+					if(board[neighborcheck1][neighborcheck2]==0) {
 						if(neighbors==3) {
-							tempboard[maker1][maker2]=1;
+							tempboard[neighborcheck1][neighborcheck2]=1;
 						}
 					}else{
 						neighbors--;
-						if(neighbors<2 || neighbors>4) {
-							tempboard[maker1][maker2]=0;
+						if(neighbors<2 || neighbors>3) {
+							tempboard[neighborcheck1][neighborcheck2]=0;
 						}
 					}
 
 				}
-				board=tempboard;
-				printboard();
-				game(capacity, gen+1);
 			}
+			board=tempboard;
+			printboard();
+				game(capacity, gen+1);
+
 		}
 	}
 }

@@ -11,7 +11,7 @@ public class iamtestingtheadjacencymatrix {
 		am.addedge(3, 1, 3);
 		am.printmatrix();
 		System.out.println();
-		System.out.println(am.dfs(2, 4));
+		System.out.println(am.checkforconnection(2, 4));
 		am.printmatrix();
 	}
 
