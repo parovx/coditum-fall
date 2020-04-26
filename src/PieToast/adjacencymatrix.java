@@ -1,6 +1,9 @@
 package PieToast;
 
-
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 public class adjacencymatrix {
 	public int [][]adjacencyarray;
@@ -29,6 +32,15 @@ public class adjacencymatrix {
 			return true;
 		}
 		return false;
+	}
+	public ArrayList getconnection(int checked) {
+		ArrayList neighbors=new ArrayList();
+		for(int y=0; y<size; y++) {
+			if(checkforconnection(checked, y)==true) {
+				neighbors.add(getcost(checked, y));
+			}
+		}
+		return neighbors;
 	}
 	public void addcolumn(int more) {
 		int [][]newarray;
@@ -122,15 +134,41 @@ public class adjacencymatrix {
 					sp=columncheckfor0; 
 					break;
 				}
-				
+
 			}
 			if(!(temp[sp][ep]==0)){
 				return true;
 			}
 			return false;
-			
+
 		}
 		return false;
+	}
+
+	public boolean bfs(int s, int e) {
+		int[][]temp=this.adjacencyarray;
+		if(s>=size){
+			return false;
+		}
+		if(e>=size){
+			return false;
+		}
+		if(!(temp[s][e]==0)){
+			return true;
+		}
+		Queue queue = new LinkedList();
+		queue.add(s);
+		queue.addAll(getconnection(s));
+		queue.remove(s);
+		if(queue.size()==0) {
+			return false;
+		}
+		if(queue.contains(e)) {
+			return true;
+		}else {
+			//queue.
+		}
+		
 	}
 
 	public int minspanningtree(int source){
