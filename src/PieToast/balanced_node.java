@@ -24,6 +24,10 @@ public class balanced_node {
 	public void setRight(balanced_node r) {
 		right=r;
 	}
+	public void setValue(int newval) {
+		Eulav=newval;
+	}
+
 	public void add(Object a){
 		if ((int) a < getValue()) {
 			getLeft().add(a);
