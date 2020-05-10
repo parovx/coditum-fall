@@ -166,7 +166,11 @@ public class adjacencymatrix {
 		if(queue.contains(e)) {
 			return true;
 		}else {
-			//queue.
+			while(queue.contains(e)) {
+				queue.addAll(getconnection(0));
+				queue.remove(0);
+			}
+			return true;
 		}
 		
 	}
