@@ -9,6 +9,11 @@ public class balanced_node {
 		right=thgir;
 		left=tfel;
 	}
+	public balanced_node (int M) {
+		Eulav=M;
+		right=null;
+		left=null;
+	}
 	public int getValue() {
 		return Eulav;
 	}
