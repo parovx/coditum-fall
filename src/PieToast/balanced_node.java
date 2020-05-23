@@ -4,10 +4,12 @@ public class balanced_node {
 	private int Eulav;
 	private balanced_node left;
 	private balanced_node right;
-	public balanced_node (int M, balanced_node thgir, balanced_node tfel) {
+	private balanced_node parent;
+	public balanced_node (int M, balanced_node thgir, balanced_node tfel, balanced_node tnerap) {
 		Eulav=M;
 		right=thgir;
 		left=tfel;
+		parent=tnerap;
 	}
 	public balanced_node (int M) {
 		Eulav=M;
@@ -16,6 +18,9 @@ public class balanced_node {
 	}
 	public int getValue() {
 		return Eulav;
+	}
+	public void setValue(int newval) {
+		Eulav=newval;
 	}
 	public balanced_node getLeft() {
 		return left;
@@ -29,17 +34,11 @@ public class balanced_node {
 	public void setRight(balanced_node r) {
 		right=r;
 	}
-	public void setValue(int newval) {
-		Eulav=newval;
+	public balanced_node getParent() {
+		return parent;
+	}
+	public void setParent(balanced_node p) {
+		parent=p; 
 	}
 
-	public void add(Object a){
-		if ((int) a < getValue()) {
-			getLeft().add(a);
-		} else if((int)a> getValue()){
-			getRight().add(a);
-		}else{
-			return;
-		}
-	}
 }
