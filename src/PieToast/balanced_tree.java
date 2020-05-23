@@ -7,17 +7,17 @@ public class balanced_tree {
 
 	}
 	public static balanced_node right(balanced_node R) {
-		balanced_node thetemp1=R.getLeft();
-		thetemp1.setRight(R);
-		R.setLeft(null);
-		return thetemp1;
+		balanced_node templ=R.getLeft();
+		R.setLeft(templ.getRight());
+		templ.setRight(R);
+		return templ;
 	}
 
 	public static balanced_node left(balanced_node L) {
-		balanced_node thetemp1=L.getRight();
-		thetemp1.setRight(L);
-		L.setRight(null);
-		return thetemp1;
+		balanced_node tempr=L.getRight();
+		L.setRight(tempr.getLeft());
+		tempr.setLeft(L);
+		return tempr;
 	}
 
 	public static balanced_node rightleft(balanced_node RL) {
@@ -43,16 +43,16 @@ public class balanced_tree {
 	public static void balance(balanced_node C) {
 		if(C.getRight()==null && C.getLeft()!=null) {
 			if(C.getLeft().getLeft()==null && C.getLeft().getRight()!=null) {
-				leftright(C);
+			//	C=leftright(C);
 			}else if(C.getLeft().getLeft()!=null && C.getLeft().getRight()==null){
-				left(C);
+				C=left(C);
 			}
 		}
 		if(C.getRight()!=null && C.getLeft()==null) {
 			if(C.getRight().getRight()==null && C.getRight().getLeft()!=null){
-				rightleft(C);
+			//	C=rightleft(C);
 			}else if(C.getRight().getRight()!=null && C.getRight().getLeft()==null) {
-				right(C);
+				C=right(C);
 			}
 		}
 	}
@@ -63,16 +63,18 @@ public class balanced_tree {
 		}else{
 			balanced_node temp=head;
 			balanced_node parent=null;
-			while(temp.getValue()!=n) {
+			while(true) {
+				sidewaysprint(head, 0);
+				System.out.println("a");
 				if(temp.getValue()>n && temp.getLeft()==null) {
 					temp.setLeft(new balanced_node (n));
-					if(parent!=null) {
+					if(parent!=null && parent!=head) {
 						balance(parent);
 					}
 					break;
-				}else if(temp.getValue()<n && temp.getLeft()==null) {
+				}else if(temp.getValue()<n && temp.getRight()==null) {
 					temp.setRight(new balanced_node (n));
-					if(parent!=null) {
+					if(parent!=null && parent!=head) {
 						balance(parent);
 					}
 					break;
