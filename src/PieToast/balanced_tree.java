@@ -61,7 +61,41 @@ public class balanced_tree {
 		if(head==null){
 			head=new balanced_node (n);
 		}else{
-			//while(!==n)
+			balanced_node temp=head;
+			balanced_node parent=null;
+			while(temp.getValue()!=n) {
+				if(temp.getValue()>n && temp.getLeft()==null) {
+					temp.setLeft(new balanced_node (n));
+					if(parent!=null) {
+						balance(parent);
+					}
+					break;
+				}else if(temp.getValue()<n && temp.getLeft()==null) {
+					temp.setRight(new balanced_node (n));
+					if(parent!=null) {
+						balance(parent);
+					}
+					break;
+				}else if(temp.getValue()>n && temp.getLeft()!=null) {
+					parent=temp;
+					temp=temp.getLeft();
+				}else if(temp.getValue()<n && temp.getRight()!=null){
+					parent=temp;
+					temp=temp.getRight();
+				}
+			}
+		}
+	}
+
+	public void sidewaysprint (balanced_node node, int depth) {
+
+		if(node!=null) {
+			sidewaysprint(node.getRight(), depth+1);
+			for(int spacer=0; spacer<depth; spacer++) {
+				System.out.print("  ");
+			}
+			System.out.println(node.getValue());
+			sidewaysprint(node.getLeft(), depth+1);
 		}
 	}
 }
