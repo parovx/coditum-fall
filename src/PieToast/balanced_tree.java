@@ -16,10 +16,11 @@ public class balanced_tree {
 
 	public static balanced_node left(balanced_node L) {
 		balanced_node tempr=L.getRight();
+		tempr.setParent(null);
 		L.setRight(tempr.getLeft());
 		tempr.setLeft(L);
 		System.out.println("left");
-		System.out.print(tempr.getRight().getValue());
+		System.out.println("Left balance's right node "+tempr.getRight().getValue());
 		return tempr;
 	}
 
@@ -71,7 +72,7 @@ public class balanced_tree {
 			balanced_node temp=head;
 			while(true) {
 				sidewaysprint(head, 0);
-				System.out.println("a");
+				System.out.println("add begins");
 				if(temp.getValue()>n && temp.getLeft()==null) {
 					temp.setLeft(new balanced_node (n));
 					temp.getLeft().setParent(temp);
@@ -84,7 +85,7 @@ public class balanced_tree {
 					temp.setRight(new balanced_node (n));
 					temp.getRight().setParent(temp);
 					if(temp.getParent()!=null) {
-						System.out.println(temp.getParent().getValue());
+						System.out.println("parent "+temp.getParent().getValue());
 						balance(temp.getParent());
 					}
 					break;
