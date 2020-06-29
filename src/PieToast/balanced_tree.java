@@ -19,11 +19,12 @@ public class balanced_tree {
 		tempr.setParent(null);
 		L.setRight(tempr.getLeft());
 		tempr.setLeft(L);
+		L.setParent(tempr);
 		System.out.println("left");
-		System.out.println("Left balance's right node "+tempr.getRight().getValue());
+		System.out.println("Left balance's right node is "+tempr.getRight().getValue());
 		return tempr;
 	}
-
+//no problem is here, balance is the problem
 	public static balanced_node rightleft(balanced_node RL) {
 		balanced_node temp2=RL.getRight().getLeft();
 		balanced_node temprl=temp2.getRight();
@@ -95,6 +96,9 @@ public class balanced_tree {
 					temp=temp.getRight();
 				}
 			}
+		}
+		if(!head.equals(null)){
+			
 		}
 	}
 
