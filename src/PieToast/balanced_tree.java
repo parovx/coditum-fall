@@ -3,7 +3,7 @@ package PieToast;
 public class balanced_tree {
 	balanced_node head;
 	public balanced_tree(){
-	head=null;
+		head=null;
 	}
 	public balanced_node right(balanced_node R) {
 		balanced_node templ=R.getLeft();
@@ -15,11 +15,15 @@ public class balanced_tree {
 
 	public balanced_node left(balanced_node L) {
 		balanced_node tempr=L.getRight();
-		tempr.setParent(null);
-		L.setRight(tempr.getLeft());
-		tempr.setLeft(L);
-		L.setParent(tempr);
-		head=tempr;
+		if(tempr.getParent().getParent().equals(null) || tempr.getParent().equals(null)) {
+			tempr.setParent(null);
+			L.setRight(tempr.getLeft());
+			tempr.setLeft(L);
+			L.setParent(tempr);
+			head=tempr;
+		}else if(tempr.getParent()){
+		
+		}
 		System.out.println("left");
 		System.out.println("Left balance's right node is "+tempr.getRight().getValue());
 		return tempr;
@@ -97,17 +101,22 @@ public class balanced_tree {
 				}
 			}
 		}
-}
+	}
 
-public void sidewaysprint (balanced_node node, int depth) {
+	public void sidewaysprint (balanced_node node, int depth) {
 
-	if(node!=null) {
-		sidewaysprint(node.getRight(), depth+1);
-		for(int spacer=0; spacer<depth; spacer++) {
-			System.out.print("  ");
+		if(node!=null) {
+			sidewaysprint(node.getRight(), depth+1);
+			for(int spacer=0; spacer<depth; spacer++) {
+				System.out.print("  ");
+			}
+			System.out.println(node.getValue());
+			sidewaysprint(node.getLeft(), depth+1);
 		}
-		System.out.println(node.getValue());
-		sidewaysprint(node.getLeft(), depth+1);
 	}
 }
-}
+/*
+     2
+  1     4
+      3   5
+ */
