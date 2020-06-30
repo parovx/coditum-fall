@@ -15,14 +15,12 @@ public class balanced_tree {
 
 	public balanced_node left(balanced_node L) {
 		balanced_node tempr=L.getRight();
-		if(tempr.getParent().getParent().equals(null) || tempr.getParent().equals(null)) {
-			tempr.setParent(null);
-			L.setRight(tempr.getLeft());
-			tempr.setLeft(L);
-			L.setParent(tempr);
+		tempr.setParent(tempr.getParent().getParent());
+		L.setRight(tempr.getLeft());
+		tempr.setLeft(L);
+		L.setParent(tempr);
+		if(tempr.getParent().equals(null)) {
 			head=tempr;
-		}else if(tempr.getParent()){
-		
 		}
 		System.out.println("left");
 		System.out.println("Left balance's right node is "+tempr.getRight().getValue());
