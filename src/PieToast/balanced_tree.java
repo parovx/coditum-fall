@@ -9,6 +9,18 @@ public class balanced_tree {
 		balanced_node templ=R.getLeft();
 		R.setLeft(templ.getRight());
 		templ.setRight(R);
+		R.setParent(templ);
+		if(templ.getParent()==null) {
+			head=templ;
+
+		}else{
+			if(templ.getParent().getLeft()!=null) {
+
+				if(templ.getParent().getLeft().equals(templ.getRight())) {
+					templ.getParent().setLeft(templ);
+				}
+			}
+		}
 		System.out.println("right");
 		return templ;
 	}
@@ -19,8 +31,16 @@ public class balanced_tree {
 		L.setRight(tempr.getLeft());
 		tempr.setLeft(L);
 		L.setParent(tempr);
-		if(tempr.getParent().equals(null)) {
+		if(tempr.getParent()==null) {
 			head=tempr;
+
+		}else{
+			if(tempr.getParent().getRight()!=null) {
+
+				if(tempr.getParent().getRight().equals(tempr.getLeft())) {
+					tempr.getParent().setRight(tempr);
+				}
+			}
 		}
 		System.out.println("left");
 		System.out.println("Left balance's right node is "+tempr.getRight().getValue());
