@@ -19,6 +19,9 @@ public class balanced_tree {
 				if(templ.getParent().getLeft().equals(templ.getRight())) {
 					templ.getParent().setLeft(templ);
 				}
+				while(head.getParent()!=null) {
+					head=head.getParent();
+				}
 			}
 		}
 		System.out.println("right");
