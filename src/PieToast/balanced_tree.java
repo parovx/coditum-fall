@@ -8,6 +8,7 @@ public class balanced_tree {
 	public balanced_node right(balanced_node R) {
 		balanced_node templ=R.getLeft();
 		R.setLeft(templ.getRight());
+		templ.setParent(R.getParent());
 		templ.setRight(R);
 		R.setParent(templ);
 		if(templ.getParent()==null) {
@@ -49,7 +50,7 @@ public class balanced_tree {
 		System.out.println("Left balance's right node is "+tempr.getRight().getValue());
 		return tempr;
 	}
-	//no problem is here, balance is the problem
+	
 	public balanced_node rightleft(balanced_node RL) {
 		balanced_node temp2=RL.getRight().getLeft();
 		balanced_node temprl=temp2.getRight();
