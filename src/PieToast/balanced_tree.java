@@ -56,7 +56,8 @@ public class balanced_tree {
 		balanced_node temprl=temp2.getRight();
 		temp2.setRight(RL.getRight());
 		RL.setRight(temp2);
-		temp2=left(RL);
+		//temp2=left(RL);
+		
 		temp2.getRight().setLeft(temprl);
 		System.out.println("rightleft");
 		return temp2;
