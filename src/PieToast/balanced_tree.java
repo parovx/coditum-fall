@@ -25,7 +25,6 @@ public class balanced_tree {
 				}
 			}
 		}
-		System.out.println("right");
 		return templ;
 	}
 
@@ -46,11 +45,9 @@ public class balanced_tree {
 				}
 			}
 		}
-		System.out.println("left");
-		System.out.println("Left balance's right node is "+tempr.getRight().getValue());
 		return tempr;
 	}
-	
+
 	public balanced_node rightleft(balanced_node RL) {
 		balanced_node temp2=RL.getRight().getLeft();
 		balanced_node temprl=temp2.getRight();
@@ -64,24 +61,21 @@ public class balanced_tree {
 		temp2.setParent(tempaboveloop);
 		temp2.setLeft(RL);
 		RL.setRight(null);
-		System.out.println("rightleft");
 		return temp2;
 
 	}
 
 	public balanced_node leftright(balanced_node LR) {
-		balanced_node temp2=LR.getLeft();
+		balanced_node temp2=LR.getLeft().getRight();
 		balanced_node templr=temp2.getLeft();
 		temp2.setLeft(LR.getLeft());
 		LR.setLeft(temp2);
-		temp2=right(LR);
 		temp2.getLeft().setRight(templr);
 		balanced_node tempaboveloop=LR.getParent();
 		LR.getParent().setRight(temp2);
 		temp2.setParent(tempaboveloop);
 		temp2.setRight(LR);
 		LR.setLeft(null);
-		System.out.println("leftright");
 		return temp2;
 	}
 
@@ -109,21 +103,17 @@ public class balanced_tree {
 		}else{
 			balanced_node temp=head;
 			while(true) {
-				sidewaysprint(head, 0);
-				System.out.println("add begins");
 				if(temp.getValue()>n && temp.getLeft()==null) {
 					temp.setLeft(new balanced_node (n));
 					temp.getLeft().setParent(temp);
 					if(temp.getParent()!=null) {
 						balance(temp.getParent());
-						//overwrite parent
 					}
 					break;
 				}else if(temp.getValue()<n && temp.getRight()==null) {
 					temp.setRight(new balanced_node (n));
 					temp.getRight().setParent(temp);
 					if(temp.getParent()!=null) {
-						System.out.println("parent "+temp.getParent().getValue());
 						balance(temp.getParent());
 					}
 					break;
@@ -131,6 +121,22 @@ public class balanced_tree {
 					temp=temp.getLeft();
 				}else if(temp.getValue()<n && temp.getRight()!=null){
 					temp=temp.getRight();
+				}else if(temp.getValue()==n && temp.getLeft()==null) {
+					temp.setLeft(new balanced_node (n));
+					temp.getLeft().setParent(temp);
+					if(temp.getParent()!=null) {
+						balance(temp.getParent());
+					}
+					break;
+				}else if(temp.getValue()==n && temp.getRight()==null) {
+					temp.setRight(new balanced_node (n));
+					temp.getRight().setParent(temp);
+					if(temp.getParent()!=null) {
+						balance(temp.getParent());
+					}
+					break;
+				}else if(temp.getValue()==n && temp.getLeft()!=null && temp.getRight()!=null) {
+					temp=temp.getLeft();
 				}
 			}
 		}
