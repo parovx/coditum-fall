@@ -56,21 +56,31 @@ public class balanced_tree {
 		balanced_node temprl=temp2.getRight();
 		temp2.setRight(RL.getRight());
 		RL.setRight(temp2);
-		//temp2=left(RL);
-		
+		temp2.setParent(RL);
+		temp2.getRight().setParent(temp2);
 		temp2.getRight().setLeft(temprl);
+		balanced_node tempaboveloop=RL.getParent();
+		RL.getParent().setLeft(temp2);
+		temp2.setParent(tempaboveloop);
+		temp2.setLeft(RL);
+		RL.setRight(null);
 		System.out.println("rightleft");
 		return temp2;
 
 	}
 
 	public balanced_node leftright(balanced_node LR) {
-		balanced_node temp2=LR.getLeft().getRight();
+		balanced_node temp2=LR.getLeft();
 		balanced_node templr=temp2.getLeft();
 		temp2.setLeft(LR.getLeft());
 		LR.setLeft(temp2);
 		temp2=right(LR);
 		temp2.getLeft().setRight(templr);
+		balanced_node tempaboveloop=LR.getParent();
+		LR.getParent().setRight(temp2);
+		temp2.setParent(tempaboveloop);
+		temp2.setRight(LR);
+		LR.setLeft(null);
 		System.out.println("leftright");
 		return temp2;
 	}
