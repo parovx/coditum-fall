@@ -4,18 +4,18 @@ import java.lang.reflect.Array;
 
 public class mergesort {
 	static int size=5;
-	static int[] array=new int[size];
+	static int[] array = {1, 2, 3, 4, 5, 6};
 	public static void main(String[] agrs) {
-
+		split();
 	}
-	public static int[] split() {
+	public static void split() {
 		int split=size;
 		int splitcounter=0;
 		while(split!=2 || split!=1) {
 			split=split/2;
 			splitcounter++;
 		}
-		Arraylist[] temparray=new Arraylist[size];
+		int[][] temparray=new int[size][];
 		int[] smallarray=new int[split];
 		for(int middletemp=0; middletemp<splitcounter; middletemp++) {
 			for(int addtotemp=0; addtotemp<split; addtotemp++) {		
@@ -28,8 +28,17 @@ public class mergesort {
 			}
 			temparray[middletemp]=smallarray;
 		}
+		merge(temparray);
 	}
-	public static int merge() {
-
+	public static void print(int[] printed) {
+		for(int printer=0; printer<printed.length; printer++) {
+			System.out.print(printed[printer]+", ");
+		}
+	}
+	public static int merge(int[][] thearray) {
+		int[] finalmerged=new int[size];
+		for(int x=0; x<size; x++) {
+			finalmerged[x]=thearray[x];
+		}
 	}
 }
