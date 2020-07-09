@@ -3,39 +3,38 @@ package PieToast;
 import java.lang.reflect.Array;
 
 public class mergesort {
-	static int size=8;
-	static int[] array = {1, 2, 3, 4};
+	static int[] array = {5, 2, 7, 4, 8, 3};
 	public static void main(String[] agrs) {
 		split(array);
 		print(array);
 	}
-	public static void split(int[] ouray) {
-		int[] lefthalf=new int[size/2];
-		int[] righthalf=new int[size/2];
-		for(int x=0; x<size/2; x++) {
+	public static int[] split(int[] ouray) {
+		int[] lefthalf=new int[ouray.length/2];
+		int[] righthalf=new int[ouray.length/2];
+		for(int x=0; x<ouray.length/2; x++) {
 			lefthalf[x]=ouray[x];
 		}
 		int y=0;
-		for(int z=size/2; z<size; z++) {
+		for(int z=ouray.length/2; z<ouray.length; z++) {
 			righthalf[y]=ouray[z];
 			y++;
 		}
-		merge(lefthalf, righthalf);
+		return merge(lefthalf, righthalf);
 	}
 	public static void print(int[] printed) {
 		for(int printer=0; printer<printed.length; printer++) {
 			System.out.print(printed[printer]+", ");
 		}
 	}
-	public static void merge(int[] thearray, int[] anotherarray) {
-		int[] finalmerged=new int[size];
-		for(int x=0; x<size/2; x++){
+	public static int[] merge(int[] thearray, int[] anotherarray) {
+		int[] finalmerged=new int[array.length];
+		for(int x=0; x<thearray.length/2+1; x++){
 			finalmerged[x]=thearray[x];
 		}
-		for(int x=0; x<size/2; x++){
-			finalmerged[x+size/2]=anotherarray[x];
+		for(int x=0; x<anotherarray.length/2+1; x++){
+			finalmerged[x+anotherarray.length/2+1]=anotherarray[x];
 		}
-		for(int x=1; x<size; x++) {
+		for(int x=1; x<array.length; x++) {
 			int y=x-1;
 			if(finalmerged[x]<finalmerged[y]) {
 				int temp=finalmerged[x];
@@ -45,7 +44,6 @@ public class mergesort {
 				x=0;
 			}
 		}
-		array=finalmerged;
-		return;
+		return finalmerged;
 	}
 }
