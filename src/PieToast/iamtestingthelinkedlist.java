@@ -2,17 +2,17 @@ package PieToast;
 
 import java.util.Random;
 
-public class iamtestingthebalancedtree {
+public class iamtestingthelinkedlist {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		balanced_tree bt=new balanced_tree();
+		LinkedList ll=new LinkedList();
 		for (int EEEE=0; EEEE<1000; EEEE++){
 			Random rand=new Random();
 			int num1=rand.nextInt(2147483647);
-			bt.add(num1);
+			ll.add(num1);
 		}
-		bt.sidewaysprint(bt.head, 0);
+		System.out.println(ll.toString());
 	}
 
 }

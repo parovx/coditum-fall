@@ -8,7 +8,7 @@ public class m {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
-		System.out.println("Don't talk about Minecraft");
+		System.out.println("Don't talk to me about Minecraft");
 		Scanner scan=new Scanner(System.in);
 		String mm=scan.next();
 		if(mm.equals("minecraft")){
