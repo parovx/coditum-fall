@@ -46,4 +46,13 @@ public class mergesort {
 		}
 		return finalmerged;
 	}
+	public static boolean oddoreven() {
+		for(int x=0; x<1073741823; x++) {
+			if(0+(2*x)==array.length){
+				return true;
+			}
+		}
+		return false;
+			
+	}
 }
