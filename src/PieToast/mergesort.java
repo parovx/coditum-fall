@@ -3,23 +3,45 @@ package PieToast;
 import java.lang.reflect.Array;
 
 public class mergesort {
-	static int[] array = {5, 2, 7, 4, 8, 3};
-	public static void main(String[] agrs) {
-		split(array);
+	static int[] array = {5, 114, 29, 444, 218218, 2, 18, 21, 28, 68, 3154};
+	public static void main(String[] args) {
+		array=split(array);
 		print(array);
 	}
 	public static int[] split(int[] ouray) {
-		int[] lefthalf=new int[ouray.length/2];
-		int[] righthalf=new int[ouray.length/2];
-		for(int x=0; x<ouray.length/2; x++) {
-			lefthalf[x]=ouray[x];
+		if(oddoreven()==true) {
+			int[] lefthalf=new int[ouray.length/2];
+			int[] righthalf=new int[ouray.length/2];
+			for(int x=0; x<ouray.length/2; x++) {
+				lefthalf[x]=ouray[x];
+			}
+			int y=0;
+			for(int z=ouray.length/2; z<ouray.length; z++) {
+				righthalf[y]=ouray[z];
+				y++;
+			}
+			print(lefthalf);
+			System.out.println();
+			print(righthalf);
+			System.out.println();
+			return merge(lefthalf, righthalf);
+		}else {
+			int[] lefthalf=new int[(ouray.length+1)/2];
+			int[] righthalf=new int[(ouray.length-1)/2];
+			for(int x=0; x<(ouray.length+1)/2; x++) {
+				lefthalf[x]=ouray[x];
+			}
+			int y=0;
+			for(int z=(ouray.length+1)/2; z<ouray.length; z++) {
+				righthalf[y]=ouray[z];
+				y++;
+			}
+			print(lefthalf);
+			System.out.println();
+			print(righthalf);
+			System.out.println();
+			return merge(lefthalf, righthalf);
 		}
-		int y=0;
-		for(int z=ouray.length/2; z<ouray.length; z++) {
-			righthalf[y]=ouray[z];
-			y++;
-		}
-		return merge(lefthalf, righthalf);
 	}
 	public static void print(int[] printed) {
 		for(int printer=0; printer<printed.length; printer++) {
@@ -28,11 +50,17 @@ public class mergesort {
 	}
 	public static int[] merge(int[] thearray, int[] anotherarray) {
 		int[] finalmerged=new int[array.length];
-		for(int x=0; x<thearray.length/2+1; x++){
+		for(int x=0; x<thearray.length; x++){
 			finalmerged[x]=thearray[x];
 		}
-		for(int x=0; x<anotherarray.length/2+1; x++){
-			finalmerged[x+anotherarray.length/2+1]=anotherarray[x];
+		if(oddoreven()==true) {
+		for(int x=0; x<anotherarray.length; x++){
+			finalmerged[x+anotherarray.length]=anotherarray[x];
+		}
+		}else{
+		for(int x=0; x<anotherarray.length; x++){
+			finalmerged[x+anotherarray.length+1]=anotherarray[x];
+		}
 		}
 		for(int x=1; x<array.length; x++) {
 			int y=x-1;
@@ -53,6 +81,6 @@ public class mergesort {
 			}
 		}
 		return false;
-			
+
 	}
 }
