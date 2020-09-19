@@ -11,22 +11,22 @@ public class UnoCards {
 	}
 	public void print(){
 		if(value<10){
-			System.out.println(colour+" "+value);
+			System.out.print(colour+" "+value);
 		}else if(value>9 && value<19){
 			int temp=value-9;
-			System.out.println(colour+" "+temp);
+			System.out.print(colour+" "+temp);
 		}else if(value==19){
-			System.out.println(colour+" 0");
+			System.out.print(colour+" 0");
 		}else if(value==20 || value==21){
-			System.out.println(colour+" skip turn");
+			System.out.print(colour+" skip turn");
 		}else if(value==22 || value==23){
-			System.out.println(colour+" reverse");
+			System.out.print(colour+" reverse");
 		}else if(value==24 || value==25){
-			System.out.println(colour+" draw two");
+			System.out.print(colour+" draw two");
 		}else if(value==26){
-			System.out.println("WILD CARD");
+			System.out.print("WILD CARD");
 		}else{
-			System.out.println("DRAW FOUR");
+			System.out.print("DRAW FOUR");
 		}
 	}
 	public static UnoCards RandomUnoCard(){
