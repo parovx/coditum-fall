@@ -9,6 +9,15 @@ public class UnoCards {
 		colour=coloor;
 		value=valoo;
 	}
+	
+	public int getValue() {
+		return value;
+	}
+	
+	public String getColour() {
+		return colour;
+	}
+	
 	public void print(){
 		if(value<10){
 			System.out.print(colour+" "+value);
@@ -32,7 +41,7 @@ public class UnoCards {
 	public static UnoCards RandomUnoCard(){
 		Random rand=new Random();
 		int randomcard=rand.nextInt(27);
-		int randomcolor=rand.nextInt(3);
+		int randomcolor=rand.nextInt(4);
 		String randomcolor2="";
 		if (randomcolor==0){
 			randomcolor2="Red";
@@ -40,8 +49,10 @@ public class UnoCards {
 			randomcolor2="Yellow";
 		}else if (randomcolor==2){
 			randomcolor2="Green";
-		}else{
+		}else if (randomcolor==3){
 			randomcolor2="Blue";
+		}else if (randomcolor==4) {
+			randomcolor2="Wild";
 		}
 		UnoCards carda=new UnoCards(randomcolor2, randomcard);
 		return carda;
