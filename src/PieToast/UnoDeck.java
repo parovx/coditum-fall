@@ -2,14 +2,11 @@ package PieToast;
 import java.util.ArrayList;
 import java.util.Random;
 public class UnoDeck {
-	static ArrayList <UnoCards> deck;
+	static ArrayList <UnoCards> deck=new ArrayList();
 	public static void create(){
 		for(int x=0; x<4; x++) {
 			for(int y=0; y<2; y++) {
 				for(int z=0; z<13; z++) {
-					if(y==1) {
-						z=1;
-					}
 					if(x==0) { 
 						UnoCards c=new UnoCards("Red", z);
 						deck.add(c);
@@ -57,12 +54,13 @@ public class UnoDeck {
 	}
 	private int indexOf(ArrayList<UnoCards> deck2) {
 		// TODO Auto-generated method stub
-		for(int s=0; s<deck.size(); s++) {
-
-			if(deck.get(s).equals(deck2)) {
-				return s;
-			}
-		}
-		return -1;
+		return(deck.indexOf(deck2));
+	}
+	public int size() {
+		// TODO Auto-generated method stub
+		return deck.size();
+	}
+	public UnoCards set(int i, UnoCards e) {
+		return(deck.set(i, e));
 	}
 }

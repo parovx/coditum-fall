@@ -17,17 +17,17 @@ public class UnoCards {
 	}
 	public String printCard() {
 		if(value==11) {
-			return colour+" Skip Turn";
+			return colour+" Skip Turn"+", ";
 		}else if(value==12) {
-			return colour+" Reverse";
+			return colour+" Reverse"+", ";
 		}else if(value==13) {
-			return colour+" +2";
+			return colour+" +2"+", ";
 		}else if(value==14) {
-			return colour;
+			return colour+", ";
 		}else if(value==15) {
-			return colour;
+			return colour+", ";
 		}else {
-			return colour+" "+value;
+			return colour+" "+value+", ";
 		}
 	}
 }
