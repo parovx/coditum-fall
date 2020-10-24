@@ -15,6 +15,10 @@ public class UnoCards {
 	public String getColour() {
 		return colour;
 	}
+	
+	public void setColour(String newcolour) {
+		colour=newcolour;
+	}
 	public String printCard() {
 		if(value==11) {
 			return colour+" Skip Turn"+", ";

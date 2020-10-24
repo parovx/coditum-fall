@@ -67,6 +67,7 @@ public class Uno {
 		Scanner scan=new Scanner(System.in);
 		// TODO Auto-generated method stub
 		if(turn==0) {
+			//		bigprint();
 			hand1print();
 			thecardprint();
 			System.out.println("Pick a card to play by selecting the number it appears in in your hand");
@@ -75,16 +76,134 @@ public class Uno {
 				playedcard=hand[handcard];
 				remove(hand, handcard);
 			}else {
-				int drawspace=endfinder(hand);
-				hand[drawspace]=deck.get(0);
-				deck.remove(0);
-				System.out.println("Drew card "+ hand[drawspace].printCard());
-				
+				boolean drawing=true;
+				while(drawing==true) {
+					int drawspace=endfinder(hand);
+					hand[drawspace]=deck.get(0);
+					deck.remove(0);
+					System.out.println("Drew card "+ hand[drawspace].printCard());
+					if(hand[drawspace].getValue()==playedcard.getValue() || hand[drawspace].getColour().equals(playedcard.getColour()) || hand[drawspace].getValue()==14 || hand[drawspace].getValue()==15) {
+						System.out.println("Card "+ hand[drawspace].printCard()+" was played");
+						playedcard=hand[handcard];
+						remove(hand, handcard);
+						drawing=false;
+					}
+				}
 			}
-			game(1);
+			if(playedcard.getValue()==13) {
+				hand2[endfinder(hand2)]=deck.get(0);
+				deck.remove(0);
+				hand2[endfinder(hand2)]=deck.get(0);
+				deck.remove(0);
+			}
+			if(playedcard.getValue()==14) {
+				System.out.println("Pick a color to set the wild card to(1 for red, 2 for blue, 3 for green, 4 for yellow)");
+				int wild4color=scan.nextInt();
+				if(wild4color==1) {
+					playedcard.setColour("Red");
+				}else if(wild4color==2) {
+					playedcard.setColour("Blue");
+				}else if(wild4color==3) {
+					playedcard.setColour("Green");
+				}else {
+					playedcard.setColour("Yellow");
+				}
+			}
+			if(playedcard.getValue()==15) {
+				hand2[endfinder(hand2)]=deck.get(0);
+				deck.remove(0);
+				hand2[endfinder(hand2)]=deck.get(0);
+				deck.remove(0);
+				hand2[endfinder(hand2)]=deck.get(0);
+				deck.remove(0);
+				hand2[endfinder(hand2)]=deck.get(0);
+				deck.remove(0);
+				System.out.println("Pick a color to set the wild card to(1 for red, 2 for blue, 3 for green, 4 for yellow)");
+				int wild4color=scan.nextInt();
+				if(wild4color==1) {
+					playedcard.setColour("Red");
+				}else if(wild4color==2) {
+					playedcard.setColour("Blue");
+				}else if(wild4color==3) {
+					playedcard.setColour("Green");
+				}else {
+					playedcard.setColour("Yellow");
+				}
+			}
+			if(playedcard.getValue()==11 || playedcard.getValue()==12) {
+				game(0);
+			}else {
+				game(1);
+			}
 		}else {
+			//	bigprint();
+			hand2print();
+			thecardprint();
 			System.out.println("Pick a card to play by selecting the number it appears in in your hand");
-			game(0);
+			int handcard=scan.nextInt();
+			if(hand2[handcard].getValue()==playedcard.getValue() || hand2[handcard].getColour().equals(playedcard.getColour()) || hand2[handcard].getValue()==14 || hand2[handcard].getValue()==15) {
+				playedcard=hand2[handcard];
+				remove(hand2, handcard);
+			}else {
+				boolean drawing=true;
+				while(drawing==true) {
+					int drawspace=endfinder(hand2);
+					hand2[drawspace]=deck.get(0);
+					deck.remove(0);
+					System.out.println("Drew card "+ hand2[drawspace].printCard());
+					if(hand2[drawspace].getValue()==playedcard.getValue() || hand2[drawspace].getColour().equals(playedcard.getColour()) || hand2[drawspace].getValue()==14 || hand2[drawspace].getValue()==15) {
+						System.out.println("Card "+ hand2[drawspace].printCard()+" was played");
+						playedcard=hand2[drawspace];
+						remove(hand2, drawspace);
+						drawing=false;
+					}
+				}
+			}
+			if(playedcard.getValue()==13) {
+				hand[endfinder(hand)]=deck.get(0);
+				deck.remove(0);
+				hand[endfinder(hand)]=deck.get(0);
+				deck.remove(0);
+			}
+			if(playedcard.getValue()==14) {
+				System.out.println("Pick a color to set the wild card to(1 for red, 2 for blue, 3 for green, 4 for yellow)");
+				int wild4color=scan.nextInt();
+				if(wild4color==1) {
+					playedcard.setColour("Red");
+				}else if(wild4color==2) {
+					playedcard.setColour("Blue");
+				}else if(wild4color==3) {
+					playedcard.setColour("Green");
+				}else {
+					playedcard.setColour("Yellow");
+				}
+			}
+			if(playedcard.getValue()==15) {
+				hand[endfinder(hand)]=deck.get(0);
+				deck.remove(0);
+				hand[endfinder(hand)]=deck.get(0);
+				deck.remove(0);
+				hand[endfinder(hand)]=deck.get(0);
+				deck.remove(0);
+				hand[endfinder(hand)]=deck.get(0);
+				deck.remove(0);
+				System.out.println("Pick a color to set the wild card to(1 for red, 2 for blue, 3 for green, 4 for yellow)");
+				int wild4color=scan.nextInt();
+				if(wild4color==1) {
+					playedcard.setColour("Red");
+				}else if(wild4color==2) {
+					playedcard.setColour("Blue");
+				}else if(wild4color==3) {
+					playedcard.setColour("Green");
+				}else {
+					playedcard.setColour("Yellow");
+				}
+			}
+			if(playedcard.getValue()==11 || playedcard.getValue()==12) {
+				game(1);
+			}else {
+				game(0);
+			}
 		}
 	}
 	public static void draw(UnoCards[] handy, int cardsdrawn) {
@@ -100,16 +219,9 @@ public class Uno {
 
 	}
 	public static void remove(UnoCards[] hando, int deadcard) {
-		int handend=0;
-		for(int y=0; y<hando.length; y++) {
-			if(hando[y].equals(null)) {
-				handend=y;
-			}
-			y=103;
-		}
 		hando[deadcard]=null;
-		for(int x=deadcard; x<handend; x++) {
-			hand[x]=hand[x+1];
+		for(int x=deadcard; x<hando.length-1; x++) {
+			hando[x]=hando[x+1];
 		}
 	}
 	public static int endfinder(UnoCards[] hanb) {
