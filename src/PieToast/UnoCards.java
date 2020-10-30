@@ -30,6 +30,8 @@ public class UnoCards {
 			return colour+", ";
 		}else if(value==15) {
 			return colour+", ";
+		}else if(value==16){
+			return;
 		}else {
 			return colour+" "+value+", ";
 		}
