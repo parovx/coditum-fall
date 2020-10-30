@@ -61,6 +61,10 @@ public class Uno {
 		System.out.println();
 		playedcard=deck.get(0);
 		deck.remove(0);
+		for(int hand1filler=8; hand1filler<hand.length; hand1filler++){
+			UnoCards[]filler= new UnoCards("BLANK", 16);
+			hand[hand1filler]=filler;
+		}
 		game(0);
 	}
 	public static void game(int turn) {
